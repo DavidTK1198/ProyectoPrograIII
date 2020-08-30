@@ -9,7 +9,7 @@ package Logic;
  *
  * @author DavidTK1198
  */
-public class Cliente {
+public class Cliente {//Persona
 
     private String nombre;
     private String cedula;
