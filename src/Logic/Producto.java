@@ -5,7 +5,7 @@
  */
 package Logic;
 
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -52,3 +52,4 @@ public class Producto {
     }
     
 }
+
