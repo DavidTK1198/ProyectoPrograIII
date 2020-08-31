@@ -145,6 +145,7 @@ public class View extends javax.swing.JFrame implements Observer {
         Presentation.Cliente.Model modelo=new Presentation.Cliente.Model();
         Presentation.Cliente.Controller c1= new Presentation.Cliente.Controller(vista, modelo);
         vista.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_SalirMouseClicked
 
     /**
