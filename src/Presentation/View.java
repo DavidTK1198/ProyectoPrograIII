@@ -5,15 +5,23 @@
  */
 package Presentation;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  *
  * @author DavidTK1198
  */
-public class View extends javax.swing.JFrame {
+public class View extends javax.swing.JFrame implements Observer {
 
     /**
      * Creates new form View
      */
+    private Controller control;
+    private Model model;
+
+  
+    
     public View() {
         initComponents();
     }
@@ -146,5 +154,27 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel textoSalir;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg) {
+        
+    }
+    
+      public Controller getControl() {
+        return control;
+    }
+
+    public void setControl(Controller control) {
+        this.control = control;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
+        model.addObserver(this);
+    }
 }
 

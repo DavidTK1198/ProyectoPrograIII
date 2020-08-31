@@ -5,10 +5,24 @@
  */
 
 package Presentation.Producto;
+
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * 
  * @author DavidTK1198
  */
-public class Model {
-
+public class Model extends Observable {
+    @Override
+    
+    public void addObserver(Observer a){
+       
+        super.addObserver(a);
+        refresh();
+    }
+    private void refresh(){
+        this.setChanged();
+        this.notifyObservers();
+    }
 }

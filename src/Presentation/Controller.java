@@ -11,5 +11,14 @@ package Presentation;
  * @author DavidTK1198
  */
 public class Controller {
+    private View vista;
+    private Model model;
+
+    public Controller(View vista, Model model) {
+        this.vista = vista;
+        this.model = model;
+        vista.setControl(this);
+        vista.setModel(model);
+    }
 
 }
