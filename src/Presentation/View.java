@@ -5,6 +5,7 @@
  */
 package Presentation;
 
+import Data.Empresa;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -19,6 +20,7 @@ public class View extends javax.swing.JFrame implements Observer {
      */
     private Controller control;
     private Model model;
+    private Data.Empresa mi_Empresa;
 
   
     
@@ -179,5 +181,11 @@ public class View extends javax.swing.JFrame implements Observer {
         this.model = model;
         model.addObserver(this);
     }
+
+    public void setMi_Empresa(Empresa mi_Empresa) {
+        this.mi_Empresa = mi_Empresa;
+    }
+    
+    
 }
 
