@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Application;
-
 import Data.Empresa;
 
 /**
@@ -25,6 +24,7 @@ public class Application {
     }
     
 }
+
 
 
 
