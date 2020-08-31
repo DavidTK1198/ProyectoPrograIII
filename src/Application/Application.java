@@ -15,11 +15,14 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code Application logic here
+      Presentation.View v1= new Presentation.View();
         System.out.println("Hola mundo");
+        v1.setVisible(true);
     }
     
 }
+
+
 
 
 

@@ -36,8 +36,7 @@ public class View extends javax.swing.JFrame implements Observer {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        textoSalir = new javax.swing.JLabel();
-        IconoSalir = new javax.swing.JLabel();
+        Salir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -46,32 +45,29 @@ public class View extends javax.swing.JFrame implements Observer {
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 255));
 
-        textoSalir.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        textoSalir.setText("Salir");
-
-        IconoSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-exit-64.png"))); // NOI18N
+        Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-exit-64.png"))); // NOI18N
+        Salir.setText("Salir");
+        Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(IconoSalir, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(textoSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(Salir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(textoSalir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(IconoSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 61, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -114,7 +110,7 @@ public class View extends javax.swing.JFrame implements Observer {
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 436, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 439, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
             .addGroup(layout.createSequentialGroup()
@@ -141,18 +137,25 @@ public class View extends javax.swing.JFrame implements Observer {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirMouseClicked
+        // TODO add your handling code here:
+        Presentation.Cliente.View vista= new Presentation.Cliente.View();
+        Presentation.Cliente.Model modelo=new Presentation.Cliente.Model();
+        Presentation.Cliente.Controller c1= new Presentation.Cliente.Controller(vista, modelo);
+        vista.setVisible(true);
+    }//GEN-LAST:event_SalirMouseClicked
+
     /**
      * @param args the command line arguments
      */
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IconoSalir;
+    private javax.swing.JButton Salir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel textoSalir;
     // End of variables declaration//GEN-END:variables
 
     @Override
