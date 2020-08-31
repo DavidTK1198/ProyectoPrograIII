@@ -14,6 +14,7 @@ import java.util.Observer;
  * @author DavidTK1198
  */
 public class Model extends Observable {
+    
     @Override
     
     public void addObserver(Observer a){

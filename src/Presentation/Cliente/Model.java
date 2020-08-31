@@ -7,16 +7,22 @@
 package Presentation.Cliente;
 
 
+import Logic.Producto;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.table.TableModel;
 
 /**
  * 
  * @author DavidTK1198
  */
 public class Model extends Observable {
-    @Override
     
+    private TableModel table;
+    private Producto producto;
+    private List<Producto> lista;
+    @Override
     public void addObserver(Observer a){
        
         super.addObserver(a);
