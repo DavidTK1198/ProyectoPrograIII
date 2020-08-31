@@ -5,6 +5,8 @@
  */
 package Application;
 
+import Data.Empresa;
+
 /**
  *
  * @author DavidTK1198
@@ -17,10 +19,13 @@ public class Application {
     public static void main(String[] args) {
       Presentation.View v1= new Presentation.View();
         System.out.println("Hola mundo");
+        
         v1.setVisible(true);
+        v1.setMi_Empresa(Empresa.getInstance());
     }
     
 }
+
 
 
 
