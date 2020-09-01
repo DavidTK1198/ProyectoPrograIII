@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package Presentation.MainWindow;
-
-import Data.Empresa;
 import java.util.Observable;
 import java.util.Observer;
 
