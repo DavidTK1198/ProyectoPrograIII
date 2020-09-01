@@ -5,11 +5,6 @@
  */
 package Data;
 
-import Logic.Cliente;
-import Logic.Producto;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  *
  * @author DavidTK1198
@@ -22,12 +17,8 @@ public class Empresa {
     private String correoE;
     private String Cedula;
     private String direccion;
-    private final Map<String, Producto> productos;
-    private final Map<String, Cliente> clientes;
 
     private Empresa() {
-        productos=new HashMap<>();
-        clientes=new HashMap<>();
     }
 
     public static Empresa getInstance() {
@@ -78,24 +69,24 @@ public class Empresa {
         this.direccion = direccion;
     }
     
-    public void addProduct(Producto p) throws Exception{
-        Producto pro=productos.get(p.getCodigo());
-        
-        if(pro==null){
-            productos.put(p.getCodigo(), p);
-        }else{
-            throw new Exception("El Producto  ya  Existe");
-        }
-        
-    }
-    
-    public void addClient(Cliente c) throws Exception{
-        Cliente cliente=clientes.get(c.getCedula());
-        if(cliente==null){
-            clientes.put(c.getCedula(), c);
-        }else{
-            throw new Exception("El cliente ya  Existe");
-        }
-    } 
+//    public void addProduct(Producto p) throws Exception{
+//        Producto pro=productos.get(p.getCodigo());
+//        
+//        if(pro==null){
+//            productos.put(p.getCodigo(), p);
+//        }else{
+//            throw new Exception("El Producto  ya  Existe");
+//        }
+//        
+//    }
+//    
+//    public void addClient(Cliente c) throws Exception{
+//        Cliente cliente=clientes.get(c.getCedula());
+//        if(cliente==null){
+//            clientes.put(c.getCedula(), c);
+//        }else{
+//            throw new Exception("El cliente ya  Existe");
+//        }
+//    } 
     
 }
