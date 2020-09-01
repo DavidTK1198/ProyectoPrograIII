@@ -7,6 +7,7 @@ package Presentation.Producto;
 
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,7 +36,7 @@ public class View extends javax.swing.JFrame implements Observer {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        ListaDeProductos = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         BusProd = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -58,8 +59,8 @@ public class View extends javax.swing.JFrame implements Observer {
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos o Servicios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Black", 2, 18))); // NOI18N
 
-        jTable1.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        ListaDeProductos.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        ListaDeProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -67,7 +68,7 @@ public class View extends javax.swing.JFrame implements Observer {
                 "Producto/Servicio#", "Codigo", "Nombre", "Descripcion", "Precio Unitario"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(ListaDeProductos);
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 2, 18)); // NOI18N
         jLabel5.setText("BUSQUEDA POR CODIGO");
@@ -131,6 +132,11 @@ public class View extends javax.swing.JFrame implements Observer {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-save-35.png"))); // NOI18N
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         Nuevo.setBackground(new java.awt.Color(204, 255, 0));
         Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new_25355.png"))); // NOI18N
@@ -248,10 +254,41 @@ public class View extends javax.swing.JFrame implements Observer {
         // TODO add your handling code here:
     }//GEN-LAST:event_VolverActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String codigo = this.Cod.getText();
+        String nomb = this.PrSr.getText();
+        String descrip = this.detalle.getText();
+        String pre = this.PrecioU.getText();
+        if(ValidacionTexto(codigo,nomb,descrip,pre)){
+            //....
+        }
+        double precio = Double.parseDouble(pre);
+        //new producto...
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private boolean ValidacionTexto(String nom,String ape, String corr, String iden){
+        if(nom.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingresar Codigo");
+            return false;
+        }
+        if(ape.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingresar Nombre");
+            return false;
+        }
+        if(corr.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingresar Descripcion");
+            return false;
+        }
+        if(iden.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingresar Precio Unitario");
+            return false;
+        }
+        return true;
+    }
     @Override
     public void update(Observable o, Object arg) {
+       this.ListaDeProductos.setModel(model.getTable());
     }
-
     public Controller getControl() {
         return control;
     }
@@ -277,6 +314,7 @@ public class View extends javax.swing.JFrame implements Observer {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BusProd;
     private javax.swing.JTextField Cod;
+    private javax.swing.JTable ListaDeProductos;
     private javax.swing.JButton Nuevo;
     private javax.swing.JTextField PrSr;
     private javax.swing.JTextField PrecioU;
@@ -293,7 +331,6 @@ public class View extends javax.swing.JFrame implements Observer {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
 

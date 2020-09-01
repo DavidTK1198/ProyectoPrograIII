@@ -5,11 +5,13 @@
  */
 package Presentation.Producto;
 
-import Logic.Cliente;
+import Logic.Producto;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-import javax.swing.table.TableModel;
+import Presentation.Producto.TableModel;
+
 
 /**
  *
@@ -18,19 +20,60 @@ import javax.swing.table.TableModel;
 public class Model extends Observable {
 
     private TableModel table;
-    private Cliente cl;
-    private List<Cliente> lista;
-
+    private Producto Product;
+    private int[] col = {0,1,2,3,4};
+    private List<Producto> lista;
+    private boolean editable;
     @Override
-
-    public void addObserver(Observer a) {
-
+    
+    public void addObserver(Observer a){
+       
         super.addObserver(a);
         refresh();
     }
 
-    private void refresh() {
+    public Model() {
+        Product = new Producto();
+        lista = new ArrayList<>();
+        table = new TableModel(lista,col);
+        editable = false;
+    }
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+    private void refresh(){
         this.setChanged();
         this.notifyObservers();
+    }
+
+    public TableModel getTable() {
+        return table;
+    }
+
+    public void setTable(List<Producto> tablee) {
+        table = new TableModel(tablee,col);
+    }
+
+    public Producto getProduct() {
+        return Product;
+    }
+
+    public void setProduct(Producto Product) {
+        this.Product = Product;
+    }
+
+    public List<Producto> getLista() {
+        return lista;
+    }
+
+    public void setLista(List<Producto> a) {
+        this.lista = a;
+        setTable(a);
+        refresh();
     }
 }
