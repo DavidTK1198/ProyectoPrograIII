@@ -15,9 +15,11 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Presentation.MainWindow.View v1= new Presentation.MainWindow.View();
-        System.out.println("Hola mundo");
-        v1.setVisible(true);
+//      Presentation.MainWindow.View v1= new Presentation.MainWindow.View();
+//      
+//        v1.setVisible(true);
+    Presentation.Cliente.View v2 = new Presentation.Cliente.View();
+    v2.setVisible(true);
     }
     
 }
