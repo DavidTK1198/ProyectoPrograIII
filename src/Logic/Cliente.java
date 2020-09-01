@@ -5,6 +5,8 @@
  */
 package Logic;
 
+import java.util.Objects;
+
 /**
  *
  * @author DavidTK1198
@@ -57,6 +59,24 @@ public class Cliente {//Persona
     public void setCorreoE(String CorreoE) {
         this.CorreoE = CorreoE;
     }
-    
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if (!Objects.equals(this.cedula, other.cedula)) {
+            return false;
+        }
+        return true;
+    }
+
+  
 }

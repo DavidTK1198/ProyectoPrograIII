@@ -305,11 +305,9 @@ public class View extends javax.swing.JFrame implements Observer {
        String apelli = this.Apelli.getText();
        String correo = this.CorreoEle.getText();
        String iden = this.Identfi.getText();
-          if(ValidacionTexto(nombre,apelli,correo,iden)){
-              control.agregar(model.isEditable(),nombre,apelli,correo,iden);
-           }
-       
-       
+       if(ValidacionTexto(nombre,apelli,correo,iden)){
+//        control.agregar(model.isEditable(),nombre,apelli,correo,iden);
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
     
@@ -353,9 +351,6 @@ public class View extends javax.swing.JFrame implements Observer {
         this.model = model;
         model.addObserver(this);
     }
-    
-    
-
     /**
      * @param args the command line arguments
      */

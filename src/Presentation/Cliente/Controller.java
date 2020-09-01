@@ -26,7 +26,7 @@ public class Controller {
     }
 
     public void agregar(boolean editable, String nombre, String apelli, String correo, String iden) {
-        Cliente clien = new Cliente(nombre,apelli,iden,correo);
+//        Cliente clien = new Cliente(nombre,apelli,iden,correo);
         
         try{
             if(!editable){
