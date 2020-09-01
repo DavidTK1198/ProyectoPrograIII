@@ -26,6 +26,7 @@ public class Model extends Observable {
     private Cliente client;
     private int[] col = {0,1,2,3,4};
     private List<Cliente> lista;
+    private boolean editable;
     @Override
     
     public void addObserver(Observer a){
@@ -38,6 +39,15 @@ public class Model extends Observable {
         client = new Cliente();
         lista = new ArrayList<>();
         table = new TableModelClient(lista,col);
+        editable = false;
+    }
+
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
     }
     private void refresh(){
         this.setChanged();

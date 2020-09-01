@@ -5,6 +5,8 @@
  */
 package Data;
 
+import Logic.Producto;
+
 /**
  *
  * @author DavidTK1198

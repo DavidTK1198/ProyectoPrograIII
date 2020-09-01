@@ -17,6 +17,7 @@ public class TableModelClient extends AbstractTableModel{
     private List<Cliente> filas;
     private int[] columnas;
     private String[] nombCol;
+   
 
     public TableModelClient(List<Cliente> filas, int[] columnas) {
         this.filas = filas;

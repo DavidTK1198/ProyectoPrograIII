@@ -7,6 +7,7 @@ package Presentation.Cliente;
 
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -106,6 +107,11 @@ public class View extends javax.swing.JFrame implements Observer {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save_icon-icons.com_53618.png"))); // NOI18N
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new_25355.png"))); // NOI18N
         jButton2.setText("Nuevo");
@@ -294,6 +300,38 @@ public class View extends javax.swing.JFrame implements Observer {
         // TODO add your handling code here:
     }//GEN-LAST:event_IdeBusquedaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       String nombre = this.Nom.getText();
+       String apelli = this.Apelli.getText();
+       String correo = this.CorreoEle.getText();
+       String iden = this.Identfi.getText();
+          if(ValidacionTexto(nombre,apelli,correo,iden)){
+              control.agregar(model.isEditable(),nombre,apelli,correo,iden);
+           }
+       
+       
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    private boolean ValidacionTexto(String nom,String ape, String corr, String iden){
+        if(nom.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingresar Nombre");
+            return false;
+        }
+        if(ape.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingresar Apellidos");
+            return false;
+        }
+        if(corr.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingresar Correo electronico");
+            return false;
+        }
+        if(iden.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Ingresar Identificacion");
+            return false;
+        }
+        return true;
+    }
     @Override
     public void update(Observable o, Object arg) {
        this.ListaClientes.setModel(model.getTable());
