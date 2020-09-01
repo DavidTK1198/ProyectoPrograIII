@@ -63,7 +63,6 @@ public class View extends javax.swing.JFrame implements Observer {
         jLabel2.setBackground(new java.awt.Color(204, 204, 255));
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Nombre");
-        jLabel2.setOpaque(true);
 
         Nom.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Nom.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +74,6 @@ public class View extends javax.swing.JFrame implements Observer {
         Ape.setBackground(new java.awt.Color(204, 204, 255));
         Ape.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Ape.setText("Apellidos");
-        Ape.setOpaque(true);
 
         Apelli.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Apelli.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +85,6 @@ public class View extends javax.swing.JFrame implements Observer {
         jLabel4.setBackground(new java.awt.Color(204, 204, 255));
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setText("Identificacion");
-        jLabel4.setOpaque(true);
 
         Identfi.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Identfi.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +96,6 @@ public class View extends javax.swing.JFrame implements Observer {
         jLabel5.setBackground(new java.awt.Color(204, 204, 255));
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Correo electronico");
-        jLabel5.setOpaque(true);
 
         CorreoEle.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         CorreoEle.addActionListener(new java.awt.event.ActionListener() {
@@ -189,12 +185,10 @@ public class View extends javax.swing.JFrame implements Observer {
         jLabel3.setBackground(new java.awt.Color(255, 153, 153));
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel3.setText("Buscar Cliente");
-        jLabel3.setOpaque(true);
 
         jLabel6.setBackground(new java.awt.Color(255, 153, 153));
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel6.setText("Identificacion ");
-        jLabel6.setOpaque(true);
 
         IdeBusqueda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         IdeBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -255,9 +249,9 @@ public class View extends javax.swing.JFrame implements Observer {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(19, 19, 19)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(336, 336, 336)
