@@ -7,11 +7,14 @@
 package Presentation.Cliente;
 
 
-import Logic.Producto;
+import Logic.Cliente;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.table.TableModel;
+
+
 
 /**
  * 
@@ -20,16 +23,51 @@ import javax.swing.table.TableModel;
 public class Model extends Observable {
     
     private TableModel table;
-    private Producto producto;
-    private List<Producto> lista;
+    private Cliente client;
+    private int[] col = {0,1,2,3,4};
+    private List<Cliente> lista;
     @Override
+    
     public void addObserver(Observer a){
        
         super.addObserver(a);
         refresh();
     }
+
+    public Model() {
+        client = new Cliente();
+        lista = new ArrayList<>();
+        table = new TableModelClient(lista,col);
+    }
     private void refresh(){
         this.setChanged();
         this.notifyObservers();
     }
+
+    public TableModel getTable() {
+        return table;
+    }
+
+    public void setTable(List<Cliente> tablee) {
+        table = new TableModelClient(tablee,col);
+    }
+
+    public Cliente getClient() {
+        return client;
+    }
+
+    public void setClient(Cliente client) {
+        this.client = client;
+    }
+
+    public List<Cliente> getLista() {
+        return lista;
+    }
+
+    public void setLista(List<Cliente> a) {
+        this.lista = a;
+        setTable(a);
+        refresh();
+    }
+    
 }

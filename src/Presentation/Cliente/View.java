@@ -171,6 +171,7 @@ public class View extends javax.swing.JFrame implements Observer {
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Black", 2, 14))); // NOI18N
 
+        ListaClientes.setBackground(new java.awt.Color(255, 153, 153));
         ListaClientes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         ListaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -267,7 +268,7 @@ public class View extends javax.swing.JFrame implements Observer {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -295,7 +296,7 @@ public class View extends javax.swing.JFrame implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-      
+       this.ListaClientes.setModel(model.getTable());
     }
 
     public Controller getControl() {

@@ -12,7 +12,7 @@ package Presentation.Cliente;
  */
 public class Controller {
     
-     private View vista;
+    private View vista;
     private Model model;
 
     public Controller(View vista, Model model) {

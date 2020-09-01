@@ -12,6 +12,7 @@ package Logic;
 public class Cliente {//Persona
 
     private String nombre;
+    private String apellidos;
     private String cedula;
     private String CorreoE;
 
@@ -20,6 +21,21 @@ public class Cliente {//Persona
 
     public String getNombre() {
         return nombre;
+    }
+
+    public Cliente(String nombre, String apellidos, String cedula, String CorreoE) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.cedula = cedula;
+        this.CorreoE = CorreoE;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public void setNombre(String nombre) {
