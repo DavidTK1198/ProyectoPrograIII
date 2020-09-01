@@ -48,11 +48,6 @@ public class View extends javax.swing.JFrame implements Observer {
                 botonSalirMouseClicked(evt);
             }
         });
-        botonSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSalirActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -84,10 +79,6 @@ public class View extends javax.swing.JFrame implements Observer {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonSalirActionPerformed
 
     private void botonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalirMouseClicked
         // TODO add your handling code here:
