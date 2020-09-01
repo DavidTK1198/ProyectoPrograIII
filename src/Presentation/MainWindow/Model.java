@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Presentation;
+package Presentation.MainWindow;
 
 import java.util.Observable;
 import java.util.Observer;

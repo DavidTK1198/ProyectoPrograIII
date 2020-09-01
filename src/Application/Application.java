@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Application;
-import Data.Empresa;
 
 /**
  *
@@ -16,14 +15,13 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      Presentation.View v1= new Presentation.View();
+      Presentation.MainWindow.View v1= new Presentation.MainWindow.View();
         System.out.println("Hola mundo");
-        
         v1.setVisible(true);
-        v1.setMi_Empresa(Empresa.getInstance());
     }
     
 }
+
 
 
 

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Presentation;
+package Presentation.MainWindow;
 
 import Data.Empresa;
 import java.util.Observable;
@@ -20,7 +20,6 @@ public class View extends javax.swing.JFrame implements Observer {
      */
     private Controller control;
     private Model model;
-    private Data.Empresa mi_Empresa;
 
   
     
@@ -181,10 +180,6 @@ public class View extends javax.swing.JFrame implements Observer {
     public void setModel(Model model) {
         this.model = model;
         model.addObserver(this);
-    }
-
-    public void setMi_Empresa(Empresa mi_Empresa) {
-        this.mi_Empresa = mi_Empresa;
     }
     
     
