@@ -19,7 +19,7 @@ public class View extends javax.swing.JFrame implements Observer {
      * Creates new form View
      */
     
-     private Controller control;
+    private Controller control;
     private Model model;
     public View() {
         initComponents();
