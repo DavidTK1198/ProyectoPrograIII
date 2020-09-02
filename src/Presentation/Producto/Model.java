@@ -81,22 +81,18 @@ public class Model extends Observable {
         refresh();
     }
     
-    
     public void addProduct(Producto p) throws Exception {
-         Product = productos.get(p.getCodigo());
-
+        Product = productos.get(p.getCodigo());
         if (Product == null) {
             productos.put(p.getCodigo(), p);
         } else {
-            throw new Exception("El Producto  ya  Existe");
+            throw new Exception("El producto ya existe");
         }
-
     }
 
     public List<Producto> updateTable() {
         List<Producto>ls = new ArrayList<>();
         for (Map.Entry<String, Producto> entry : productos.entrySet()) {
-            String key = entry.getKey();
             Producto ayudante = entry.getValue();
             ls.add(ayudante);
         }
