@@ -6,6 +6,7 @@
 
 package Presentation.Producto;
 
+import Logic.Producto;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +17,7 @@ public class Controller {
     
      private Presentation.Producto.View vista;
     private Presentation.Producto.Model model;
+    
 
     public Controller(Presentation.Producto.View vista, Presentation.Producto.Model model) {
         this.vista = vista;
@@ -24,12 +26,13 @@ public class Controller {
         vista.setModel(model);
     }
 
-    public void agregar(boolean editable, String nombre, String apelli, String correo, String iden) {
-//        Cliente clien = new Cliente(nombre,apelli,iden,correo);
+    public void agregar(Boolean editable,String codigo , String descripcion, String precioUnitario,String nombre) {
+        double dinero=Double.parseDouble(precioUnitario);
+        Producto Producto = new Producto(codigo,descripcion,dinero,nombre);
         
         try{
             if(!editable){
-//                Data.Empresa.getInstance().addClient(x);
+               model.addProduct(Producto);
             }else{
                 
             }

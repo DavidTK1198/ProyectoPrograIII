@@ -7,11 +7,11 @@ package Presentation.Producto;
 
 import Logic.Producto;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
-import Presentation.Producto.TableModel;
-
 
 /**
  *
@@ -21,22 +21,24 @@ public class Model extends Observable {
 
     private TableModel table;
     private Producto Product;
-    private int[] col = {0,1,2,3,4};
+    private int[] col = {0, 1, 2, 3, 4};
     private List<Producto> lista;
     private boolean editable;
+    private Map<String, Producto> productos;
+
     @Override
-    
-    public void addObserver(Observer a){
-       
+
+    public void addObserver(Observer a) {
+
         super.addObserver(a);
         refresh();
     }
 
     public Model() {
         Product = new Producto();
-        lista = new ArrayList<>();
-        table = new TableModel(lista,col);
+        table = new TableModel(lista, col);
         editable = false;
+        productos = new HashMap<>();
     }
 
     public boolean isEditable() {
@@ -46,7 +48,8 @@ public class Model extends Observable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-    private void refresh(){
+
+    private void refresh() {
         this.setChanged();
         this.notifyObservers();
     }
@@ -56,7 +59,7 @@ public class Model extends Observable {
     }
 
     public void setTable(List<Producto> tablee) {
-        table = new TableModel(tablee,col);
+        table = new TableModel(tablee, col);
     }
 
     public Producto getProduct() {
@@ -76,4 +79,26 @@ public class Model extends Observable {
         setTable(a);
         refresh();
     }
+
+    public void addProduct(Producto p) throws Exception {
+        Producto pro = productos.get(p.getCodigo());
+
+        if (pro == null) {
+            productos.put(p.getCodigo(), p);
+            updateTable();
+        } else {
+            throw new Exception("El Producto  ya  Existe");
+        }
+
+    }
+
+    public void updateTable() {
+        lista = new ArrayList<>();
+        for (Map.Entry<String, Producto> entry : productos.entrySet()) {
+            String key = entry.getKey();
+            Producto ayudante = entry.getValue();
+            lista.add(ayudante);
+        }
+    }
+
 }
