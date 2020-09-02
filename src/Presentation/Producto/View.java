@@ -145,11 +145,6 @@ public class View extends javax.swing.JFrame implements Observer {
         Volver.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-96.png"))); // NOI18N
         Volver.setText("Regresar");
-        Volver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -245,34 +240,31 @@ public class View extends javax.swing.JFrame implements Observer {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_VolverActionPerformed
-
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        String codigo = this.Cod.getText();
+        // TODO add your handling code here:
+         String codigo = this.Cod.getText();
         String nomb = this.PrSr.getText();
         String descrip = this.detalle.getText();
         String pre = this.PrecioU.getText();
         if(ValidacionTexto(codigo,nomb,descrip,pre)){
-           this.control.agregar(model.isEditable(), codigo, nomb, descrip, pre);
+           this.control.agregar(model.isEditable(), codigo, descrip, pre, nomb);
         }      
     }//GEN-LAST:event_GuardarActionPerformed
 
-    private boolean ValidacionTexto(String nom,String ape, String corr, String iden){
-        if(nom.isEmpty()){
+    private boolean ValidacionTexto(String codigo , String descripcion, String precioUnitario,String nombre){
+        if(codigo.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar Codigo");
             return false;
         }
-        if(ape.isEmpty()){
+        if(nombre.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar Nombre");
             return false;
         }
-        if(corr.isEmpty()){
+        if(descripcion.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar Descripcion");
             return false;
         }
-        if(iden.isEmpty()){
+        if(precioUnitario.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar Precio Unitario");
             return false;
         }

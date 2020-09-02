@@ -30,9 +30,11 @@ public class Controller {
         double dinero=Double.parseDouble(precioUnitario);
         Producto Producto = new Producto(codigo,descripcion,dinero,nombre);
         
+        
         try{
             if(!editable){
                model.addProduct(Producto);
+               model.setLista(model.updateTable());
             }else{
                 
             }

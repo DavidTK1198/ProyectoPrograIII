@@ -18,11 +18,15 @@ public class Application {
 //      Presentation.MainWindow.View v1= new Presentation.MainWindow.View();
 //      
 //        v1.setVisible(true);
+
     Presentation.Producto.View v2 = new Presentation.Producto.View();
+    Presentation.Producto.Model model=new Presentation.Producto.Model();
+    Presentation.Producto.Controller control=new Presentation.Producto.Controller(v2, model);
     v2.setVisible(true);
     }
     
 }
+
 
 
 
