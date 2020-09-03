@@ -5,6 +5,7 @@
  */
 package Presentation.Cliente;
 
+import Logic.Cliente;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JOptionPane;
@@ -13,7 +14,7 @@ import javax.swing.JOptionPane;
  *
  * @author DavidTK1198
  */
-public class View extends javax.swing.JFrame implements Observer {
+public class View extends javax.swing.JDialog implements Observer {
 
     /**
      * Creates new form View
@@ -21,7 +22,8 @@ public class View extends javax.swing.JFrame implements Observer {
     
      private Controller control;
     private Model model;
-    public View() {
+    public View(java.awt.Frame Parent,boolean modal ) {
+        super(Parent,modal);
         initComponents();
     }
 
@@ -306,7 +308,8 @@ public class View extends javax.swing.JFrame implements Observer {
        String correo = this.CorreoEle.getText();
        String iden = this.Identfi.getText();
        if(ValidacionTexto(nombre,apelli,correo,iden)){
-//        control.agregar(model.isEditable(),nombre,apelli,correo,iden);
+           Cliente client = new Cliente(nombre,apelli,iden,correo);
+           this.control.agregar(model.isEditable(), client);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

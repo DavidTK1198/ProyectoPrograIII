@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
  */
 public class Controller {
     
-    private View vista;
-    private Model model;
+    private Presentation.Cliente.View vista;
+    private Presentation.Cliente.Model model;
 
     public Controller(View vista, Model model) {
         this.vista = vista;
@@ -24,13 +24,17 @@ public class Controller {
         vista.setControl(this);
         vista.setModel(model);
     }
+    public void Mostrar(){
+        vista.setVisible(true);
+    }
 
-    public void agregar(boolean editable, String nombre, String apelli, String correo, String iden) {
+    public void agregar(boolean editable, Cliente c) {
 //        Cliente clien = new Cliente(nombre,apelli,iden,correo);
         
         try{
             if(!editable){
-//                Data.Empresa.getInstance().addClient(x);
+                Logic.Service.getInstance().addClient(c);
+                model.setLista(Logic.Service.getInstance().getClientes());
             }else{
                 
             }

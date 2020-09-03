@@ -36,7 +36,7 @@ public class Controller {
                Logic.Service.getInstance().addProduct(p);
                model.setLista(Logic.Service.getInstance().getProductos());
             }else{
-                
+                //Falta esta parte... ahorita la hacemos...
             }
         }catch(Exception exc){
             JOptionPane.showMessageDialog(null, exc.getMessage());

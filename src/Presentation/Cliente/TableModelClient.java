@@ -16,7 +16,7 @@ import javax.swing.table.AbstractTableModel;
 public class TableModelClient extends AbstractTableModel{
     private List<Cliente> filas;
     private int[] columnas;
-    private String[] nombCol;
+    private String[] nombCol = {"Cedula","Nombre","Apellidos","Correo Electronico"};
    
 
     public TableModelClient(List<Cliente> filas, int[] columnas) {
@@ -37,20 +37,18 @@ public class TableModelClient extends AbstractTableModel{
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         Cliente client = filas.get(rowIndex);
-        int contador = 0;
         switch (columnIndex){
-            case 0: return contador++;
-            case 1: return client.getCedula();
-            case 2: return client.getNombre();
-            case 3: return client.getApellidos();
-            case 4: return client.getCorreoE();
+            case 0: return client.getCedula();
+            case 1: return client.getNombre();
+            case 2: return client.getApellidos();
+            case 3: return client.getCorreoE();
             default: return null;
         }
     }
 
     @Override
     public String getColumnName(int column) {
-        return super.getColumnName(column); //To change body of generated methods, choose Tools | Templates.
+        return nombCol[column]; //To change body of generated methods, choose Tools | Templates.
     }
     
 }
