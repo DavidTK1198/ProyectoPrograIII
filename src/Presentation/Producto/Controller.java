@@ -28,12 +28,12 @@ public class Controller {
         vista.setVisible(true);
     }  
 
-    public void agregar(Boolean editable,String codigo , String descripcion, String precioUnitario,String nombre) {
-        double dinero=Double.parseDouble(precioUnitario);
+    public void agregar(Boolean editable,Producto p) {
+        
         try{
             if(!editable){
-               Producto producto = new Producto(codigo,descripcion,dinero,nombre);
-               Logic.Empresa.getInstance().addProduct(producto);
+               
+               Logic.Empresa.getInstance().addProduct(p);
                model.setLista(Logic.Empresa.getInstance().getProductos());
             }else{
                 

@@ -5,6 +5,7 @@
  */
 package Presentation.Producto;
 
+import Logic.Producto;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JOptionPane;
@@ -247,8 +248,18 @@ public class View extends javax.swing.JDialog implements Observer {
         String nomb = this.PrSr.getText();
         String descrip = this.detalle.getText();
         String pre = this.PrecioU.getText();
+         double dinero = 0;
         if(ValidacionTexto(codigo,nomb,descrip,pre)){
-           this.control.agregar(model.isEditable(), codigo, descrip, pre, nomb);
+            
+         try{
+           dinero =Double.parseDouble(pre);
+             
+         }catch(Exception e){
+              JOptionPane.showMessageDialog(null, e.getMessage());
+         }
+            
+            Producto p=new Producto( codigo , descrip, dinero,nomb);
+           this.control.agregar(model.isEditable(),p);
         }      
     }//GEN-LAST:event_GuardarActionPerformed
 
