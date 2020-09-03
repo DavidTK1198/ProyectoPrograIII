@@ -143,6 +143,11 @@ public class View extends javax.swing.JDialog implements Observer {
         Nuevo.setBackground(new java.awt.Color(204, 255, 0));
         Nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new_25355.png"))); // NOI18N
         Nuevo.setText("Nuevo");
+        Nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NuevoActionPerformed(evt);
+            }
+        });
 
         Volver.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-96.png"))); // NOI18N
@@ -255,13 +260,22 @@ public class View extends javax.swing.JDialog implements Observer {
            dinero =Double.parseDouble(pre);
              
          }catch(Exception e){
-              JOptionPane.showMessageDialog(null, e.getMessage());
+              JOptionPane.showMessageDialog(null,"No digito un valor valido.");
+              return;
          }
             
             Producto p=new Producto( codigo , descrip, dinero,nomb);
            this.control.agregar(model.isEditable(),p);
         }      
     }//GEN-LAST:event_GuardarActionPerformed
+
+    private void NuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoActionPerformed
+         this.Cod.setText(model.getProduct().getCodigo());
+         this.PrSr.setText(model.getProduct().getNombre());
+         this.PrecioU.setText("");
+         this.detalle.setText(model.getProduct().getDescripcion());
+         
+    }//GEN-LAST:event_NuevoActionPerformed
 
     private boolean ValidacionTexto(String codigo , String descripcion, String precioUnitario,String nombre){
         if(codigo.isEmpty()){
