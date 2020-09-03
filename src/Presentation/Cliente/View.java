@@ -68,44 +68,24 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel2.setText("Nombre");
 
         Nom.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Nom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NomActionPerformed(evt);
-            }
-        });
 
         Ape.setBackground(new java.awt.Color(204, 204, 255));
         Ape.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Ape.setText("Apellidos");
 
         Apelli.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Apelli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ApelliActionPerformed(evt);
-            }
-        });
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 255));
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setText("Identificacion");
 
         Identfi.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Identfi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdentfiActionPerformed(evt);
-            }
-        });
 
         jLabel5.setBackground(new java.awt.Color(204, 204, 255));
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Correo electronico");
 
         CorreoEle.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        CorreoEle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CorreoEleActionPerformed(evt);
-            }
-        });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save_icon-icons.com_53618.png"))); // NOI18N
         jButton1.setText("Agregar");
@@ -200,11 +180,6 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel6.setText("Identificacion ");
 
         IdeBusqueda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        IdeBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdeBusquedaActionPerformed(evt);
-            }
-        });
 
         jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
@@ -293,26 +268,6 @@ public class View extends javax.swing.JDialog implements Observer {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void NomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NomActionPerformed
-
-    private void ApelliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApelliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ApelliActionPerformed
-
-    private void IdentfiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdentfiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IdentfiActionPerformed
-
-    private void CorreoEleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CorreoEleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CorreoEleActionPerformed
-
-    private void IdeBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdeBusquedaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IdeBusquedaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        String nombre = this.Nom.getText();

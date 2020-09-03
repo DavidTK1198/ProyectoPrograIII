@@ -171,9 +171,6 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NomActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Ape">
           <Properties>
@@ -192,9 +189,6 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ApelliActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
@@ -213,9 +207,6 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdentfiActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -234,9 +225,6 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CorreoEleActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
@@ -410,9 +398,6 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdeBusquedaActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>

@@ -46,7 +46,6 @@ public class View extends javax.swing.JDialog implements Observer {
         detalle = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         PrecioU = new javax.swing.JTextField();
-        Buscar = new javax.swing.JButton();
         BusProd = new javax.swing.JTextField();
         agregar = new javax.swing.JButton();
         nuevo = new javax.swing.JButton();
@@ -75,36 +74,13 @@ public class View extends javax.swing.JDialog implements Observer {
 
         jLabel4.setText("Precio Unitario");
 
-        PrecioU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PrecioUActionPerformed(evt);
-            }
-        });
-
-        Buscar.setText("Buscar");
-        Buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscarActionPerformed(evt);
-            }
-        });
-
         BusProd.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        BusProd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusProdActionPerformed(evt);
-            }
-        });
 
         agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save_icon-icons.com_53618.png"))); // NOI18N
         agregar.setText("Agregar ");
 
         nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-new-copy-20.png"))); // NOI18N
         nuevo.setText("Nuevo");
-        nuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nuevoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -127,12 +103,8 @@ public class View extends javax.swing.JDialog implements Observer {
                                 .addComponent(jLabel2)
                                 .addGap(26, 26, 26)
                                 .addComponent(Cod, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(333, 333, 333)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Buscar)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(282, 282, 282)
-                                .addComponent(BusProd, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(615, 615, 615)
+                        .addComponent(BusProd, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(39, 39, 39)
@@ -149,9 +121,7 @@ public class View extends javax.swing.JDialog implements Observer {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BusProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Buscar)
-                .addGap(227, 227, 227))
+                .addGap(227, 292, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -195,11 +165,6 @@ public class View extends javax.swing.JDialog implements Observer {
         jScrollPane3.setViewportView(ListaDeProductos);
 
         IdeBusqueda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        IdeBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdeBusquedaActionPerformed(evt);
-            }
-        });
 
         jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
@@ -283,26 +248,6 @@ public class View extends javax.swing.JDialog implements Observer {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BusProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusProdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BusProdActionPerformed
-
-    private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BuscarActionPerformed
-
-    private void IdeBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdeBusquedaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IdeBusquedaActionPerformed
-
-    private void PrecioUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrecioUActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PrecioUActionPerformed
-
-    private void nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nuevoActionPerformed
-
     private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
         // TODO add your handling code here:
         control.hide();
@@ -356,7 +301,6 @@ public class View extends javax.swing.JDialog implements Observer {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BusProd;
-    private javax.swing.JButton Buscar;
     private javax.swing.JTextField Cod;
     private javax.swing.JTextField IdeBusqueda;
     private javax.swing.JTable ListaDeProductos;
