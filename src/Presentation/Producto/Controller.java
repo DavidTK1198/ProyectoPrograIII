@@ -42,4 +42,7 @@ public class Controller {
             JOptionPane.showMessageDialog(null, exc.getMessage());
         }
     }
+    public void hide(){
+        vista.setVisible(false);
+    }
 }

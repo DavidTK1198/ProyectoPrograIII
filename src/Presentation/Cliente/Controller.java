@@ -27,6 +27,10 @@ public class Controller {
     public void Mostrar(){
         vista.setVisible(true);
     }
+    
+    public void hide(){
+        vista.setVisible(false);
+    }
 
     public void agregar(boolean editable, Cliente c) {
 //        Cliente clien = new Cliente(nombre,apelli,iden,correo);

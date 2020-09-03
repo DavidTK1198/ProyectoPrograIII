@@ -253,6 +253,11 @@ public class View extends javax.swing.JDialog implements Observer {
 
         Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-25.png"))); // NOI18N
         Volver.setText("Volver");
+        Volver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VolverMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -320,6 +325,11 @@ public class View extends javax.swing.JDialog implements Observer {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
+        // TODO add your handling code here:
+        control.hide();
+    }//GEN-LAST:event_VolverMouseClicked
     
     private boolean ValidacionTexto(String nom,String ape, String corr, String iden){
         if(nom.isEmpty()){
