@@ -33,8 +33,8 @@ public class Controller {
         try{
             if(!editable){
                
-               Logic.Empresa.getInstance().addProduct(p);
-               model.setLista(Logic.Empresa.getInstance().getProductos());
+               Logic.Service.getInstance().addProduct(p);
+               model.setLista(Logic.Service.getInstance().getProductos());
             }else{
                 
             }
