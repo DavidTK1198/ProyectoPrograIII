@@ -15,24 +15,11 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//      Presentation.MainWindow.View v1= new Presentation.MainWindow.View();
-//      
-//        v1.setVisible(true);
-
-    Presentation.Producto.View v2 = new Presentation.Producto.View();
-    Presentation.Producto.Model model=new Presentation.Producto.Model();
-    Presentation.Producto.Controller control=new Presentation.Producto.Controller(v2, model);
-    v2.setVisible(true);
+        Presentation.MainWindow.View vista = new Presentation.MainWindow.View();
+        Presentation.MainWindow.Model model = new Presentation.MainWindow.Model();
+        Presentation.MainWindow.Controller control = new Presentation.MainWindow.Controller(vista, model);
+        vista.setVisible(true);
     }
-    
+
 }
-
-
-
-
-
-
-
-
-
 

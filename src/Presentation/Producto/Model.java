@@ -7,9 +7,7 @@ package Presentation.Producto;
 
 import Logic.Producto;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -26,7 +24,7 @@ public class Model extends Observable {
     private int[] col = {0,1,2,3};
     private List<Producto> lista;
     private boolean editable;
-    private Map<String,Producto> productos;
+    
     @Override
     
     public void addObserver(Observer a){
@@ -40,7 +38,7 @@ public class Model extends Observable {
         lista = new ArrayList<>();
         table = new TableModel(lista,col);
         editable = false;
-        productos=new HashMap<>();
+        
     }
 
     public boolean isEditable() {
@@ -81,21 +79,4 @@ public class Model extends Observable {
         refresh();
     }
     
-    public void addProduct(Producto p) throws Exception {
-        Product = productos.get(p.getCodigo());
-        if (Product == null) {
-            productos.put(p.getCodigo(), p);
-        } else {
-            throw new Exception("El producto ya existe");
-        }
-    }
-
-    public List<Producto> updateTable() {
-        List<Producto>ls = new ArrayList<>();
-        for (Map.Entry<String, Producto> entry : productos.entrySet()) {
-            Producto ayudante = entry.getValue();
-            ls.add(ayudante);
-        }
-        return ls;
-    }
 }

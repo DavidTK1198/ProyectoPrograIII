@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Data;
+package Logic;
 
-import Logic.Producto;
+import Data.Data;
+import java.util.List;
 
 /**
  *
@@ -19,8 +20,10 @@ public class Empresa {
     private String correoE;
     private String Cedula;
     private String direccion;
+     private final Data data;
 
     private Empresa() {
+         data =  new Data();
     }
 
     public static Empresa getInstance() {
@@ -71,6 +74,19 @@ public class Empresa {
         this.direccion = direccion;
     }
     
-
+    public List<Cliente> getClientes(){
+        return this.data.getClientes(); 
+    }
+    
+     public List<Producto> getProductos(){
+        return this.data.getProductos();
+    }
+    public void addProduct(Producto p) throws Exception{
+        this.data.addProduct(p);
+    }
+    
+    public void addClient(Cliente c) throws Exception{
+        this.data.addClient(c);
+    }
     
 }

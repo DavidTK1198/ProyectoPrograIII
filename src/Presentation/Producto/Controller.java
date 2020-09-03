@@ -24,14 +24,17 @@ public class Controller {
         vista.setControl(this);
         vista.setModel(model);
     }
+      public void show(){
+        vista.setVisible(true);
+    }  
 
     public void agregar(Boolean editable,String codigo , String descripcion, String precioUnitario,String nombre) {
         double dinero=Double.parseDouble(precioUnitario);
         try{
             if(!editable){
                Producto producto = new Producto(codigo,descripcion,dinero,nombre);
-               model.addProduct(producto);
-               model.setLista(model.updateTable());
+               Logic.Empresa.getInstance().addProduct(producto);
+               model.setLista(Logic.Empresa.getInstance().getProductos());
             }else{
                 
             }

@@ -36,6 +36,7 @@ public class View extends javax.swing.JFrame implements Observer {
 
         jPanel1 = new javax.swing.JPanel();
         botonSalir = new javax.swing.JButton();
+        Productos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,6 +50,18 @@ public class View extends javax.swing.JFrame implements Observer {
             }
         });
 
+        Productos.setText("Productos");
+        Productos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ProductosMouseClicked(evt);
+            }
+        });
+        Productos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -57,11 +70,17 @@ public class View extends javax.swing.JFrame implements Observer {
                 .addContainerGap(414, Short.MAX_VALUE)
                 .addComponent(botonSalir)
                 .addGap(23, 23, 23))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Productos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(266, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
+                .addComponent(Productos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
                 .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -85,12 +104,22 @@ public class View extends javax.swing.JFrame implements Observer {
         this.dispose();
     }//GEN-LAST:event_botonSalirMouseClicked
 
+    private void ProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProductosActionPerformed
+
+    private void ProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProductosMouseClicked
+        // TODO add your handling code here:
+        this.control.productoShow();
+    }//GEN-LAST:event_ProductosMouseClicked
+
     /**
      * @param args the command line arguments
      */
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Productos;
     private javax.swing.JButton botonSalir;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

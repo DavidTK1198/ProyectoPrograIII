@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author DavidTK1198
  */
-public class View extends javax.swing.JFrame implements Observer {
+public class View extends javax.swing.JDialog implements Observer {
 
     /**
      * Creates new form View
@@ -21,7 +21,8 @@ public class View extends javax.swing.JFrame implements Observer {
     
     private Controller control;
     private Model model;
-    public View() {
+    public View(java.awt.Frame parent, boolean modal) {
+        super(parent,modal);
         initComponents();
     }
 
@@ -54,7 +55,7 @@ public class View extends javax.swing.JFrame implements Observer {
         Nuevo = new javax.swing.JButton();
         Volver = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Productos o Servicios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Black", 2, 18))); // NOI18N
