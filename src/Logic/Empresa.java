@@ -19,7 +19,11 @@ public class Empresa {
     private String direccion;
      
     private Empresa() {
-         
+         this.nombre = "";
+         this.telefono = "";
+         this.direccion = "";
+         this.Cedula = "";
+         this.telefono = "";
     }
 
     public static Empresa getInstance() {

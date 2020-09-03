@@ -19,6 +19,10 @@ public class Cliente {//Persona
     private String CorreoE;
 
     public Cliente() {
+        this.nombre = "";
+        this.apellidos = "";
+        this.cedula = "";
+        this.CorreoE = "";
     }
 
     public String getNombre() {

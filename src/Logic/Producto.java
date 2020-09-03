@@ -5,6 +5,8 @@
  */
 package Logic;
 
+import java.util.Objects;
+
 
 
 /**
@@ -14,8 +16,6 @@ package Logic;
 public class Producto {
     private String codigo;
     private String nombre;
-
-
     private String descripcion;
     private double precioUnitario;
 
@@ -23,11 +23,14 @@ public class Producto {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioUnitario = precioUnitario;
-         this.nombre = nombre;
+        this.nombre = nombre;
     }
 
     public Producto() {
-       
+       this.codigo = "";
+       this.descripcion = "";
+       this.precioUnitario = 0;
+       this.nombre = "";
     }
 
     public String getCodigo() {
@@ -64,6 +67,31 @@ public class Producto {
     public String toString() {
         return "Producto{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", precioUnitario=" + precioUnitario + '}';
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Producto other = (Producto) obj;
+        if (!Objects.equals(this.codigo, other.codigo)) {
+            return false;
+        }
+        return true;
+    }
+    
     
 }
 
