@@ -33,7 +33,6 @@ public class Controller {
     }
 
     public void agregar(boolean editable, Cliente c) {
-//        Cliente clien = new Cliente(nombre,apelli,iden,correo);
         
         try{
             if(!editable){

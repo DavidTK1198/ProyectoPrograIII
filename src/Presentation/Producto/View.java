@@ -78,6 +78,11 @@ public class View extends javax.swing.JDialog implements Observer {
 
         agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save_icon-icons.com_53618.png"))); // NOI18N
         agregar.setText("Agregar ");
+        agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarMouseClicked(evt);
+            }
+        });
 
         nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-new-copy-20.png"))); // NOI18N
         nuevo.setText("Nuevo");
@@ -252,6 +257,25 @@ public class View extends javax.swing.JDialog implements Observer {
         // TODO add your handling code here:
         control.hide();
     }//GEN-LAST:event_VolverMouseClicked
+
+    private void agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarMouseClicked
+        // TODO add your handling code here:
+        String nombre = this.PrSr.getText();
+       String codigo = this.Cod.getText();
+       String precio = this.PrecioU.getText();
+       String detail = this.detalle.getText();
+       try{
+           double dinero=Double.parseDouble(precio);
+       }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Por favor ingresar solo numeros en el precio");
+            return;
+       }
+       double dinero=Double.parseDouble(precio);
+       if(ValidacionTexto(codigo,detail,precio,nombre)){
+           Producto p = new Producto(codigo,detail,dinero,nombre);
+           this.control.agregar(model.isEditable(), p);
+        }
+    }//GEN-LAST:event_agregarMouseClicked
 
     private boolean ValidacionTexto(String codigo , String descripcion, String precioUnitario,String nombre){
         if(codigo.isEmpty()){
