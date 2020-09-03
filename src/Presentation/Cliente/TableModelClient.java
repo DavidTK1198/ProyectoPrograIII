@@ -15,8 +15,8 @@ import javax.swing.table.AbstractTableModel;
  */
 public class TableModelClient extends AbstractTableModel{
     private List<Cliente> filas;
-    private int[] columnas;
-    private String[] nombCol = {"Cedula","Nombre","Apellidos","Correo Electronico"};
+    private final int[] columnas;
+    private final String[] nombCol = {"Cedula","Nombre","Apellidos","Correo Electronico"};
    
 
     public TableModelClient(List<Cliente> filas, int[] columnas) {
@@ -52,3 +52,4 @@ public class TableModelClient extends AbstractTableModel{
     }
     
 }
+

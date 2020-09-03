@@ -24,7 +24,7 @@ public class Model extends Observable {
     
     private TableModel table;
     private Cliente client;
-    private int[] col = {0,1,2,3,4};
+    private int[] col = {0,1,2,3};
     private List<Cliente> lista;
     private boolean editable;
     @Override
