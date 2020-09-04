@@ -282,8 +282,10 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                          <Component id="eliminar" min="-2" pref="112" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="23" max="32767" attributes="0"/>
@@ -300,9 +302,12 @@
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="IdeBusqueda" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="121" max="-2" attributes="0"/>
                   <EmptySpace pref="23" max="32767" attributes="0"/>
               </Group>
@@ -408,6 +413,14 @@
               <Image iconType="3" name="/Images/seek_search_binoculars_1572.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Buscar"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="eliminar">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Images/icons8-delete-male-user-20.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
         </Component>
       </SubComponents>

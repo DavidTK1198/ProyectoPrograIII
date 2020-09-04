@@ -47,26 +47,9 @@ public class Controller {
         vista.setVisible(false);
     }
 
-    void selectedItem(String aux){
-        Producto p;
-        try {
-            p = Logic.Service.getInstance().getSelectedProduct(aux);
-            model.setProduct(p);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-
-    }
-
-    void delete() {
-        Producto p = model.getProduct();
-        try {
-            Logic.Service.getInstance().deleteProduct(p);
-            model.setLista(Logic.Service.getInstance().getProductos());
-
-        } catch (Exception exc) {
-            JOptionPane.showMessageDialog(null, exc.getMessage());
-        }
-
+    void eliminar(int n) {
+        Producto p=model.getRow(n);
+        Logic.Service.getInstance().deleteProduct(p);
+         model.setLista(Logic.Service.getInstance().getProductos());
     }
 }

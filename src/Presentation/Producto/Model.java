@@ -80,5 +80,9 @@ public class Model extends Observable {
         setTable(a);
         refresh();
     }
+
+    public Producto getRow(int n) {
+       return  table.getRowAt(n);
+    }
     
 }

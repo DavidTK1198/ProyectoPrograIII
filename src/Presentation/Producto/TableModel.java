@@ -49,8 +49,15 @@ public class TableModel extends AbstractTableModel{
     public String getColumnName(int column) {
         return nombCol[column];
     }
+
+    public Producto getRowAt(int n) {
+        return filas.get(n);
+    }
+
+   
     
 }
+
 
 
 

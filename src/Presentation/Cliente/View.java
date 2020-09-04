@@ -54,6 +54,7 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel6 = new javax.swing.JLabel();
         IdeBusqueda = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Volver = new javax.swing.JButton();
 
@@ -185,6 +186,9 @@ public class View extends javax.swing.JDialog implements Observer {
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
         jButton3.setText("Buscar");
 
+        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-delete-male-user-20.png"))); // NOI18N
+        eliminar.setText("Eliminar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -203,8 +207,10 @@ public class View extends javax.swing.JDialog implements Observer {
                                 .addGap(151, 151, 151)
                                 .addComponent(jLabel3))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(jButton3)))
+                        .addGap(19, 19, 19)
+                        .addComponent(jButton3)
+                        .addGap(117, 117, 117)
+                        .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -216,9 +222,11 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(IdeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(jButton3)
-                .addGap(48, 48, 48)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(eliminar))
+                .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -340,6 +348,7 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JTable ListaClientes;
     private javax.swing.JTextField Nom;
     private javax.swing.JButton Volver;
+    private javax.swing.JButton eliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

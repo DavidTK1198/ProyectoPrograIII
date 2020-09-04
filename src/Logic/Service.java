@@ -44,12 +44,9 @@ private final Data data;
         this.data.addClient(c);
     }
     
-    public void deleteProduct(Producto p)throws Exception{
+    public void deleteProduct(Producto p){
            this.data.removeElement(p);
     }
     
-    public Producto getSelectedProduct(String search) throws Exception{
-        return this.data.getProducto(search);
-    }
-    
+     
 }

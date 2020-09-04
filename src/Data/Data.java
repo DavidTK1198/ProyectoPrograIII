@@ -59,11 +59,9 @@ public class Data {
         return ls;
     }
     
-    public void removeElement(Producto p) throws Exception{//arreglar
+    public void removeElement(Producto p){//revisar
         
-        if(this.productos.remove(p, p.getCodigo())){
-                    throw new  Exception(); 
-        }
+       productos.remove(p.getCodigo());
     }
     
    public Producto getProducto(String p) throws Exception{
@@ -74,6 +72,7 @@ public class Data {
         return prod;
     }
 }
+
 
 
 

@@ -169,11 +169,6 @@ public class View extends javax.swing.JDialog implements Observer {
                 "Cliente#", "Cedula", "Nombre", "Apellidos", "Correo@"
             }
         ));
-        ListaDeProductos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ListaDeProductosMouseClicked(evt);
-            }
-        });
         jScrollPane3.setViewportView(ListaDeProductos);
 
         IdeBusqueda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -185,10 +180,11 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel5.setFont(new java.awt.Font("Arial Black", 2, 18)); // NOI18N
         jLabel5.setText("BUSQUEDA POR CODIGO");
 
+        eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-delete-shield-20.png"))); // NOI18N
         eliminar.setText("Eliminar");
-        eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarActionPerformed(evt);
+        eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eliminarMouseClicked(evt);
             }
         });
 
@@ -295,20 +291,16 @@ public class View extends javax.swing.JDialog implements Observer {
         }
     }//GEN-LAST:event_agregarMouseClicked
 
-    private void ListaDeProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDeProductosMouseClicked
+    private void eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseClicked
         // TODO add your handling code here:
-        int n=this.ListaDeProductos.getSelectedRow();
-       
-       String aux=(ListaDeProductos.getValueAt(n, 0).toString());
-
-        control.selectedItem(aux);
-        
-    }//GEN-LAST:event_ListaDeProductosMouseClicked
-
-    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-        // TODO add your handling code here:
-        control.delete();
-    }//GEN-LAST:event_eliminarActionPerformed
+        int n=ListaDeProductos.getSelectedRow();
+        if(n>-1){
+            control.eliminar(n);
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Debes seleccionar un elemento");
+        }
+    }//GEN-LAST:event_eliminarMouseClicked
 
     private boolean ValidacionTexto(String codigo , String descripcion, String precioUnitario,String nombre){
         if(codigo.isEmpty()){
