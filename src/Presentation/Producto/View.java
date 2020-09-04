@@ -10,6 +10,7 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author DavidTK1198
@@ -55,6 +56,7 @@ public class View extends javax.swing.JDialog implements Observer {
         IdeBusqueda = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        eliminar = new javax.swing.JButton();
         Volver = new javax.swing.JButton();
 
         setAlwaysOnTop(true);
@@ -167,6 +169,11 @@ public class View extends javax.swing.JDialog implements Observer {
                 "Cliente#", "Cedula", "Nombre", "Apellidos", "Correo@"
             }
         ));
+        ListaDeProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaDeProductosMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(ListaDeProductos);
 
         IdeBusqueda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -178,6 +185,13 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel5.setFont(new java.awt.Font("Arial Black", 2, 18)); // NOI18N
         jLabel5.setText("BUSQUEDA POR CODIGO");
 
+        eliminar.setText("Eliminar");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -185,8 +199,10 @@ public class View extends javax.swing.JDialog implements Observer {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addComponent(jButton3))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)
+                        .addGap(68, 68, 68)
+                        .addComponent(eliminar))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +223,9 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGap(18, 18, 18)
                 .addComponent(IdeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jButton3)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3)
+                    .addComponent(eliminar))
                 .addGap(48, 48, 48)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
@@ -277,6 +295,21 @@ public class View extends javax.swing.JDialog implements Observer {
         }
     }//GEN-LAST:event_agregarMouseClicked
 
+    private void ListaDeProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDeProductosMouseClicked
+        // TODO add your handling code here:
+        int n=this.ListaDeProductos.getSelectedRow();
+       
+       String aux=(ListaDeProductos.getValueAt(n, 0).toString());
+
+        control.selectedItem(aux);
+        
+    }//GEN-LAST:event_ListaDeProductosMouseClicked
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        // TODO add your handling code here:
+        control.delete();
+    }//GEN-LAST:event_eliminarActionPerformed
+
     private boolean ValidacionTexto(String codigo , String descripcion, String precioUnitario,String nombre){
         if(codigo.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar Codigo");
@@ -333,6 +366,7 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JButton Volver;
     private javax.swing.JButton agregar;
     private javax.swing.JTextArea detalle;
+    private javax.swing.JButton eliminar;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

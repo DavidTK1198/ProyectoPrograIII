@@ -8,7 +8,6 @@ package Logic;
 
 import Data.Data;
 import java.util.List;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * 
@@ -43,6 +42,14 @@ private final Data data;
     
     public void addClient(Cliente c) throws Exception{
         this.data.addClient(c);
+    }
+    
+    public void deleteProduct(Producto p)throws Exception{
+           this.data.removeElement(p);
+    }
+    
+    public Producto getSelectedProduct(String search) throws Exception{
+        return this.data.getProducto(search);
     }
     
 }

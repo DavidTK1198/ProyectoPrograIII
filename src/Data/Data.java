@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlRootElement;
+
 
 public class Data {
 
@@ -58,6 +58,30 @@ public class Data {
         }
         return ls;
     }
+    
+    public void removeElement(Producto p) throws Exception{//arreglar
+        
+        if(this.productos.remove(p, p.getCodigo())){
+                    throw new  Exception(); 
+        }
+    }
+    
+   public Producto getProducto(String p) throws Exception{
+        Producto prod=productos.get(p);
+        if(prod==null){
+            throw new Exception("No se encontro al elemento");
+        }
+        return prod;
+    }
 }
+
+
+
+
+
+
+
+
+
 
 

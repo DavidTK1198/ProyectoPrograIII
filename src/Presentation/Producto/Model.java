@@ -49,8 +49,10 @@ public class Model extends Observable {
         this.editable = editable;
     }
     private void refresh(){
+         Product = new Producto();
         this.setChanged();
         this.notifyObservers();
+        
     }
 
     public TableModel getTable() {
