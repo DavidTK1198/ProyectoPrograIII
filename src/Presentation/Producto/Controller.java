@@ -41,6 +41,8 @@ public class Controller {
         } catch (Exception exc) {
             JOptionPane.showMessageDialog(null, exc.getMessage());
         }
+        model.setProduct(new Producto());
+        model.setEditable(false);
     }
 
     public void hide() {
@@ -51,5 +53,9 @@ public class Controller {
         Producto p=model.getRow(n);
         Logic.Service.getInstance().deleteProduct(p);
          model.setLista(Logic.Service.getInstance().getProductos());
+    }
+
+    public void cancelar() {
+       model.setProduct(new Producto());
     }
 }

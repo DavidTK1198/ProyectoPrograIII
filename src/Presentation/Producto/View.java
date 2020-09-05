@@ -50,11 +50,12 @@ public class View extends javax.swing.JDialog implements Observer {
         BusProd = new javax.swing.JTextField();
         agregar = new javax.swing.JButton();
         nuevo = new javax.swing.JButton();
+        Cancelarr = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         ListaDeProductos = new javax.swing.JTable();
         IdeBusqueda = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        BottonBuscar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         eliminar = new javax.swing.JButton();
         Volver = new javax.swing.JButton();
@@ -88,6 +89,20 @@ public class View extends javax.swing.JDialog implements Observer {
 
         nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-new-copy-20.png"))); // NOI18N
         nuevo.setText("Nuevo");
+        nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevoActionPerformed(evt);
+            }
+        });
+
+        Cancelarr.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Cancelarr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cancel.png"))); // NOI18N
+        Cancelarr.setText("Cancelar");
+        Cancelarr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarrActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -96,6 +111,10 @@ public class View extends javax.swing.JDialog implements Observer {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(39, 39, 39)
+                        .addComponent(PrecioU, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -113,14 +132,12 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addGap(615, 615, 615)
                         .addComponent(BusProd, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(39, 39, 39)
-                        .addComponent(PrecioU, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(276, 276, 276)
+                        .addGap(31, 31, 31)
                         .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(nuevo)))
+                        .addGap(43, 43, 43)
+                        .addComponent(nuevo)
+                        .addGap(69, 69, 69)
+                        .addComponent(Cancelarr)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -128,7 +145,7 @@ public class View extends javax.swing.JDialog implements Observer {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BusProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 292, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -145,15 +162,16 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(Cod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(PrecioU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nuevo))
-                .addContainerGap())
+                    .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nuevo)
+                    .addComponent(Cancelarr, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 102, 0));
@@ -173,9 +191,14 @@ public class View extends javax.swing.JDialog implements Observer {
 
         IdeBusqueda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
-        jButton3.setText("Buscar");
+        BottonBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BottonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
+        BottonBuscar.setText("Buscar");
+        BottonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonBuscarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 2, 18)); // NOI18N
         jLabel5.setText("BUSQUEDA POR CODIGO");
@@ -196,7 +219,7 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(BottonBuscar)
                         .addGap(68, 68, 68)
                         .addComponent(eliminar))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -220,11 +243,11 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addComponent(IdeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(BottonBuscar)
                     .addComponent(eliminar))
                 .addGap(48, 48, 48)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-25.png"))); // NOI18N
@@ -289,6 +312,7 @@ public class View extends javax.swing.JDialog implements Observer {
            Producto p = new Producto(codigo,detail,dinero,nombre);
            this.control.agregar(model.isEditable(), p);
         }
+        this.deshabilitarCajitas();
     }//GEN-LAST:event_agregarMouseClicked
 
     private void eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseClicked
@@ -302,6 +326,22 @@ public class View extends javax.swing.JDialog implements Observer {
         }
     }//GEN-LAST:event_eliminarMouseClicked
 
+    private void BottonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonBuscarActionPerformed
+          
+    }//GEN-LAST:event_BottonBuscarActionPerformed
+
+    private void nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoActionPerformed
+         control.cancelar();
+         habilitarCajitas();
+    }//GEN-LAST:event_nuevoActionPerformed
+
+    private void CancelarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarrActionPerformed
+      
+      limpiarTextFields();
+      deshabilitarCajitas();
+    }//GEN-LAST:event_CancelarrActionPerformed
+
+    
     private boolean ValidacionTexto(String codigo , String descripcion, String precioUnitario,String nombre){
         if(codigo.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar Codigo");
@@ -323,8 +363,31 @@ public class View extends javax.swing.JDialog implements Observer {
     }
     @Override
     public void update(Observable o, Object arg) {
+       Producto producto = model.getProduct();
+       boolean ayuda = model.isEditable();
+       if(ayuda){
+           habilitarCajitas();
+           this.Cod.setEnabled(false);
+           
+       }
+       this.Cod.setText(producto.getCodigo());
+       this.detalle.setText(producto.getDescripcion());
+       this.PrecioU.setText(String.valueOf(producto.getPrecioUnitario()));
+       this.PrSr.setText(producto.getNombre());
        this.ListaDeProductos.setModel(model.getTable());
        
+    }
+     private void habilitarCajitas() {
+       this.Cod.setEnabled(true);
+       this.PrSr.setEnabled(true);
+       this.PrecioU.setEnabled(true);
+       this.detalle.setEnabled(true);
+    }
+    private void deshabilitarCajitas() {
+       this.Cod.setEnabled(false);
+       this.PrSr.setEnabled(false);
+       this.PrecioU.setEnabled(false);
+       this.detalle.setEnabled(false);
     }
     public Controller getControl() {
         return control;
@@ -349,7 +412,9 @@ public class View extends javax.swing.JDialog implements Observer {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BottonBuscar;
     private javax.swing.JTextField BusProd;
+    private javax.swing.JButton Cancelarr;
     private javax.swing.JTextField Cod;
     private javax.swing.JTextField IdeBusqueda;
     private javax.swing.JTable ListaDeProductos;
@@ -359,7 +424,6 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JButton agregar;
     private javax.swing.JTextArea detalle;
     private javax.swing.JButton eliminar;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -371,5 +435,14 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton nuevo;
     // End of variables declaration//GEN-END:variables
+
+    private void limpiarTextFields() {
+        this.Cod.setText(model.getProduct().getCodigo());
+        this.detalle.setText(model.getProduct().getDescripcion());
+        this.PrSr.setText(model.getProduct().getNombre());
+        this.PrecioU.setText(String.valueOf(model.getProduct().getPrecioUnitario()));
+    }
+
+   
 }
 

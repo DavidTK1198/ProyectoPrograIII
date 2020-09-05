@@ -53,6 +53,7 @@ public class TableModel extends AbstractTableModel{
     public Producto getRowAt(int n) {
         return filas.get(n);
     }
+    
 
    
     

@@ -98,6 +98,11 @@ public class View extends javax.swing.JDialog implements Observer {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new_25355.png"))); // NOI18N
         jButton2.setText("Nuevo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -293,6 +298,10 @@ public class View extends javax.swing.JDialog implements Observer {
         // TODO add your handling code here:
         control.hide();
     }//GEN-LAST:event_VolverMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     private boolean ValidacionTexto(String nom,String ape, String corr, String iden){
         if(nom.isEmpty()){
