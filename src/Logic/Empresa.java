@@ -5,6 +5,8 @@
  */
 package Logic;
 
+import java.util.List;
+
 /**
  *
  * @author DavidTK1198
@@ -14,16 +16,23 @@ public class Empresa {
     private static Empresa single_instance = null; //Singleton
     private String nombre;
     private String telefono;
-    private String correoE;
-    private String Cedula;
+    private String correo;
+    private String CedulaJuridica;
     private String direccion;
      
     private Empresa() {
          this.nombre = "";
          this.telefono = "";
          this.direccion = "";
-         this.Cedula = "";
+         this.correo = "";
          this.telefono = "";
+    }
+    private Empresa(String nombre,String actividad,String telefono,String direcion,String CedJuri,String correo) {
+         this.nombre = nombre;
+         this.telefono = telefono;
+         this.direccion = direcion;
+         this.CedulaJuridica = CedJuri;
+         this.correo = correo;
     }
 
     public static Empresa getInstance() {
@@ -50,20 +59,20 @@ public class Empresa {
         this.telefono = telefono;
     }
 
-    public String getCorreoE() {
-        return correoE;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setCorreoE(String correoE) {
-        this.correoE = correoE;
+    public void setCorreo(String correoE) {
+        this.correo = correo;
     }
 
-    public String getCedula() {
-        return Cedula;
+    public String getCedulaJuridica() {
+        return CedulaJuridica;
     }
 
-    public void setCedula(String Cedula) {
-        this.Cedula = Cedula;
+    public void setCedulaJuridica(String CedulaJuridica) {
+        this.CedulaJuridica = CedulaJuridica;
     }
 
     public String getDireccion() {
