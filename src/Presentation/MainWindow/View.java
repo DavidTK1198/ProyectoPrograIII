@@ -53,6 +53,11 @@ public class View extends javax.swing.JFrame implements Observer {
 
         empresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-job-48.png"))); // NOI18N
         empresa.setText("Configurar Empresa");
+        empresa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                empresaMouseClicked(evt);
+            }
+        });
 
         Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-folder-bills-60(1).png"))); // NOI18N
         Facturar.setText("Facturación");
@@ -157,6 +162,11 @@ public class View extends javax.swing.JFrame implements Observer {
     private void productosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_productosActionPerformed
+
+    private void empresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empresaMouseClicked
+        // TODO add your handling code here:
+        this.control.empresaShow();
+    }//GEN-LAST:event_empresaMouseClicked
 
     /**
      * @param args the command line arguments
