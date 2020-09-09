@@ -3,47 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Presentation.Empresa;
-
-import Presentation.Empresa.*;
-
 
 /**
  *
  * @author boyro
  */
-
 public class Controller {
-    
+
     private Presentation.Empresa.View vista;
-    
+    private Presentation.Empresa.Model model;
 
     public Controller(View vista, Model model) {
         this.vista = vista;
         vista.setControl(this);
-        //vista.setModel(model);
+        vista.setModel(model);
     }
-    public void Mostrar(){
+
+    public void Mostrar() {
         vista.setVisible(true);
     }
-    
-    public void hide(){
+
+    public void hide() {
         vista.setVisible(false);
     }
-/*
-    public void agregar(boolean editable, Cliente c) {
-        
-        try{
-            if(!editable){
-                Logic.Service.getInstance().addClient(c);
-                model.setLista(Logic.Service.getInstance().getClientes());
-            }else{
-                
-            }
-        }catch(Exception exc){
-            JOptionPane.showMessageDialog(null, exc.getMessage());
+
+    public void editEmpresa(boolean editable, String nombre, String correoE, String juridica, String direccion) {//a ver como manejamos la lista de telefonos
+
+        if (!editable) {
+            Logic.Empresa.getInstance().setNombre(nombre);
+            Logic.Empresa.getInstance().setCorreo(correoE);
+            Logic.Empresa.getInstance().setCedulaJuridica(juridica);
+            Logic.Empresa.getInstance().setDireccion(direccion);
         }
+
     }
-*/
 }

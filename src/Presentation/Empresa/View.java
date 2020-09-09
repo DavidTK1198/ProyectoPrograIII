@@ -5,8 +5,6 @@
  */
 package Presentation.Empresa;
 
-import Presentation.Empresa.*;
-import Logic.Empresa;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JOptionPane;
@@ -15,17 +13,16 @@ import javax.swing.JOptionPane;
  *
  * @author boyro
  */
-
 public class View extends javax.swing.JDialog implements Observer {
 
     /**
      * Creates new form View
      */
-    
     private Controller control;
     private Model model;
-    public View(java.awt.Frame Parent,boolean modal ) {
-        super(Parent,modal);
+
+    public View(java.awt.Frame Parent, boolean modal) {
+        super(Parent, modal);
         initComponents();
     }
 
@@ -309,17 +306,16 @@ public class View extends javax.swing.JDialog implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String nombre = this.NombreTxtFld.getText();
-       String actividad = this.ActividadTxtFld.getText();
-       String correo = this.CorreoTxtFld.getText();
-       String cedJud = this.CedJuridicaiTxtFld.getText();
-       String telefono = this.TelefonoTxtFld.getText();
-       String direccion = this.direccionTxtFld.getText();
-       if(ValidacionTexto(nombre,actividad,correo,cedJud)){
-          // Empresa empresa = new Empresa(nombre,actividad,telefono,direccion,cedJud,correo);
-           //this.control.agregar(model.isEditable(), empresa);
+        String nombre = this.NombreTxtFld.getText();
+        String actividad = this.ActividadTxtFld.getText();
+        String correo = this.CorreoTxtFld.getText();
+        String cedJud = this.CedJuridicaiTxtFld.getText();
+        String telefono = this.TelefonoTxtFld.getText();//revisar que hacemos con la lista de telefonos
+        String direccion = this.direccionTxtFld.getText();
+        if (ValidacionTexto(nombre, actividad, correo, cedJud)) {
+            this.control.editEmpresa(model.isEditable(), nombre, correo, cedJud, direccion);
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
@@ -330,29 +326,30 @@ public class View extends javax.swing.JDialog implements Observer {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-    
-    private boolean ValidacionTexto(String nom,String ape, String corr, String iden){
-        if(nom.isEmpty()){
+
+    private boolean ValidacionTexto(String nom, String ape, String corr, String iden) {//arreglar con los datos correctos de la empresa
+        if (nom.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar Nombre");
             return false;
         }
-        if(ape.isEmpty()){
+        if (ape.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar Apellidos");
             return false;
         }
-        if(corr.isEmpty()){
+        if (corr.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar Correo electronico");
             return false;
         }
-        if(iden.isEmpty()){
+        if (iden.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar Identificacion");
             return false;
         }
         return true;
     }
+
     @Override
     public void update(Observable o, Object arg) {
-       this.ListaTelefonos.setModel(model.getTable());
+        this.ListaTelefonos.setModel(model.getTable());
     }
 
     public Controller getControl() {
@@ -374,7 +371,7 @@ public class View extends javax.swing.JDialog implements Observer {
     /**
      * @param args the command line arguments
      */
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ActicidaLbl;
@@ -403,4 +400,3 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JLabel telefonoLbl;
     // End of variables declaration//GEN-END:variables
 }
-
