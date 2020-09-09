@@ -6,6 +6,7 @@
 package Data;
 
 import Logic.Cliente;
+import Logic.Factura;
 import Logic.Producto;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,6 +18,7 @@ public class Data {
 
     private Map<String, Producto> productos;
     private Map<String, Cliente> clientes;
+    private Map<String,Factura> facturas;
 
     public Data() {
         clientes = new HashMap<>();
@@ -50,6 +52,15 @@ public class Data {
         }
     }
 
+       public List<Factura> getFacturas() {
+        List<Factura> ls = new ArrayList<>();
+        for (Map.Entry<String, Factura> entry : facturas.entrySet()) {
+            Factura ayudante = entry.getValue();
+            ls.add(ayudante);
+        }
+        return ls;
+    }
+       
     public List<Producto> getProductos() {
         List<Producto> ls = new ArrayList<>();
         for (Map.Entry<String, Producto> entry : productos.entrySet()) {
@@ -73,6 +84,7 @@ public class Data {
     }
 
 }
+
 
 
 

@@ -18,11 +18,15 @@ public class LineaDetalle {
         this.cantidadProd = cantidadProd;
     }
 
-    public Producto getProduc() {
+    LineaDetalle() {
+       
+    }
+
+    public Producto getCurret() {
         return produc;
     }
 
-    public void setProduc(Producto produc) {
+    public void setCurret(Producto produc) {
         this.produc = produc;
     }
 
@@ -37,3 +41,5 @@ public class LineaDetalle {
     
     
 }
+
+

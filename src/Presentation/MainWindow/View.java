@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Presentation.MainWindow;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Observable;
@@ -21,14 +22,10 @@ public class View extends javax.swing.JFrame implements Observer {
     private Controller control;
     private Model model;
 
-  
-    
     public View() {
         initComponents();
-        
-
-    Date date = new Date();
-        String fech=new SimpleDateFormat("dd/MM/yyyy").format(date);
+        Date date = new Date();
+        String fech = new SimpleDateFormat("dd/MM/yyyy").format(date);
         this.fecha.setText(fech);
     }
 
@@ -296,7 +293,6 @@ public class View extends javax.swing.JFrame implements Observer {
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Facturar;
@@ -318,10 +314,10 @@ public class View extends javax.swing.JFrame implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        
+
     }
-    
-      public Controller getControl() {
+
+    public Controller getControl() {
         return control;
     }
 
@@ -337,7 +333,5 @@ public class View extends javax.swing.JFrame implements Observer {
         this.model = model;
         model.addObserver(this);
     }
-    
-    
-}
 
+}
