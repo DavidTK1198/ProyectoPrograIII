@@ -194,11 +194,6 @@ public class View extends javax.swing.JDialog implements Observer {
         BottonBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BottonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
         BottonBuscar.setText("Buscar");
-        BottonBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BottonBuscarActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 2, 18)); // NOI18N
         jLabel5.setText("BUSQUEDA POR CODIGO");
@@ -325,10 +320,6 @@ public class View extends javax.swing.JDialog implements Observer {
             JOptionPane.showMessageDialog(null, "Debes seleccionar un elemento");
         }
     }//GEN-LAST:event_eliminarMouseClicked
-
-    private void BottonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonBuscarActionPerformed
-          
-    }//GEN-LAST:event_BottonBuscarActionPerformed
 
     private void nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoActionPerformed
          control.cancelar();

@@ -7,8 +7,7 @@
 package Presentation.Empresa;
 
 import Presentation.Empresa.*;
-import Logic.Empresa;
-import javax.swing.JOptionPane;
+
 
 /**
  *
