@@ -19,6 +19,9 @@ public class Controller {
     Presentation.Cliente.Model cliente_model;
     Presentation.Cliente.View cliente_Vista;
     Presentation.Cliente.Controller cliente_control;
+     Presentation.Empresa.Model empresa_model;
+    Presentation.Empresa.View empresa_Vista;
+    Presentation.Empresa.Controller empresa_control;
 
     public Controller(View vista, Model model) {
         this.vista = vista;
@@ -35,6 +38,10 @@ public class Controller {
         cliente_model = new Presentation.Cliente.Model();
         cliente_Vista = new Presentation.Cliente.View(this.vista, true);
         cliente_control = new Presentation.Cliente.Controller(cliente_Vista, cliente_model);
+        empresa_model=new Presentation.Empresa.Model();
+        empresa_Vista= new Presentation.Empresa.View(this.vista,true);
+         empresa_control= new Presentation.Empresa.Controller(empresa_Vista,empresa_model);
+        
     }
 
     public void productoShow() {
@@ -43,6 +50,9 @@ public class Controller {
 
     public void clienteShow() {
         this.cliente_control.Mostrar();
+    }
+    public void empresaShow(){
+        this.empresa_control.Mostrar();
     }
 
 }

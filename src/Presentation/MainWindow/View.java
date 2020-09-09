@@ -91,11 +91,6 @@ public class View extends javax.swing.JFrame implements Observer {
                 empresaMouseClicked(evt);
             }
         });
-        empresa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                empresaActionPerformed(evt);
-            }
-        });
 
         Facturar.setBackground(new java.awt.Color(255, 255, 255));
         Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-folder-bills-60(1).png"))); // NOI18N
@@ -274,13 +269,9 @@ public class View extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_productosActionPerformed
 
     private void empresaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_empresaMouseClicked
-        // TODO add your handling code here:
-        //this.control.empresaShow();
-    }//GEN-LAST:event_empresaMouseClicked
 
-    private void empresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empresaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_empresaActionPerformed
+        this.control.empresaShow();
+    }//GEN-LAST:event_empresaMouseClicked
 
     private void clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesActionPerformed
         // TODO add your handling code here:

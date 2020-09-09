@@ -5,10 +5,6 @@
  */
 
 package Presentation.Empresa;
-
-
-import Presentation.Cliente.*;
-import Logic.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -26,7 +22,7 @@ public class Model extends Observable {
     
     private TableModel table;
     private int telefono;
-    private int[] col = {0,1,2,3};
+    private int[] col = {0};
     private List<Integer> listaTelefonos;
     private boolean editable;
     @Override

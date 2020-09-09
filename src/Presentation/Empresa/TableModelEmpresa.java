@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package Presentation.Empresa;
-
-import Logic.Cliente;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -50,4 +48,5 @@ public class TableModelEmpresa extends AbstractTableModel{
     }
     
 }
+
 
