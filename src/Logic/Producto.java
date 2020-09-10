@@ -6,6 +6,9 @@
 package Logic;
 
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlID;
 
 
 
@@ -13,7 +16,10 @@ import java.util.Objects;
  *
  * @author Daniel Madrigal
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Producto {
+     @XmlID
     private String codigo;
     private String nombre;
     private String descripcion;
@@ -109,6 +115,7 @@ public class Producto {
     
     
 }
+
 
 
 

@@ -8,17 +8,25 @@ package Logic;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
 
 /**
  *
  * @author DavidTK1198
+ * 
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Cliente {//Persona
 
     private String nombre;
     private String apellidos;
+    @XmlID
     private String cedula;
     private String CorreoE;
+    @XmlIDREF
     private List<Factura> listaFacturas;
 
     public Cliente() {

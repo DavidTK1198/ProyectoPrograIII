@@ -5,10 +5,14 @@
  */
 package Logic;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
 /**
  *
  * @author Daniel Madrigal
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class LineaDetalle {
     private Producto produc;
     private int cantidadProd;
@@ -42,5 +46,6 @@ public class LineaDetalle {
     
     
 }
+
 
 

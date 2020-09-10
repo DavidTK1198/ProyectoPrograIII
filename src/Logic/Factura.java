@@ -9,15 +9,21 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
 
 
 /**
  *
  * @author Daniel Madrigal
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Factura {
-
+  @XmlIDREF
     List<LineaDetalle> misLineas;
+    @XmlID
     String numeroFactura;
     Cliente curret;
     String fecha;
@@ -101,6 +107,7 @@ public class Factura {
     }
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
 
 
 

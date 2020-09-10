@@ -7,7 +7,9 @@
 package Logic;
 
 import Data.Data;
+import Data.XmlPersister;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  * 
@@ -18,7 +20,13 @@ private final Data data;
   private static Service my_instance = null; //Singleton
 
     public Service() {
-        data=new Data();
+        try{
+          this.data=XmlPersister.getInstance().restore();
+        }catch(Exception e){
+             JOptionPane.showMessageDialog(null, "Ocurrio en error al Cargar los datos"); 
+             this.data=new Data();
+        }
+        
     }
     
      public static Service getInstance() {
