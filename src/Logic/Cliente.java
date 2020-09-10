@@ -5,6 +5,8 @@
  */
 package Logic;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -17,18 +19,30 @@ public class Cliente {//Persona
     private String apellidos;
     private String cedula;
     private String CorreoE;
+    private List<Factura> listaFacturas;
 
     public Cliente() {
         this.nombre = "";
         this.apellidos = "";
         this.cedula = "";
         this.CorreoE = "";
+        this.listaFacturas = new ArrayList<>();
+    }
+
+    public List<Factura> getListaFacturas() {
+        return listaFacturas;
+    }
+
+    public void setListaFacturas(List<Factura> listaFacturas) {
+        this.listaFacturas = listaFacturas;
     }
 
     public String getNombre() {
         return nombre;
     }
-
+    public void agregarFacturas(Factura f){
+        this.listaFacturas.add(f);
+    }
     public Cliente(String nombre, String apellidos, String cedula, String CorreoE) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -81,6 +95,8 @@ public class Cliente {//Persona
         }
         return true;
     }
+
+
 
   
 }

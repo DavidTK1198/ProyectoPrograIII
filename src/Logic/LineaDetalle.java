@@ -18,8 +18,9 @@ public class LineaDetalle {
         this.cantidadProd = cantidadProd;
     }
 
-    LineaDetalle() {
-       
+    public LineaDetalle() {
+       this.produc = null;
+       this.cantidadProd = 0;
     }
 
     public Producto getCurret() {

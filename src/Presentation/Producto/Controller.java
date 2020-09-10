@@ -34,7 +34,9 @@ public class Controller {
             if (!editable) {
 
                 Logic.Service.getInstance().addProduct(p);
+                p.calculoIV();
                 model.setLista(Logic.Service.getInstance().getProductos());
+                
             } else {
                 //Falta esta parte... ahorita la hacemos...
             }

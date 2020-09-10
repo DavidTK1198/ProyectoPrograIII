@@ -18,6 +18,7 @@ public class Producto {
     private String nombre;
     private String descripcion;
     private double precioUnitario;
+    private double impuestoVenta;
 
     public Producto(String codigo , String descripcion, double precioUnitario,String nombre) {
         this.codigo = codigo;
@@ -31,8 +32,19 @@ public class Producto {
        this.descripcion = "";
        this.precioUnitario = 0;
        this.nombre = "";
+       this.impuestoVenta = 0;
+       
+    }
+   
+    public double getImpuestoVenta() {
+        return impuestoVenta;
     }
 
+    public void setImpuestoVenta(double impuestoVenta) {
+        this.impuestoVenta = impuestoVenta;
+    }
+
+    
     public String getCodigo() {
         return codigo;
     }
@@ -90,6 +102,9 @@ public class Producto {
             return false;
         }
         return true;
+    }
+    public void calculoIV(){
+        this.setImpuestoVenta(this.precioUnitario*0.13);
     }
     
     

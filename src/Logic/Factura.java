@@ -22,6 +22,7 @@ public class Factura {
     Cliente curret;
     String fecha;
     String tipoPago;
+    
 
     public Factura() {
         misLineas = new ArrayList<>();
@@ -33,13 +34,72 @@ public class Factura {
         LineaDetalle nueva;
         nueva = new LineaDetalle(p, n);
         this.misLineas.add(nueva);
-
     }
 
     public List<LineaDetalle> getLineas() {
         return misLineas;
     }
 
+    public String getNumeroFactura() {
+        return numeroFactura;
+    }
+
+    public void setNumeroFactura(String numeroFactura) {
+        this.numeroFactura = numeroFactura;
+    }
+
+    public Cliente getCurret() {
+        return curret;
+    }
+
+    public void setCurret(Cliente curret) {
+        this.curret = curret;
+        this.curret.agregarFacturas(this);
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getTipoPago() {
+        return tipoPago;
+    }
+
+    public void setTipoPago(String tipoPago) {
+        this.tipoPago = tipoPago;
+    }
+    public double calcularTotal(){
+        double total = 0;
+        Producto prod;
+        for(int i=0; i<this.misLineas.size();i++){
+            prod = this.misLineas.get(i).getCurret();
+            total+= (prod.getPrecioUnitario()+prod.getImpuestoVenta())*this.misLineas.get(i).getCantidadProd();
+        }
+        return total;
+    }
+    public double subTotal(){
+        double total = 0;
+        Producto prod;
+        for(int i=0; i<this.misLineas.size();i++){
+            prod = this.misLineas.get(i).getCurret();
+            total+= (prod.getPrecioUnitario())*this.misLineas.get(i).getCantidadProd();
+        }
+        return total;
+    }
+    public double totalImpuesto(){
+        double total = 0;
+        Producto prod;
+            for(int i=0; i<this.misLineas.size();i++){
+            prod = this.misLineas.get(i).getCurret();
+            total+= (prod.getImpuestoVenta()*this.misLineas.get(i).getCantidadProd());
+        }
+        return total;
+    }
+    //10----> 525---> 25----> (525 + 25)* 10
 }
 
 
