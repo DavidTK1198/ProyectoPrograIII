@@ -8,7 +8,6 @@ package Logic;
 import Data.Data;
 import Data.XmlPersister;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,7 +22,6 @@ public class Service {
         try {
             this.data = XmlPersister.getInstance().restore();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Ocurrio en error al Cargar los datos");
             this.data = new Data();
         }
 
