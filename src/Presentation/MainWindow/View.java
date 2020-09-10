@@ -252,6 +252,8 @@ public class View extends javax.swing.JFrame implements Observer {
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        String p="";/// a ver que ponemos aquí
+        Logic.Service.getInstance().Save(p);
     }//GEN-LAST:event_SalirActionPerformed
 
     private void clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientesMouseClicked
