@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Data;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import javax.xml.bind.JAXBContext;

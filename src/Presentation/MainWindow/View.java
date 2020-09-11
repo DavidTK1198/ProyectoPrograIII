@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package Presentation.MainWindow;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
+
 
 /**
  *
@@ -27,6 +27,12 @@ public class View extends javax.swing.JFrame implements Observer {
         Date date = new Date();
         String fech = new SimpleDateFormat("dd/MM/yyyy").format(date);
         this.fecha.setText(fech);
+        String p="./Facturas.xml";
+        try {
+            Logic.Service.getInstance().load(p);
+        } catch (Exception ex) {
+            
+        }
     }
 
     /**
@@ -252,8 +258,12 @@ public class View extends javax.swing.JFrame implements Observer {
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        String p="";/// a ver que ponemos aquí
-        Logic.Service.getInstance().Save(p);
+        String p="./Facturas.xml";/// a ver que ponemos aquí
+        try {
+            Logic.Service.getInstance().Save(p);
+        } catch (Exception ex) {
+            //arreglar
+        }
     }//GEN-LAST:event_SalirActionPerformed
 
     private void clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientesMouseClicked

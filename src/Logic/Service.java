@@ -59,7 +59,13 @@ public class Service {
         this.data.removeElement(p);
     }
 
-    public void Save(String p){
+    public void Save(String p) throws Exception{
         XmlPersister.getInstance().setPath(p);
+        XmlPersister.getInstance().store(data);
+    }
+
+    public void load(String p) throws Exception {
+        XmlPersister.getInstance().setPath(p);
+        XmlPersister.getInstance().restore();
     }
 }
