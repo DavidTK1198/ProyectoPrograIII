@@ -7,13 +7,16 @@ package Logic;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlID;
 
 /**
  *
  * @author Daniel Madrigal
  */
-@XmlAccessorType(XmlAccessType.FIELD)
+
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class LineaDetalle {
+    @XmlID
     private Producto produc;
     private int cantidadProd;
 
@@ -46,6 +49,7 @@ public class LineaDetalle {
     
     
 }
+
 
 
 

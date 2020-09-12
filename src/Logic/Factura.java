@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlIDREF;
  *
  * @author Daniel Madrigal
  */
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class Factura {
   @XmlIDREF
     List<LineaDetalle> misLineas;
@@ -107,6 +107,7 @@ public class Factura {
     }
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
 
 
 

@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
  *
  * @author DavidTK1198
  */
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class Empresa {
 
     private static Empresa single_instance = null; //Singleton

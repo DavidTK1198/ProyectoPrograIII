@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement()
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class Data {
 
     private Map<String, Producto> productos;
@@ -90,6 +90,9 @@ public class Data {
     }
 
 }
+
+
+
 
 
 
