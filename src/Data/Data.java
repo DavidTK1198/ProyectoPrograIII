@@ -89,7 +89,21 @@ public class Data {
         return prod;
     }
 
+    @Override
+    public String toString() {
+        String n="";
+         for (Map.Entry<String, Producto> entry : productos.entrySet()) {
+            Producto ayudante = entry.getValue();
+          n=n+ayudante.toString();
+         }
+        return n ;
+    }
+   
+   
+
 }
+
+
 
 
 
