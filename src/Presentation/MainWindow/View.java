@@ -27,7 +27,7 @@ public class View extends javax.swing.JFrame implements Observer {
         Date date = new Date();
         String fech = new SimpleDateFormat("dd/MM/yyyy").format(date);
         this.fecha.setText(fech);
-        String p="Facturas.x.ml";
+        String p="Facturas.xml";
         try {
             Logic.Service.getInstance().load(p);
         } catch (Exception ex) {
