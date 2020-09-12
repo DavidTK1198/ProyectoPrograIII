@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlID;
  */
 
 @XmlAccessorType(XmlAccessType.PROPERTY)
+
 public class Producto {
      @XmlID
     private String codigo;
@@ -115,6 +116,8 @@ public class Producto {
     
     
 }
+
+
 
 
 

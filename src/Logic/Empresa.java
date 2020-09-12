@@ -7,6 +7,7 @@ package Logic;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlID;
 
 /**
  *
@@ -16,6 +17,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 public class Empresa {
 
     private static Empresa single_instance = null; //Singleton
+    @XmlID
     private String nombre;
     private String telefono;
     private String correo;
