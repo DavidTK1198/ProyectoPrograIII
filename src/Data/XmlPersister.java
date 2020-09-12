@@ -41,6 +41,7 @@ public class XmlPersister {
         Marshaller nuevo = jaxbContext.createMarshaller();
         nuevo.marshal(my_data, os);
         os.flush();
+        os.close();
 
     }
 
