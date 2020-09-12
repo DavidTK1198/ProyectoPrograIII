@@ -22,6 +22,9 @@ public class Controller {
      Presentation.Empresa.Model empresa_model;
     Presentation.Empresa.View empresa_Vista;
     Presentation.Empresa.Controller empresa_control;
+    Presentation.Facturacion.Controller factura;
+    Presentation.Facturacion.Model model_factura;
+    Presentation.Facturacion.View factura_View;
 
     public Controller(View vista, Model model) {
         this.vista = vista;
@@ -41,6 +44,9 @@ public class Controller {
         empresa_model=new Presentation.Empresa.Model();
         empresa_Vista= new Presentation.Empresa.View(this.vista,true);
          empresa_control= new Presentation.Empresa.Controller(empresa_Vista,empresa_model);
+         model_factura=new Presentation.Facturacion.Model();
+         factura_View=new Presentation.Facturacion.View(vista, true);
+         factura=new Presentation.Facturacion.Controller(factura_View, model_factura);
         
     }
 
@@ -53,6 +59,10 @@ public class Controller {
     }
     public void empresaShow(){
         this.empresa_control.Mostrar();
+    }
+    
+    public void facturacion_Show(){
+        this.factura.show();
     }
 
 }

@@ -5,25 +5,23 @@
  */
 package Presentation.Facturacion;
 
+import Logic.LineaDetalle;
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  *
  * @author Daniel Madrigal
  */
-public class View extends javax.swing.JFrame {
+public class View extends javax.swing.JDialog implements Observer {
 
-    /**
-     * Creates new form View
-     */
-    
-    private int[] col = {0,1,2,3};
-    private int[] col2 = {0,1,2,3};
-    public View() {
-        
+    private Controller control;
+    private Model model;
+  
+
+    public View(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
-        Presentation.Cliente.TableModelClient nueva=new Presentation.Cliente.TableModelClient(Logic.Service.getInstance().getClientes(), col);
-         Presentation.Producto.TableModel nueva2=new Presentation.Producto.TableModel(Logic.Service.getInstance().getProductos(), col2);
-        this.clients.setModel(nueva);
-        this.productos.setModel(nueva2);
     }
 
     /**
@@ -306,4 +304,28 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JTextField productoText;
     private javax.swing.JTable productos;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg) {
+        LineaDetalle  li = model.getCurrent();
+       boolean ayuda = model.isEditable();
+       this.facturar.setModel(model.getTable());
+       this.clients.setModel(model.getTableCliente());
+       this.productos.setModel(model.getTableProducto());
+    }
+    
+     public void setControl(Controller control) {
+        this.control = control;
+    }
+     
+        public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
+        model.addObserver(this);
+    }
+    
+    
 }

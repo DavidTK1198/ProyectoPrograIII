@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Data;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import javax.xml.bind.JAXBContext;
@@ -21,9 +22,9 @@ public class XmlPersister {
 
     public XmlPersister() {
     }
-    
-    public void setPath(String p){
-        this.path=p;
+
+    public void setPath(String p) {
+        this.path = p;
     }
 
     public static XmlPersister getInstance() {
@@ -33,23 +34,21 @@ public class XmlPersister {
 
         return my_instance;
     }
-    
-    public void store(Data my_data) throws Exception{
-       JAXBContext  jaxbContext = JAXBContext.newInstance(Data.class);
-        FileOutputStream os=new FileOutputStream(path);
-        Marshaller nuevo= jaxbContext.createMarshaller();
+
+    public void store(Data my_data) throws Exception {
+        JAXBContext jaxbContext = JAXBContext.newInstance(Data.class);
+        FileOutputStream os = new FileOutputStream(path);
+        Marshaller nuevo = jaxbContext.createMarshaller();
         nuevo.marshal(my_data, os);
         os.flush();
-        os.close();
-        System.out.println("Data.XmlPersister.store()");
-       
+
     }
-    
-    public Data restore()throws Exception{
+
+    public Data restore() throws Exception {
         JAXBContext jaxbContext = JAXBContext.newInstance(Data.class);
-        FileInputStream is=new FileInputStream(path);
-        Unmarshaller unmarshaller= jaxbContext.createUnmarshaller();
-        Data result=(Data) unmarshaller.unmarshal(is);
+        FileInputStream is = new FileInputStream(path);
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        Data result = (Data) unmarshaller.unmarshal(is);
         is.close();
         return result;
     }

@@ -17,49 +17,21 @@ public class Controller {
 private Presentation.Facturacion.View vista;
     private Presentation.Facturacion.Model model;
 
-//    public Controller(Presentation.Producto.View vista, Presentation.Producto.Model model) {
-//        this.vista = vista;
-//        this.model = model;
-//        vista.setControl(this);
-//        vista.setModel(model);
-//    }
-//
-//    public void show() {
-//        vista.setVisible(true);
-//    }
-//
-//    public void agregar(Boolean editable, LineaDetalle p) {
-//
-//        try {
-//            if (!editable) {
-////
-////                Logic.Service.getInstance().addProduct(p);
-////                p.calculoIV();
-////                model.setLista(Logic.Service.getInstance().getProductos());
-//                
-//            } else {
-//                //Falta esta parte... ahorita la hacemos...
-//            }
-//        } catch (Exception exc) {
-//            JOptionPane.showMessageDialog(null, exc.getMessage());
-//        }
-////        model.setProduct(new Producto());
-//        model.setEditable(false);
-//    }
-//
-//    public void hide() {
-//        vista.setVisible(false);
-//    }
-//
-//    void eliminar(int n) {
-////        Producto p=model.getRow(n);
-////        Logic.Service.getInstance().deleteProduct(p);
-////         model.setLista(Logic.Service.getInstance().getProductos());
-//    }
-//
-//    public void cancelar() {
-////       model.setProduct(new Producto());
-//    }
+    public Controller(Presentation.Facturacion.View vista, Presentation.Facturacion.Model model) {
+        this.vista = vista;
+        this.model = model;
+        vista.setControl(this);
+        vista.setModel(model);
+    }
+
+    public void show() {
+        vista.setVisible(true);
+    }
+
+
+    public void hide() {
+        vista.setVisible(false);
+    }
 
    
 }
