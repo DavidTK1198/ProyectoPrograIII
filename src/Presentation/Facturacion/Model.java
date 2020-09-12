@@ -7,7 +7,6 @@
 package Presentation.Facturacion;
 
 import Logic.LineaDetalle;
-import Presentation.Cliente.TableModelClient;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -48,11 +47,11 @@ public class Model extends Observable {
                                                                                                                    // y productos
     }
 
-    public TableModelClient getTableCliente() {
+    public Presentation.Cliente.TableModelClient getTableCliente() {
         return tableCliente;
     }
 
-    public void setTableCliente(TableModelClient tableCliente) {
+    public void setTableCliente(Presentation.Cliente.TableModelClient tableCliente) {
         this.tableCliente = tableCliente;
     }
 
