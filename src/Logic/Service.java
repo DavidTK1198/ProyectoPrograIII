@@ -66,6 +66,6 @@ public class Service {
 
     public void load(String p) throws Exception {
         XmlPersister.getInstance().setPath(p);
-        XmlPersister.getInstance().restore();
+        this.data = XmlPersister.getInstance().restore();
     }
 }

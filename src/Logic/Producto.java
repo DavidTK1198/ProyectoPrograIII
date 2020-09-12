@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlID;
 public class Producto {
      @XmlID
     private String codigo;
-    private String nombre;
+    private String nombreE;
     private String descripcion;
     private double precioUnitario;
     private double impuestoVenta;
@@ -30,14 +30,14 @@ public class Producto {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioUnitario = precioUnitario;
-        this.nombre = nombre;
+        this.nombreE = nombre;
     }
 
     public Producto() {
        this.codigo = "";
        this.descripcion = "";
        this.precioUnitario = 0;
-       this.nombre = "";
+       this.nombreE = "";
        this.impuestoVenta = 0;
        
     }
@@ -75,11 +75,11 @@ public class Producto {
         this.precioUnitario = precioUnitario;
     }
     public String getNombre() {
-        return nombre;
+        return nombreE;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombreE = nombre;
     }
     @Override
     public String toString() {

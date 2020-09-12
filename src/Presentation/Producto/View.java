@@ -26,6 +26,7 @@ public class View extends javax.swing.JDialog implements Observer {
     public View(java.awt.Frame parent, boolean modal) {
         super(parent,modal);
         initComponents();
+      
     }
 
     /**

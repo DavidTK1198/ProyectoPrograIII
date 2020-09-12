@@ -18,21 +18,21 @@ public class Empresa {
 
     private static Empresa single_instance = null; //Singleton
     @XmlID
-    private String nombre;
+    private String nombreEm;
     private String telefono;
     private String correo;
     private String CedulaJuridica;
     private String direccion;
      
     private Empresa() {
-         this.nombre = "";
+         this.nombreEm = "";
          this.telefono = "";
          this.direccion = "";
          this.correo = "";
          this.telefono = "";
     }
     private Empresa(String nombre,String actividad,String telefono,String direcion,String CedJuri,String correo) {
-         this.nombre = nombre;
+         this.nombreEm = nombre;
          this.telefono = telefono;
          this.direccion = direcion;
          this.CedulaJuridica = CedJuri;
@@ -48,11 +48,11 @@ public class Empresa {
     }
 
     public String getNombre() {
-        return nombre;
+        return nombreEm;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombreEm = nombre;
     }
 
     public String getTelefono() {
