@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlIDREF;
  * @author Daniel Madrigal
  */
 
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.FIELD)
 public class LineaDetalle {
     @XmlIDREF
     private Producto produc;
@@ -49,6 +49,7 @@ public class LineaDetalle {
     
     
 }
+
 
 
 

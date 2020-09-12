@@ -12,13 +12,12 @@ import javax.xml.bind.annotation.XmlID;
 
 
 
+
 /**
  *
  * @author Daniel Madrigal
  */
-
-@XmlAccessorType(XmlAccessType.PROPERTY)
-
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Producto {
      @XmlID
     private String codigo;
@@ -116,6 +115,8 @@ public class Producto {
     
     
 }
+
+
 
 
 

@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlIDREF;
  * @author DavidTK1198
  * 
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Cliente {//Persona
 
     private String nombre;

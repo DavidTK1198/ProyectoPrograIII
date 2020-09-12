@@ -18,17 +18,18 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement()
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Data {
 
-    private Map<String, Producto> productos;
-    private Map<String, Cliente> clientes;
-    private Map<String,Factura> facturas;
+    private final Map<String, Producto> productos;
+    private final Map<String, Cliente> clientes;
+    private final Map<String,Factura> facturas;
     Empresa Emp=Logic.Empresa.getInstance();
 
     public Data() {
         clientes = new HashMap<>();
         productos = new HashMap<>();
+        facturas=new HashMap<>();
     }
 
     public List<Cliente> getClientes() {
@@ -91,17 +92,15 @@ public class Data {
 
     @Override
     public String toString() {
-        String n="";
-         for (Map.Entry<String, Producto> entry : productos.entrySet()) {
-            Producto ayudante = entry.getValue();
-          n=n+ayudante.toString();
-         }
-        return n ;
+       
+        return this.productos.toString();
     }
    
    
 
 }
+
+
 
 
 
