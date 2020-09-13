@@ -16,6 +16,7 @@ import java.util.List;
 public class Service {
 
     private Data data;
+    private XmlMaker maker;
     private static Service my_instance = null; //Singleton
 
     public Service() {
@@ -24,7 +25,7 @@ public class Service {
         } catch (Exception e) {
             this.data = new Data();
         }
-
+          maker=new XmlMaker();
     }
 
     public static Service getInstance() {
@@ -71,6 +72,7 @@ public class Service {
         this.data = XmlPersister.getInstance().restore();
     }
     
-    
-    
+    public void makeFacturaXML(Factura p) throws Exception{
+        this.maker.makeXml(p);
+    }
 }

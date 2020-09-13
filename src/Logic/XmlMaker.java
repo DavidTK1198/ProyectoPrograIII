@@ -66,7 +66,7 @@ public class XmlMaker {
         emisor.appendChild(correo);
 
         // CedulaJuridica
-        Element ced = documento.createElement("Cedula Juridica");
+        Element ced = documento.createElement("CedulaJuridica");
         Text jur = documento.createTextNode(Logic.Empresa.getInstance().getCedulaJuridica());
         ced.appendChild(jur);
         emisor.appendChild(ced);

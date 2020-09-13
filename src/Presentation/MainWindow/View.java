@@ -10,6 +10,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 
+
 /**
  *
  * @author DavidTK1198
@@ -264,6 +265,7 @@ public class View extends javax.swing.JFrame implements Observer {
         } catch (Exception ex) {
             //arreglar
         }
+       
     }//GEN-LAST:event_SalirActionPerformed
 
     private void clientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientesMouseClicked
