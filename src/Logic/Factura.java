@@ -36,7 +36,7 @@ public class Factura {
     public Factura() {
         misLineas = new ArrayList<>();
         Date date = new Date();
-        fecha = new SimpleDateFormat("dd/MM/yyyy").format(date);
+        fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date);
     }
 
     public void addLine(Producto p, int n) {
@@ -110,6 +110,7 @@ public class Factura {
     }
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
 
 
 

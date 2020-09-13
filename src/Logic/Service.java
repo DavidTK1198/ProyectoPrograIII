@@ -34,7 +34,9 @@ public class Service {
 
         return my_instance;
     }
-
+      public List<Factura> misFacturas(){
+          return this.data.getFacturas();
+      }
     public List<Cliente> getClientes() {
         return this.data.getClientes();
     }
@@ -68,4 +70,7 @@ public class Service {
         XmlPersister.getInstance().setPath(p);
         this.data = XmlPersister.getInstance().restore();
     }
+    
+    
+    
 }
