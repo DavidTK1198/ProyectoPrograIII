@@ -7,6 +7,9 @@
 package Presentation.Cliente;
 
 import Logic.Cliente;
+import Logic.Service;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -46,4 +49,22 @@ public class Controller {
         }
     }
 
+    void buscarCliente(String ced) {
+        
+        try{
+            Cliente client = Service.getInstance().getCliente(ced);
+            List<Cliente> lc = new ArrayList<>();
+            lc.add(client);
+            model.setLista(lc);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        model.setClient(new Cliente());
+        
+    }
+
+    public void mostrarTodosLosClientes() {
+        List<Cliente> lc = Service.getInstance().getClientes();
+        model.setLista(lc);
+    }
 }

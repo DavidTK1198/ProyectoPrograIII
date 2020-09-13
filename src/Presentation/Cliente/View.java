@@ -20,7 +20,7 @@ public class View extends javax.swing.JDialog implements Observer {
      * Creates new form View
      */
     
-     private Controller control;
+    private Controller control;
     private Model model;
     public View(java.awt.Frame Parent,boolean modal ) {
         super(Parent,modal);
@@ -53,8 +53,8 @@ public class View extends javax.swing.JDialog implements Observer {
         ListaClientes = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        IdeBusqueda = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        IdeBusquedaClien = new javax.swing.JTextField();
+        BusquedaBotton = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Volver = new javax.swing.JButton();
@@ -202,11 +202,16 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel6.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel6.setText("Identificacion ");
 
-        IdeBusqueda.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        IdeBusquedaClien.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        jButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
-        jButton3.setText("Buscar");
+        BusquedaBotton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        BusquedaBotton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
+        BusquedaBotton.setText("Buscar");
+        BusquedaBotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaBottonActionPerformed(evt);
+            }
+        });
 
         eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-delete-male-user-20.png"))); // NOI18N
         eliminar.setText("Eliminar");
@@ -223,14 +228,14 @@ public class View extends javax.swing.JDialog implements Observer {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(27, 27, 27)
-                                .addComponent(IdeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(IdeBusquedaClien, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(151, 151, 151)
                                 .addComponent(jLabel3))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jButton3)
+                        .addComponent(BusquedaBotton)
                         .addGap(117, 117, 117)
                         .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(23, Short.MAX_VALUE))
@@ -243,10 +248,10 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(IdeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(IdeBusquedaClien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(BusquedaBotton)
                     .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -327,6 +332,15 @@ public class View extends javax.swing.JDialog implements Observer {
           this.deshabilitarCajasTexto();
           
     }//GEN-LAST:event_CancelarActionPerformed
+
+    private void BusquedaBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaBottonActionPerformed
+       String texto = this.IdeBusquedaClien.getText();
+       if(!texto.isEmpty()){
+           control.buscarCliente(texto);
+       }else{
+           control.mostrarTodosLosClientes();
+       }
+    }//GEN-LAST:event_BusquedaBottonActionPerformed
     public void limpiarTexto(){
         this.Apelli.setText(model.getClient().getApellidos());
         this.CorreoEle.setText(model.getClient().getCorreoE());
@@ -377,6 +391,7 @@ public class View extends javax.swing.JDialog implements Observer {
        this.Nom.setText(client.getNombre());
        this.CorreoEle.setText(client.getCorreoE());
        this.Identfi.setText(client.getCedula());
+       this.IdeBusquedaClien.setText("");
        this.ListaClientes.setModel(model.getTable());
     }
 
@@ -404,9 +419,10 @@ public class View extends javax.swing.JDialog implements Observer {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Ape;
     private javax.swing.JTextField Apelli;
+    private javax.swing.JButton BusquedaBotton;
     private javax.swing.JButton Cancelar;
     private javax.swing.JTextField CorreoEle;
-    private javax.swing.JTextField IdeBusqueda;
+    private javax.swing.JTextField IdeBusquedaClien;
     private javax.swing.JTextField Identfi;
     private javax.swing.JTable ListaClientes;
     private javax.swing.JTextField Nom;
@@ -414,7 +430,6 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JButton eliminar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

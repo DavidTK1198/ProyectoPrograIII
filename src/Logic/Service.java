@@ -57,7 +57,9 @@ public class Service {
     public Producto getProducto(String id) throws Exception {
         return this.data.getProducto(id);
     }
-    
+    public Cliente getCliente(String ced)throws Exception{
+        return this.data.getCliente(ced);
+    }
     public void deleteProduct(Producto p) {
         this.data.removeElement(p);
     }
@@ -75,4 +77,7 @@ public class Service {
     public void makeFacturaXML(Factura p) throws Exception{
         this.maker.makeXml(p);
     }
+
 }
+
+

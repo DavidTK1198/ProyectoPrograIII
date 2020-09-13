@@ -90,6 +90,13 @@ public class Data {
         }
         return prod;
     }
+   public Cliente getCliente(String ced)throws Exception{
+       Cliente client = this.clientes1.get(ced);
+       if(client == null){
+           throw new Exception("Cedula no encontrada");
+       }
+       return client;
+   }
 
    
 
