@@ -17,10 +17,11 @@ import javax.xml.bind.annotation.XmlID;
 public class Empresa {
 
     private static Empresa single_instance = null; //Singleton
-    @XmlID
+
     private String nombreEm;
     private String telefono;
     private String correo;
+    @XmlID
     private String CedulaJuridica;
     private String direccion;
      

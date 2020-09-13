@@ -22,20 +22,20 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Data {
 
-     private final Map<String, Producto> productos;
-     @XmlTransient private final Map<String, Cliente> clientes;
+        private final  Map<String, Producto> productos;
+      private final Map<String, Cliente> clientes1;
      @XmlTransient private final Map<String,Factura> facturas;
-     @XmlTransient Empresa Emp=Logic.Empresa.getInstance();
+     Empresa Emp=Logic.Empresa.getInstance();
 
     public Data() {
-        clientes = new HashMap<>();
+        clientes1 = new HashMap<>();
         productos = new HashMap<>();
         facturas = new HashMap<>();
     }
 
     public List<Cliente> getClientes() {
         List<Cliente> ls = new ArrayList<>();
-        for (Map.Entry<String, Cliente> entry : clientes.entrySet()) {
+        for (Map.Entry<String, Cliente> entry : clientes1.entrySet()) {
             Cliente ayudante = entry.getValue();
             ls.add(ayudante);
         }
@@ -52,9 +52,9 @@ public class Data {
     }
     
     public void addClient(Cliente p) throws Exception {
-        Cliente cl = clientes.get(p.getCedula());
+        Cliente cl = clientes1.get(p.getCedula());
         if (cl == null) {
-            clientes.put(p.getCedula(), p);
+            clientes1.put(p.getCedula(), p);
         } else {
             throw new Exception("El producto ya existe");
         }
@@ -91,15 +91,24 @@ public class Data {
         return prod;
     }
 
-    @Override
-    public String toString() {
-       
-        return this.productos.toString();
-    }
-   
    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

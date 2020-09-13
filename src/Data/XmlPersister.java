@@ -35,8 +35,14 @@ public class XmlPersister {
     }
 
     public void store(Data my_data) throws Exception {
-        
-        JAXBContext jaxbContext = JAXBContext.newInstance(Data.class);
+         JAXBContext jaxbContext=null;
+        try{
+       jaxbContext = JAXBContext.newInstance(Data.class);
+        }catch(Exception e){
+            System.out.println("Data.XmlPersister.store()");
+  System.out.println(e.getClass());
+    System.out.println(e.getCause());
+        }
         FileOutputStream os = new FileOutputStream(path);
         Marshaller nuevo = jaxbContext.createMarshaller();
         nuevo.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);

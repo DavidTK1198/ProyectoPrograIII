@@ -25,7 +25,8 @@ public class Factura {
     List<LineaDetalle> misLineas;
     @XmlID
     String numeroFactura;
-    Cliente curret;
+    @XmlIDREF
+    Cliente actual;
     String fecha;
     String tipoPago;
     
@@ -55,12 +56,12 @@ public class Factura {
     }
 
     public Cliente getCurret() {
-        return curret;
+        return actual;
     }
 
     public void setCurret(Cliente curret) {
-        this.curret = curret;
-        this.curret.agregarFacturas(this);
+        this.actual = curret;
+        this.actual.agregarFacturas(this);
     }
 
     public String getFecha() {
@@ -82,7 +83,7 @@ public class Factura {
         double total = 0;
         Producto prod;
         for(int i=0; i<this.misLineas.size();i++){
-            prod = this.misLineas.get(i).getCurret();
+            prod = this.misLineas.get(i).getCurret1();
             total+= (prod.getPrecioUnitario()+prod.getImpuestoVenta())*this.misLineas.get(i).getCantidadProd();
         }
         return total;
@@ -91,7 +92,7 @@ public class Factura {
         double total = 0;
         Producto prod;
         for(int i=0; i<this.misLineas.size();i++){
-            prod = this.misLineas.get(i).getCurret();
+            prod = this.misLineas.get(i).getCurret1();
             total+= (prod.getPrecioUnitario())*this.misLineas.get(i).getCantidadProd();
         }
         return total;
@@ -100,13 +101,15 @@ public class Factura {
         double total = 0;
         Producto prod;
             for(int i=0; i<this.misLineas.size();i++){
-            prod = this.misLineas.get(i).getCurret();
+            prod = this.misLineas.get(i).getCurret1();
             total+= (prod.getImpuestoVenta()*this.misLineas.get(i).getCantidadProd());
         }
         return total;
     }
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
+
 
 
 

@@ -7,6 +7,7 @@ package Logic;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
 
 /**
@@ -18,6 +19,7 @@ import javax.xml.bind.annotation.XmlIDREF;
 public class LineaDetalle {
     @XmlIDREF
     private Producto produc;
+    @XmlID
     private int cantidadProd;
 
     public LineaDetalle(Producto produc, int cantidadProd) {
@@ -30,11 +32,11 @@ public class LineaDetalle {
        this.cantidadProd = 0;
     }
 
-    public Producto getCurret() {
+    public Producto getCurret1() {
         return produc;
     }
 
-    public void setCurret(Producto produc) {
+    public void setCurret1(Producto produc) {
         this.produc = produc;
     }
 
@@ -49,6 +51,8 @@ public class LineaDetalle {
     
     
 }
+
+
 
 
 
