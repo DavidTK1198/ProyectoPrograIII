@@ -195,6 +195,11 @@ public class View extends javax.swing.JDialog implements Observer {
         BottonBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         BottonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/seek_search_binoculars_1572.png"))); // NOI18N
         BottonBuscar.setText("Buscar");
+        BottonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BottonBuscarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial Black", 2, 18)); // NOI18N
         jLabel5.setText("BUSQUEDA POR CODIGO");
@@ -297,13 +302,14 @@ public class View extends javax.swing.JDialog implements Observer {
        String codigo = this.Cod.getText();
        String precio = this.PrecioU.getText();
        String detail = this.detalle.getText();
+       double dinero = 0;
        try{
-           double dinero=Double.parseDouble(precio);
+           dinero=Double.parseDouble(precio);
        }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Por favor ingresar solo numeros en el precio");
             return;
        }
-       double dinero=Double.parseDouble(precio);
+     
        if(ValidacionTexto(codigo,detail,precio,nombre)){
            Producto p = new Producto(codigo,detail,dinero,nombre);
            this.control.agregar(model.isEditable(), p);
@@ -332,6 +338,15 @@ public class View extends javax.swing.JDialog implements Observer {
       limpiarTextFields();
       deshabilitarCajitas();
     }//GEN-LAST:event_CancelarrActionPerformed
+
+    private void BottonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonBuscarActionPerformed
+        String txt = this.IdeBusqueda.getText();
+        if(!txt.isEmpty()){
+            control.buscarPorCedula(txt);
+        }else{
+            control.cargarTodosLosProductos();
+        }
+    }//GEN-LAST:event_BottonBuscarActionPerformed
 
     
     private boolean ValidacionTexto(String codigo , String descripcion, String precioUnitario,String nombre){
@@ -366,6 +381,7 @@ public class View extends javax.swing.JDialog implements Observer {
        this.detalle.setText(producto.getDescripcion());
        this.PrecioU.setText(String.valueOf(producto.getPrecioUnitario()));
        this.PrSr.setText(producto.getNombre());
+       this.IdeBusqueda.setText("");
        this.ListaDeProductos.setModel(model.getTable());
        
     }

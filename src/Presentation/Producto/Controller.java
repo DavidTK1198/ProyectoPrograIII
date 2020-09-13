@@ -5,8 +5,14 @@
  */
 package Presentation.Producto;
 
+import Data.Data;
+import Logic.Empresa;
 import Logic.Producto;
+import Logic.Service;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import java.util.List;
+
 
 /**
  *
@@ -60,6 +66,24 @@ public class Controller {
 
     public void cancelar() {
        model.setProduct(new Producto());
+    }
+    public void buscarPorCedula(String ced){
+        
+        try{
+            Producto product = Service.getInstance().getProducto(ced);
+            List<Producto> lp = new ArrayList<>();
+            lp.add(product);
+            model.setLista(lp);
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        model.setProduct(new Producto());
+    }
+
+    public void cargarTodosLosProductos() {
+            List<Producto> lp = Service.getInstance().getProductos();
+            model.setLista(lp);
     }
 
    

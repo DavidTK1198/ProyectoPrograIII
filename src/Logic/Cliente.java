@@ -21,10 +21,10 @@ import javax.xml.bind.annotation.XmlIDREF;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cliente {//Persona
 
-    private String nombre;
-    private String apellidos;
     @XmlID
     private String cedula;
+    private String nombre;
+    private String apellidos;
     private String CorreoE;
     @XmlIDREF
     private List<Factura> listaFacturas;
@@ -86,6 +86,12 @@ public class Cliente {//Persona
         this.CorreoE = CorreoE;
     }
 
+     @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

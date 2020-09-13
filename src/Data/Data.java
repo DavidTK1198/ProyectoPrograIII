@@ -22,10 +22,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Data {
 
-        private final  Map<String, Producto> productos;
-         private final Map<String,Factura> facturas;
+      private final  Map<String, Producto> productos;
+      private final Map<String,Factura> facturas;
       private final Map<String, Cliente> clientes1;
-     Empresa Emp=Logic.Empresa.getInstance();
+      Empresa Emp=Logic.Empresa.getInstance();
 
     public Data() {
         clientes1 = new HashMap<>();
