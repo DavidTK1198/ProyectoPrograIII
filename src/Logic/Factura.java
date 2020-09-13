@@ -23,8 +23,10 @@ import javax.xml.bind.annotation.XmlIDREF;
 public class Factura {
   @XmlIDREF
     List<LineaDetalle> misLineas;
+  
     @XmlID
     String numeroFactura;
+    
     @XmlIDREF
     Cliente actual;
     String fecha;
@@ -108,6 +110,7 @@ public class Factura {
     }
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
 
 
 

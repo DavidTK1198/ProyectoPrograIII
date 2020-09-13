@@ -16,15 +16,15 @@ import java.util.Map;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+
 
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Data {
 
         private final  Map<String, Producto> productos;
+         private final Map<String,Factura> facturas;
       private final Map<String, Cliente> clientes1;
-     @XmlTransient private final Map<String,Factura> facturas;
      Empresa Emp=Logic.Empresa.getInstance();
 
     public Data() {
@@ -94,6 +94,9 @@ public class Data {
    
 
 }
+
+
+
 
 
 

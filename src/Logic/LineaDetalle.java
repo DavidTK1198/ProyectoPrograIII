@@ -19,17 +19,21 @@ import javax.xml.bind.annotation.XmlIDREF;
 public class LineaDetalle {
     @XmlIDREF
     private Producto produc;
-    @XmlID
+  
     private int cantidadProd;
+      @XmlID
+    private String ide;
 
     public LineaDetalle(Producto produc, int cantidadProd) {
         this.produc = produc;
         this.cantidadProd = cantidadProd;
+        ide=String.valueOf(cantidadProd);
     }
 
     public LineaDetalle() {
        this.produc = null;
        this.cantidadProd = 0;
+       ide="";
     }
 
     public Producto getCurret1() {
@@ -51,6 +55,10 @@ public class LineaDetalle {
     
     
 }
+
+
+
+
 
 
 

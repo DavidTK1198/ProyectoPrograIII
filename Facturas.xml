@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <productos/>
+    <facturas/>
+    <clientes1>
+        <entry>
+            <key>34</key>
+            <value>
+                <nombre>3</nombre>
+                <apellidos>23</apellidos>
+                <cedula>34</cedula>
+                <CorreoE>2134</CorreoE>
+            </value>
+        </entry>
+        <entry>
+            <key>123</key>
+            <value>
+                <nombre>543</nombre>
+                <apellidos>2334</apellidos>
+                <cedula>123</cedula>
+                <CorreoE>4</CorreoE>
+            </value>
+        </entry>
+        <entry>
+            <key>34343212</key>
+            <value>
+                <nombre>3543412</nombre>
+                <apellidos>42334</apellidos>
+                <cedula>34343212</cedula>
+                <CorreoE>4345</CorreoE>
+            </value>
+        </entry>
+    </clientes1>
+    <Emp>
+        <nombreEm></nombreEm>
+        <telefono></telefono>
+        <correo></correo>
+        <direccion></direccion>
+    </Emp>
+</data>
