@@ -25,12 +25,13 @@ public class Data {
       private final  Map<String, Producto> productos;
       private final Map<String,Factura> facturas;
       private final Map<String, Cliente> clientes1;
-      Empresa Emp=Logic.Empresa.getInstance();
+      private Empresa Emp;
 
     public Data() {
         clientes1 = new HashMap<>();
         productos = new HashMap<>();
         facturas = new HashMap<>();
+        Emp=Logic.Empresa.getInstance();
     }
 
     public List<Cliente> getClientes() {
@@ -57,6 +58,15 @@ public class Data {
             clientes1.put(p.getCedula(), p);
         } else {
             throw new Exception("El producto ya existe");
+        }
+    }
+    public void addFactura(Factura p) throws Exception{
+        
+          Factura fa = facturas.get(p.getNumeroFactura());
+        if (fa == null) {
+            facturas.put(p.getNumeroFactura(), p);
+        } else {
+            throw new Exception("La Factura ya existe");
         }
     }
 
@@ -101,6 +111,8 @@ public class Data {
    
 
 }
+
+
 
 
 

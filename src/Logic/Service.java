@@ -46,6 +46,10 @@ public class Service {
         return this.data.getProductos();
     }
 
+    public void addFactura(Factura p) throws Exception{
+        this.data.addFactura(p);
+    }
+    
     public void addProduct(Producto p) throws Exception {
         this.data.addProduct(p);
     }

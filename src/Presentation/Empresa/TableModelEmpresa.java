@@ -17,14 +17,13 @@ public class TableModelEmpresa extends AbstractTableModel{
     private final int[] columnas;
     private final String[] nombCol = {"Nombre Empresa","Ced. Juridica","Correo Electronico"};
 
-    public TableModelEmpresa(List<String> filas, int[] columnas) {
-        this.filas = filas;
+    public TableModelEmpresa(int[] columnas) {
         this.columnas = columnas;
     }
 
     @Override
     public int getRowCount() {
-        return filas.size();
+        return 1;
     }
 
     @Override
@@ -49,5 +48,6 @@ public class TableModelEmpresa extends AbstractTableModel{
     }
     
 }
+
 
 

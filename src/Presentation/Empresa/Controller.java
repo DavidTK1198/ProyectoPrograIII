@@ -35,17 +35,14 @@ public class Controller {
     public void editEmpresa(boolean editable, String nom,String cedJur,String direc,String activ, String tel,String correoE) {//a ver como manejamos la lista de telefonos
 
         if (!editable) {
+            System.out.print(Logic.Empresa.getInstance().getNombre());
             Logic.Empresa.getInstance().setNombre(nom);
             Logic.Empresa.getInstance().setCorreo(correoE);
             Logic.Empresa.getInstance().setCedulaJuridica(cedJur);
             Logic.Empresa.getInstance().setDireccion(direc);
             Logic.Empresa.getInstance().setActividad(activ);
             Logic.Empresa.getInstance().setTelefono(tel);
-            List<String> nueva = new ArrayList<>();
-            nueva.add(nom);
-            nueva.add(cedJur);
-            nueva.add(correoE);
-            model.setLista(nueva); 
+            model.setInformacion(); 
         }
     }
 }

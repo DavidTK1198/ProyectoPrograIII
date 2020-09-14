@@ -6,7 +6,10 @@
 
 package Presentation.Facturacion;
 
+import Logic.Cliente;
+import Logic.Factura;
 import Logic.LineaDetalle;
+import Logic.Producto;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,6 +34,41 @@ private Presentation.Facturacion.View vista;
 
     public void hide() {
         vista.setVisible(false);
+    }
+
+    void setProducto(int n) {
+       Producto p=model.getTableProducto().getRowAt(n);
+       model.setPd(p);
+    }
+
+    void setCliente(int n) {
+       Cliente cl=model.getTableCliente().getRowAT(n);
+       model.setCl(cl);
+    }
+
+    void agregar(LineaDetalle nueva) {
+        Factura p=model.getNueva();
+       model.setLi(nueva);
+       model.setLista(model.getNueva().getLineas());
+       p.addLine(nueva);
+       
+    }
+
+    void hacerFactura() {
+        Factura p;
+        LineaDetalle nueva=model.getLi();
+        this.model.getNueva().addLine(nueva);
+        p=model.getNueva();
+    try {
+        Logic.Service.getInstance().addFactura(p);
+    } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
+            
+        }
+        this.model.setFlag(true);
+        this.model.facturaUpdate();
+        this.model.setLista(model.getNueva().getLineas()); 
+        
     }
 
    

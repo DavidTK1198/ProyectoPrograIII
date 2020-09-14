@@ -51,6 +51,11 @@ public class TableModelClient extends AbstractTableModel{
         return nombCol[column]; //To change body of generated methods, choose Tools | Templates.
     }
     
+    public Cliente getRowAT(int n){
+        return filas.get(n);
+    }
+    
 }
+
 
 

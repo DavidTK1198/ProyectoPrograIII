@@ -39,9 +39,8 @@ public class Factura {
         fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date);
     }
 
-    public void addLine(Producto p, int n) {
-        LineaDetalle nueva;
-        nueva = new LineaDetalle(p, n);
+    public void addLine(LineaDetalle nueva) {
+       
         this.misLineas.add(nueva);
     }
 
@@ -110,6 +109,8 @@ public class Factura {
     }
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
+
 
 
 

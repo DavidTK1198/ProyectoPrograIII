@@ -36,6 +36,8 @@ public class LineaDetalle {
        ide="";
     }
 
+    
+
     public Producto getCurret1() {
         return produc;
     }
@@ -55,6 +57,7 @@ public class LineaDetalle {
     
     
 }
+
 
 
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <productos/>
+    <facturas/>
+    <clientes1/>
+    <Emp>
+        <nombreEm>1234</nombreEm>
+        <telefono>2121</telefono>
+        <correo>1234</correo>
+        <actividad>1221</actividad>
+        <CedulaJuridica>3434</CedulaJuridica>
+        <direccion>213434</direccion>
+    </Emp>
+</data>

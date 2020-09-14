@@ -6,6 +6,7 @@
 package Presentation.Facturacion;
 
 import Logic.LineaDetalle;
+import Logic.Producto;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -17,7 +18,7 @@ public class TableModel extends AbstractTableModel {
 
     private List<LineaDetalle> filas;
     private int[] columnas;
-    private String[] nombCol = {"Codigo", "Nombre", "Descripcion", "Precio Unitario"};//Arreglar
+    private String[] nombCol = {"Codigo", "Nombre", "Cantidad", };//Arreglar
 
     public TableModel(List<LineaDetalle> filas, int[] columnas) {
         this.filas = filas;
@@ -35,19 +36,24 @@ public class TableModel extends AbstractTableModel {
     }
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        LineaDetalle li = filas.get(rowIndex);
-
-        return null;
-    }
-
-    @Override
     public String getColumnName(int column) {
         return nombCol[column];
     }
 
     public LineaDetalle getRowAt(int n) {
         return filas.get(n);
+    }
+    
+      @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        LineaDetalle li = filas.get(rowIndex);
+        Producto p=li.getCurret1();
+        switch (columnIndex){
+            case 0: return p.getCodigo();
+            case 1: return p.getNombre();
+            case 2: return li.getCantidadProd();
+            default: return null;
+        }
     }
 
 }
