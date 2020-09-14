@@ -5,6 +5,9 @@
  */
 package Presentation.Empresa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author boyro
@@ -16,6 +19,7 @@ public class Controller {
 
     public Controller(View vista, Model model) {
         this.vista = vista;
+        this.model = model;
         vista.setControl(this);
         vista.setModel(model);
     }
@@ -28,14 +32,20 @@ public class Controller {
         vista.setVisible(false);
     }
 
-    public void editEmpresa(boolean editable, String nombre, String correoE, String juridica, String direccion) {//a ver como manejamos la lista de telefonos
+    public void editEmpresa(boolean editable, String nom,String cedJur,String direc,String activ, String tel,String correoE) {//a ver como manejamos la lista de telefonos
 
         if (!editable) {
-            Logic.Empresa.getInstance().setNombre(nombre);
+            Logic.Empresa.getInstance().setNombre(nom);
             Logic.Empresa.getInstance().setCorreo(correoE);
-            Logic.Empresa.getInstance().setCedulaJuridica(juridica);
-            Logic.Empresa.getInstance().setDireccion(direccion);
+            Logic.Empresa.getInstance().setCedulaJuridica(cedJur);
+            Logic.Empresa.getInstance().setDireccion(direc);
+            Logic.Empresa.getInstance().setActividad(activ);
+            Logic.Empresa.getInstance().setTelefono(tel);
+            List<String> nueva = new ArrayList<>();
+            nueva.add(nom);
+            nueva.add(cedJur);
+            nueva.add(correoE);
+            model.setLista(nueva); 
         }
-
     }
 }

@@ -13,12 +13,11 @@ import javax.swing.table.AbstractTableModel;
  */
 
 public class TableModelEmpresa extends AbstractTableModel{
-    private List<Integer> filas;
+    private List<String> filas;
     private final int[] columnas;
-    private final String[] nombCol = {"Numero(s) telefonico(s)"};
-   
+    private final String[] nombCol = {"Nombre Empresa","Ced. Juridica","Correo Electronico"};
 
-    public TableModelEmpresa(List<Integer> filas, int[] columnas) {
+    public TableModelEmpresa(List<String> filas, int[] columnas) {
         this.filas = filas;
         this.columnas = columnas;
     }
@@ -35,9 +34,11 @@ public class TableModelEmpresa extends AbstractTableModel{
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        int telefono = filas.get(rowIndex);
+        
         switch (columnIndex){
-            case 0: return telefono;
+            case 0: return Logic.Empresa.getInstance().getNombre();
+            case 1: return Logic.Empresa.getInstance().getCedulaJuridica();
+            case 2: return Logic.Empresa.getInstance().getCorreo();
             default: return null;
         }
     }

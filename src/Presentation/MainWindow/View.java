@@ -101,9 +101,9 @@ public class View extends javax.swing.JFrame implements Observer {
 
         Facturar.setBackground(new java.awt.Color(255, 255, 255));
         Facturar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-folder-bills-60(1).png"))); // NOI18N
-        Facturar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FacturarActionPerformed(evt);
+        Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FacturarMouseClicked(evt);
             }
         });
 
@@ -252,10 +252,6 @@ public class View extends javax.swing.JFrame implements Observer {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacturarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FacturarActionPerformed
-
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         // TODO add your handling code here:
         this.dispose();
@@ -294,6 +290,10 @@ public class View extends javax.swing.JFrame implements Observer {
     private void RegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RegistrosActionPerformed
+
+    private void FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturarMouseClicked
+      this.control.facturacion_Show();
+    }//GEN-LAST:event_FacturarMouseClicked
 
     /**
      * @param args the command line arguments

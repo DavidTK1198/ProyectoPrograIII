@@ -111,6 +111,11 @@ public class View extends javax.swing.JDialog implements Observer {
         Cliente.setText("ID Cliente");
 
         Volver.setText("Volver");
+        Volver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VolverMouseClicked(evt);
+            }
+        });
 
         producto.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         producto.setText("Codigo Producto");
@@ -264,6 +269,10 @@ public class View extends javax.swing.JDialog implements Observer {
     private void CantidadBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantidadBusquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CantidadBusquedaActionPerformed
+
+    private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
+        this.setVisible(false);
+    }//GEN-LAST:event_VolverMouseClicked
 
     /**
      * @param args the command line arguments

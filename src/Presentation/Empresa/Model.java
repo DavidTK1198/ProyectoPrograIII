@@ -22,8 +22,8 @@ public class Model extends Observable {
     
     private TableModel table;
     private int telefono;
-    private int[] col = {0};
-    private List<Integer> listaTelefonos;
+    private int[] col = {0,1,2};
+    private List<String> listaInfoEm;
     private boolean editable;
     @Override
     
@@ -35,8 +35,8 @@ public class Model extends Observable {
 
     public Model() {
         //telefono = new Integer();
-        listaTelefonos = new ArrayList<>();
-        table = new TableModelEmpresa(listaTelefonos,col);
+        listaInfoEm = new ArrayList<>();
+        table = new TableModelEmpresa(listaInfoEm,col);
         editable = false;
     }
 
@@ -56,7 +56,7 @@ public class Model extends Observable {
         return table;
     }
 
-    public void setTable(List<Integer> tabl) {
+    public void setTable(List<String> tabl) {
         this.table = new TableModelEmpresa(tabl,col);
     }
 
@@ -68,12 +68,12 @@ public class Model extends Observable {
         this.telefono = telefono;
     }
 
-    public List<Integer> getLista() {
-        return listaTelefonos;
+    public List<String> getLista() {
+        return listaInfoEm;
     }
 
-    public void setLista(List<Integer> a) {
-        this.listaTelefonos = a;
+    public void setLista(List<String> a) {
+        this.listaInfoEm = a;
         setTable(a);
         refresh();
     }

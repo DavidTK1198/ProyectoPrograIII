@@ -5,6 +5,7 @@
  */
 package Logic;
 
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlID;
@@ -21,9 +22,27 @@ public class Empresa {
     private String nombreEm;
     private String telefono;
     private String correo;
+    private String actividad;
     @XmlID
     private String CedulaJuridica;
     private String direccion;
+
+    public String getNombreEm() {
+        return nombreEm;
+    }
+
+    public void setNombreEm(String nombreEm) {
+        this.nombreEm = nombreEm;
+    }
+
+    public String getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
+    }
+ 
      
     private Empresa() {
          this.nombreEm = "";
@@ -31,6 +50,7 @@ public class Empresa {
          this.direccion = "";
          this.correo = "";
          this.telefono = "";
+         this.actividad = "";
     }
     private Empresa(String nombre,String actividad,String telefono,String direcion,String CedJuri,String correo) {
          this.nombreEm = nombre;
@@ -38,13 +58,13 @@ public class Empresa {
          this.direccion = direcion;
          this.CedulaJuridica = CedJuri;
          this.correo = correo;
+         this.actividad = actividad;
     }
 
     public static Empresa getInstance() {
         if (single_instance == null) {
             single_instance = new Empresa();
         }
-
         return single_instance;
     }
 
@@ -69,7 +89,7 @@ public class Empresa {
     }
 
     public void setCorreo(String correoE) {
-        this.correo = correo;
+        this.correo = correoE;
     }
 
     public String getCedulaJuridica() {
