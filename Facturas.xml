@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <productos>
+        <entry>
+            <key>002</key>
+            <value>
+                <codigo>002</codigo>
+                <nombreE>Pala</nombreE>
+                <descripcion>Pala de diamante</descripcion>
+                <precioUnitario>500.0</precioUnitario>
+                <impuestoVenta>65.0</impuestoVenta>
+            </value>
+        </entry>
+        <entry>
+            <key>05</key>
+            <value>
+                <codigo>05</codigo>
+                <nombreE>Anillo</nombreE>
+                <descripcion>anillo de Sauron</descripcion>
+                <precioUnitario>700.0</precioUnitario>
+                <impuestoVenta>91.0</impuestoVenta>
+            </value>
+        </entry>
+    </productos>
+    <facturas/>
+    <clientes1>
+        <entry>
+            <key>02</key>
+            <value>
+                <cedula>02</cedula>
+                <nombre>Lucas</nombre>
+                <apellidos>sss</apellidos>
+                <CorreoE>sasas</CorreoE>
+            </value>
+        </entry>
+        <entry>
+            <key>03</key>
+            <value>
+                <cedula>03</cedula>
+                <nombre>m</nombre>
+                <apellidos>mf</apellidos>
+                <CorreoE>yttyeryr</CorreoE>
+            </value>
+        </entry>
+        <entry>
+            <key>10</key>
+            <value>
+                <cedula>10</cedula>
+                <nombre>Daniel</nombre>
+                <apellidos>LaRusso</apellidos>
+                <CorreoE>la</CorreoE>
+            </value>
+        </entry>
+    </clientes1>
+    <Emp>
+        <nombreEm></nombreEm>
+        <telefono></telefono>
+        <correo></correo>
+        <actividad></actividad>
+        <direccion></direccion>
+    </Emp>
+</data>

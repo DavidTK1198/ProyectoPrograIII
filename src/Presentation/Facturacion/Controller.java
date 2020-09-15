@@ -10,6 +10,9 @@ import Logic.Cliente;
 import Logic.Factura;
 import Logic.LineaDetalle;
 import Logic.Producto;
+import Logic.Service;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -30,8 +33,8 @@ private Presentation.Facturacion.View vista;
     }
 
     public void show() {
-        vista.setVisible(true);
         model.updateTables();
+        vista.setVisible(true);
     }
 
 
@@ -78,5 +81,43 @@ private Presentation.Facturacion.View vista;
         
     }
 
+    public void buscarCliente(String ced) {
+        try{
+            Cliente client = Service.getInstance().getCliente(ced);
+            List<Cliente> lc = new ArrayList<>();
+            lc.add(client);
+            model.setCliente(lc);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        model.setCl(new Cliente());
+    }
+
+    public void cargarTodosLosClientes() {
+        List<Cliente> lc = Service.getInstance().getClientes();
+        model.setCliente(lc);
+    }
+
+    public void busquedaProducto(String prod) {
+        try{
+            Producto product = Service.getInstance().getProducto(prod);
+            List<Producto> lp = new ArrayList<>();
+            lp.add(product);
+            model.setProducto(lp);
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        model.setPd(new Producto());
+    }
+    public void cargarTodosLosProductos(){
+        List<Producto> lp = Service.getInstance().getProductos();
+        model.setProducto(lp);
+    }
+    public void eliminarLineaDetalle(int numero){
+        List<LineaDetalle> Ld = model.getNueva().getLineas();
+        Ld.remove(numero);
+        model.setLista(Ld);
+    }
    
 }

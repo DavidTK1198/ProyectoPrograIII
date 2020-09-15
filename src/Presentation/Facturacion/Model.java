@@ -68,6 +68,17 @@ public class Model extends Observable {
     public void setLi(LineaDetalle li) {
         this.li = li;
     }
+    public void setCliente(List<Cliente> client){
+        this.tableCliente = new Presentation.Cliente.TableModelClient(client, clientes);
+        this.setChanged();
+        this.notifyObservers();    
+    }
+    public void setProducto(List<Producto> producto){
+        this.tableProducto = new Presentation.Producto.TableModel(producto, productos);
+        this.setChanged();
+        this.notifyObservers();
+    }
+    
 
     public void setTableCliente(Presentation.Cliente.TableModelClient tableCliente) {
         this.tableCliente = tableCliente;
@@ -87,8 +98,10 @@ public class Model extends Observable {
     }
 
     public void updateTables(){
-         tableCliente = new Presentation.Cliente.TableModelClient(Logic.Service.getInstance().getClientes(), clientes);
+       tableCliente = new Presentation.Cliente.TableModelClient(Logic.Service.getInstance().getClientes(), clientes);
        tableProducto = new Presentation.Producto.TableModel(Logic.Service.getInstance().getProductos(), productos);
+       this.setChanged();
+       this.notifyObservers();
     }
     
     public void setFlag(Boolean flag) {
