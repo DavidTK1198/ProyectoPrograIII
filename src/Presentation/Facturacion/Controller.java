@@ -29,6 +29,7 @@ private Presentation.Facturacion.View vista;
 
     public void show() {
         vista.setVisible(true);
+        model.updateTables();
     }
 
 

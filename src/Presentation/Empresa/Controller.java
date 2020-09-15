@@ -22,6 +22,7 @@ public class Controller {
         this.model = model;
         vista.setControl(this);
         vista.setModel(model);
+        model.setInformacion();
     }
 
     public void Mostrar() {

@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <data>
-    <productos/>
-    <facturas/>
-    <clientes1/>
+    <productos>
+        <entry>
+            <key>124F</key>
+            <value>
+                <codigo>124F</codigo>
+                <nombreE>Tornillo</nombreE>
+                <descripcion>Tornillo punta Fina</descripcion>
+                <precioUnitario>5.0</precioUnitario>
+                <impuestoVenta>0.65</impuestoVenta>
+            </value>
+        </entry>
+    </productos>
+    <facturas>
+        <entry>
+            <value>
+                <fecha>14/09/2020 20:48:49</fecha>
+            </value>
+        </entry>
+    </facturas>
+    <clientes1>
+        <entry>
+            <key>124556</key>
+            <value>
+                <cedula>124556</cedula>
+                <nombre>Pedro</nombre>
+                <apellidos>Tsubasa</apellidos>
+                <CorreoE>entucorazon@gmail.com</CorreoE>
+            </value>
+        </entry>
+    </clientes1>
     <Emp>
         <nombreEm>1234</nombreEm>
         <telefono>2121</telefono>

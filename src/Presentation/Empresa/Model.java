@@ -5,8 +5,6 @@
  */
 
 package Presentation.Empresa;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.table.TableModel;
@@ -60,11 +58,6 @@ public class Model extends Observable {
     public Integer getTelefono() {
         return telefono;
     }
-
-    public void setTelefono(Integer telefono) {
-        this.telefono = telefono;
-    }
-
 
     public void setInformacion() {
         setTable();

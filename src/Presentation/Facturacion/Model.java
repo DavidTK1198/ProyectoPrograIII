@@ -86,6 +86,11 @@ public class Model extends Observable {
         return editable;
     }
 
+    public void updateTables(){
+         tableCliente = new Presentation.Cliente.TableModelClient(Logic.Service.getInstance().getClientes(), clientes);
+       tableProducto = new Presentation.Producto.TableModel(Logic.Service.getInstance().getProductos(), productos);
+    }
+    
     public void setFlag(Boolean flag) {
         this.flag = flag;
     }

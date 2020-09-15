@@ -26,6 +26,7 @@ public class Controller {
         this.model = model;
         vista.setControl(this);
         vista.setModel(model);
+        model.setLista(Logic.Service.getInstance().getClientes());
     }
     public void Mostrar(){
         vista.setVisible(true);
