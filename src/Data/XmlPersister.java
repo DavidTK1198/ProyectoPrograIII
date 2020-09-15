@@ -74,7 +74,7 @@ public class XmlPersister {
         // Obtengo el documento, a partir del XML
         Document documento = builder.parse(new File("Facturas.xml"));
 
-        // Cojo todas las etiquetas coche del documento
+        // agarro la etiquete emp del documento
         NodeList miEmpresa = documento.getElementsByTagName("Emp");
 
         // Recorro las etiquetas
