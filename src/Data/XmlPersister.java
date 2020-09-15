@@ -5,11 +5,18 @@
  */
 package Data;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  *
@@ -35,7 +42,7 @@ public class XmlPersister {
     }
 
     public void store(Data my_data) throws Exception {
-         JAXBContext jaxbContext = JAXBContext.newInstance(Data.class);
+        JAXBContext jaxbContext = JAXBContext.newInstance(Data.class);
         FileOutputStream os = new FileOutputStream(path);
         Marshaller nuevo = jaxbContext.createMarshaller();
         nuevo.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -46,6 +53,7 @@ public class XmlPersister {
     }
 
     public Data restore() throws Exception {
+        //this.read();
         JAXBContext jaxbContext = JAXBContext.newInstance(Data.class);
         FileInputStream is = new FileInputStream(path);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
@@ -53,4 +61,23 @@ public class XmlPersister {
         is.close();
         return result;
     }
+
+    private void read() throws Exception {
+
+        String nombre = "";
+        String correo = "";
+        String tel = "";
+        String ced = "";
+        String des = "";
+        String direcc = "";
+
+        Logic.Empresa.getInstance().setNombre(nombre);
+        Logic.Empresa.getInstance().setActividad(des);
+        Logic.Empresa.getInstance().setCedulaJuridica(ced);
+        Logic.Empresa.getInstance().setCorreo(correo);
+        Logic.Empresa.getInstance().setTelefono(tel);
+        Logic.Empresa.getInstance().setDireccion(direcc);
+
+    }
+
 }
