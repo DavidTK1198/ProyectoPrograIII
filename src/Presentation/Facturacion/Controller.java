@@ -59,8 +59,6 @@ private Presentation.Facturacion.View vista;
 
     void hacerFactura() {
         Factura p;
-        LineaDetalle nueva=model.getLi();
-        this.model.getNueva().addLine(nueva);
         p=model.getNueva();
          p.setCurret(model.getCl());
     try {

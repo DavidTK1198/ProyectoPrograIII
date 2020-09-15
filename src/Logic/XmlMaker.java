@@ -49,7 +49,7 @@ public class XmlMaker {
 
         //Nombre Empresa
         Element nombreEmpresa = documento.createElement("Nombre");
-        Text textnombreE = documento.createTextNode(Logic.Empresa.getInstance().getCorreo());
+        Text textnombreE = documento.createTextNode(Logic.Empresa.getInstance().getNombre());
         nombreEmpresa.appendChild(textnombreE);
         emisor.appendChild(nombreEmpresa);
 
@@ -78,27 +78,27 @@ public class XmlMaker {
 
         Element receptor = documento.createElement("Receptor");//se hace igual que emisor
         //nombre cliente
-        Element nombreEmisor = documento.createElement("Nombre");
+        Element nombreReceptor = documento.createElement("Nombre");
         Text nombreE = documento.createTextNode(cl.getNombre());
-        nombreEmisor.appendChild(nombreE);
-        emisor.appendChild(nombreEmisor);
+        nombreReceptor.appendChild(nombreE);
+        receptor.appendChild(nombreReceptor);
         
         //cedula cliente 
           Element cedula = documento.createElement("Identificacion");
         Text ide = documento.createTextNode(cl.getCedula());
         cedula.appendChild(ide);
-        emisor.appendChild(cedula);
+        receptor.appendChild(cedula);
         //cliente apellido 
           Element apellido = documento.createElement("Apellidos");
         Text apellidos = documento.createTextNode(cl.getApellidos());
         apellido.appendChild(apellidos);
-        emisor.appendChild(apellidos);
+        receptor.appendChild(apellidos);
         
         //cliente correo
           Element correoCl = documento.createElement("CorreoElectronico");
         Text correocl = documento.createTextNode(cl.getCorreoE());
         correoCl.appendChild(correocl);
-        emisor.appendChild(correoCl);
+        receptor.appendChild(correoCl);
 
         // Añado al root el elemento emisor(Cuando se termina de agregar los elementos)
         documento.getDocumentElement().appendChild(receptor);

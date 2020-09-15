@@ -54,12 +54,13 @@ public class XmlPersister {
     }
 
     public Data restore() throws Exception {
-        this.read();
+        
         JAXBContext jaxbContext = JAXBContext.newInstance(Data.class);
         FileInputStream is = new FileInputStream(path);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         Data result = (Data) unmarshaller.unmarshal(is);
         is.close();
+        this.read();
         return result;
     }
 
