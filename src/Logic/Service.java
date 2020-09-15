@@ -20,12 +20,9 @@ public class Service {
     private static Service my_instance = null; //Singleton
 
     public Service() {
-        try {
-            this.data = XmlPersister.getInstance().restore();
-        } catch (Exception e) {
-            this.data = new Data();
-        }
-          maker=new XmlMaker();
+
+        this.data = new Data();
+        maker = new XmlMaker();
     }
 
     public static Service getInstance() {
@@ -35,9 +32,11 @@ public class Service {
 
         return my_instance;
     }
-      public List<Factura> misFacturas(){
-          return this.data.getFacturas();
-      }
+
+    public List<Factura> misFacturas() {
+        return this.data.getFacturas();
+    }
+
     public List<Cliente> getClientes() {
         return this.data.getClientes();
     }
@@ -46,10 +45,10 @@ public class Service {
         return this.data.getProductos();
     }
 
-    public void addFactura(Factura p) throws Exception{
+    public void addFactura(Factura p) throws Exception {
         this.data.addFactura(p);
     }
-    
+
     public void addProduct(Producto p) throws Exception {
         this.data.addProduct(p);
     }
@@ -61,27 +60,33 @@ public class Service {
     public Producto getProducto(String id) throws Exception {
         return this.data.getProducto(id);
     }
-    public Cliente getCliente(String ced)throws Exception{
+
+    public Cliente getCliente(String ced) throws Exception {
         return this.data.getCliente(ced);
     }
+
     public void deleteProduct(Producto p) {
         this.data.removeElement(p);
     }
 
-    public void Save(String p) throws Exception{
+    public void Save(String p) throws Exception {
         XmlPersister.getInstance().setPath(p);
         XmlPersister.getInstance().store(data);
     }
 
-    public void load(String p) throws Exception {
+    public void load(String p) {
         XmlPersister.getInstance().setPath(p);
-        this.data = XmlPersister.getInstance().restore();
+        try {
+            this.data = XmlPersister.getInstance().restore();
+        } catch (Exception e) {
+            this.data = new Data();
+
+        }
+
     }
-    
-    public void makeFacturaXML(Factura p) throws Exception{
+
+    public void makeFacturaXML(Factura p) throws Exception {
         this.maker.makeXml(p);
     }
 
 }
-
-

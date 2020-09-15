@@ -14,6 +14,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -53,7 +54,7 @@ public class XmlPersister {
     }
 
     public Data restore() throws Exception {
-        //this.read();
+        this.read();
         JAXBContext jaxbContext = JAXBContext.newInstance(Data.class);
         FileInputStream is = new FileInputStream(path);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
@@ -64,19 +65,73 @@ public class XmlPersister {
 
     private void read() throws Exception {
 
-        String nombre = "";
-        String correo = "";
-        String tel = "";
-        String ced = "";
-        String des = "";
-        String direcc = "";
+        String aux = "";
+        // Creo una instancia de DocumentBuilderFactory
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        // Creo un documentBuilder
+        DocumentBuilder builder = factory.newDocumentBuilder();
 
-        Logic.Empresa.getInstance().setNombre(nombre);
-        Logic.Empresa.getInstance().setActividad(des);
-        Logic.Empresa.getInstance().setCedulaJuridica(ced);
-        Logic.Empresa.getInstance().setCorreo(correo);
-        Logic.Empresa.getInstance().setTelefono(tel);
-        Logic.Empresa.getInstance().setDireccion(direcc);
+        // Obtengo el documento, a partir del XML
+        Document documento = builder.parse(new File("Facturas.xml"));
+
+        // Cojo todas las etiquetas coche del documento
+        NodeList miEmpresa = documento.getElementsByTagName("Emp");
+
+        // Recorro las etiquetas
+        for (int i = 0; i < miEmpresa.getLength(); i++) {
+            // Cojo el nodo actual
+            Node nodo = miEmpresa.item(i);
+            // Compruebo si el nodo es un elemento
+            if (nodo.getNodeType() == Node.ELEMENT_NODE) {
+                // Lo transformo a Element
+                Element e = (Element) nodo;
+                // Obtengo sus hijos
+                NodeList hijos = e.getChildNodes();
+                // Recorro sus hijos
+                for (int j = 0; j < hijos.getLength(); j++) {
+                    // Obtengo al hijo actual
+                    Node hijo = hijos.item(j);
+                    // Compruebo si es un nodo
+                    if (hijo.getNodeType() == Node.ELEMENT_NODE) {
+                        
+                        // evaluo el contenido
+                        aux = hijo.getNodeName();
+                        if ("nombreEm".equals(aux)) {
+                            aux = hijo.getTextContent();
+                            Logic.Empresa.getInstance().setNombre(aux);
+                        }
+
+                        if ("telefono".equals(aux)) {
+                            aux = hijo.getTextContent();
+                            Logic.Empresa.getInstance().setTelefono(aux);
+                        }
+
+                        if ("correo".equals(aux)) {
+                            aux = hijo.getTextContent();
+                            Logic.Empresa.getInstance().setCorreo(aux);
+                        }
+
+                        if ("actividad".equals(aux)) {
+                            aux = hijo.getTextContent();
+                            Logic.Empresa.getInstance().setActividad(aux);
+                        }
+
+                        if ("CedulaJuridica".equals(aux)) {
+                            aux = hijo.getTextContent();
+                            Logic.Empresa.getInstance().setCedulaJuridica(aux);
+                        }
+                        if ("direccion".equals(aux)) {
+                            aux = hijo.getTextContent();
+                            Logic.Empresa.getInstance().setDireccion(aux);
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
 
     }
 
