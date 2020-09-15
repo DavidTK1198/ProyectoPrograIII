@@ -10,6 +10,8 @@ import Logic.Cliente;
 import Logic.Factura;
 import Logic.LineaDetalle;
 import Logic.Producto;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -60,6 +62,12 @@ private Presentation.Facturacion.View vista;
         LineaDetalle nueva=model.getLi();
         this.model.getNueva().addLine(nueva);
         p=model.getNueva();
+         p.setCurret(model.getCl());
+    try {
+        Logic.Service.getInstance().makeFacturaXML(p);
+    } catch (Exception ex) {
+        Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+    }
     try {
         Logic.Service.getInstance().addFactura(p);
     } catch (Exception ex) {

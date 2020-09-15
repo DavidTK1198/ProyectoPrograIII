@@ -1,41 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <data>
-    <productos>
-        <entry>
-            <key>124F</key>
-            <value>
-                <codigo>124F</codigo>
-                <nombreE>Tornillo</nombreE>
-                <descripcion>Tornillo punta Fina</descripcion>
-                <precioUnitario>5.0</precioUnitario>
-                <impuestoVenta>0.65</impuestoVenta>
-            </value>
-        </entry>
-    </productos>
-    <facturas>
-        <entry>
-            <value>
-                <fecha>14/09/2020 20:48:49</fecha>
-            </value>
-        </entry>
-    </facturas>
-    <clientes1>
-        <entry>
-            <key>124556</key>
-            <value>
-                <cedula>124556</cedula>
-                <nombre>Pedro</nombre>
-                <apellidos>Tsubasa</apellidos>
-                <CorreoE>entucorazon@gmail.com</CorreoE>
-            </value>
-        </entry>
-    </clientes1>
+    <productos/>
+    <facturas/>
+    <clientes1/>
     <Emp>
-        <nombreEm>1234</nombreEm>
-        <telefono>2121</telefono>
-        <correo>1234</correo>
-        <actividad>1221</actividad>
-        <CedulaJuridica>3434</CedulaJuridica>
-        <direccion>213434</direccion>
+        <nombreEm></nombreEm>
+        <telefono></telefono>
+        <correo></correo>
+        <actividad></actividad>
+        <direccion></direccion>
     </Emp>
 </data>

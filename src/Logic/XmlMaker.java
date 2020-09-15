@@ -77,22 +77,73 @@ public class XmlMaker {
         
 
         Element receptor = documento.createElement("Receptor");//se hace igual que emisor
+        //nombre cliente
+        Element nombreEmisor = documento.createElement("Nombre");
+        Text nombreE = documento.createTextNode(cl.getNombre());
+        nombreEmisor.appendChild(nombreE);
+        emisor.appendChild(nombreEmisor);
         
+        //cedula cliente 
+          Element cedula = documento.createElement("Identificacion");
+        Text ide = documento.createTextNode(cl.getCedula());
+        cedula.appendChild(ide);
+        emisor.appendChild(cedula);
+        //cliente apellido 
+          Element apellido = documento.createElement("Apellidos");
+        Text apellidos = documento.createTextNode(cl.getApellidos());
+        apellido.appendChild(apellidos);
+        emisor.appendChild(apellidos);
         
+        //cliente correo
+          Element correoCl = documento.createElement("CorreoElectronico");
+        Text correocl = documento.createTextNode(cl.getCorreoE());
+        correoCl.appendChild(correocl);
+        emisor.appendChild(correoCl);
 
         // Añado al root el elemento emisor(Cuando se termina de agregar los elementos)
         documento.getDocumentElement().appendChild(receptor);
-        
-        
+         
         
         //aquí esta la carnita
+        //Linea de servicio
+        
+         Element lineaser = documento.createElement("DetalleDeServicio");
+        
         for (int i = 0; i < lineas.size(); i++) {
             Element linea = documento.createElement("LineaDetalle");
             miLinea = lineas.get(i);
             p = miLinea.getCurret1();//este es el producto, ahora hay que sacarle los datos
-
-            documento.getDocumentElement().appendChild(linea);
+            
+            //codigo
+            Element codigo1 = documento.createElement("Codigo");
+            Text  codigo= documento.createTextNode(p.getCodigo());
+            codigo1.appendChild(codigo);
+            linea.appendChild(codigo);
+          
+            
+            //nombre
+             Element name = documento.createElement("Nombre");
+            Text  nam1= documento.createTextNode(p.getNombre());
+            name.appendChild(nam1);
+            linea.appendChild(name);
+          
+            ///precio
+             Element precio = documento.createElement("Precio");
+            Text  pre= documento.createTextNode(Double.toString(p.getPrecioUnitario()));
+            precio.appendChild(pre);
+            linea.appendChild(precio);
+          
+            
+            //descripcion
+             Element descrip = documento.createElement("descripcion");
+            Text  des= documento.createTextNode(p.getDescripcion());
+            descrip.appendChild(des);
+            linea.appendChild(descrip);
+             lineaser.appendChild(linea);
+            
         }
+       
+        documento.getDocumentElement().appendChild(lineaser);
 
         // Asocio el source con el Document
         Source source = new DOMSource(documento);

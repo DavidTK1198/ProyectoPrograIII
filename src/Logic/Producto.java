@@ -23,6 +23,14 @@ public class Producto {
     private String nombreE;
     private String descripcion;
     private double precioUnitario;
+
+    public String getNombreE() {
+        return nombreE;
+    }
+
+    public void setNombreE(String nombreE) {
+        this.nombreE = nombreE;
+    }
     private double impuestoVenta;
 
     public Producto(String codigo , String descripcion, double precioUnitario,String nombre) {
@@ -114,6 +122,7 @@ public class Producto {
     
     
 }
+
 
 
 
