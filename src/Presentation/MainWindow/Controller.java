@@ -25,13 +25,16 @@ public class Controller {
     Presentation.Facturacion.Controller factura;
     Presentation.Facturacion.Model model_factura;
     Presentation.Facturacion.View factura_View;
+    Presentation.Registros.Controller registros;
+    Presentation.Registros.Model registros_model;
+    Presentation.Registros.View registros_View;
 
     public Controller(View vista, Model model) {
         this.vista = vista;
         this.model = model;
         vista.setControl(this);
         vista.setModel(model);
-        this.initOptions();
+        initOptions();
     }
 
     public void initOptions() {
@@ -43,10 +46,13 @@ public class Controller {
         cliente_control = new Presentation.Cliente.Controller(cliente_Vista, cliente_model);
         empresa_model=new Presentation.Empresa.Model();
         empresa_Vista= new Presentation.Empresa.View(this.vista,true);
-         empresa_control= new Presentation.Empresa.Controller(empresa_Vista,empresa_model);
-         model_factura=new Presentation.Facturacion.Model();
-         factura_View=new Presentation.Facturacion.View(vista, true);
-         factura=new Presentation.Facturacion.Controller(factura_View, model_factura);
+        empresa_control= new Presentation.Empresa.Controller(empresa_Vista,empresa_model);
+        model_factura=new Presentation.Facturacion.Model();
+        factura_View=new Presentation.Facturacion.View(vista, true);
+        factura=new Presentation.Facturacion.Controller(factura_View, model_factura); 
+        //registros_model=new Presentation.Registros.Model();
+        //registros_View=new Presentation.Registros.View(vista, true);
+       // registros=new Presentation.Registros.Controller(registros_View, registros_model);
         
     }
 
@@ -65,4 +71,7 @@ public class Controller {
         this.factura.show();
     }
 
+    public void registros_Show(){
+        this.registros.show();
+    }
 }
