@@ -19,8 +19,12 @@ import javax.swing.JOptionPane;
 
 /**
  * 
+ * 
  * @author DavidTK1198
+ * 
+ * 
  */
+
 public class Controller {
 private Presentation.Facturacion.View vista;
     private Presentation.Facturacion.Model model;
