@@ -3,35 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Presentation.Empresa;
+
 import java.util.Observable;
 import java.util.Observer;
-import javax.swing.table.TableModel;
-
-
 
 /**
  *
  * @author boyro
  */
-
 public class Model extends Observable {
-    
-    private TableModel table;
-    private int telefono;
-    private int[] col = {0,1,2};
+
     private boolean editable;
+
     @Override
-    
-    public void addObserver(Observer a){
-       
+
+    public void addObserver(Observer a) {
+
         super.addObserver(a);
         refresh();
     }
 
     public Model() {
-        table = new TableModelEmpresa(col);
         editable = false;
     }
 
@@ -42,26 +35,10 @@ public class Model extends Observable {
     public void setEditable(boolean editable) {
         this.editable = editable;
     }
-    private void refresh(){
+
+    private void refresh() {
         this.setChanged();
         this.notifyObservers();
     }
 
-    public TableModel getTable() {
-        return table;
-    }
-
-    public void setTable() {
-        this.table = new TableModelEmpresa(col);
-    }
-
-    public Integer getTelefono() {
-        return telefono;
-    }
-
-    public void setInformacion() {
-        setTable();
-        refresh();
-    }
-    
 }

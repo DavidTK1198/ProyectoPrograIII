@@ -255,7 +255,7 @@ public class View extends javax.swing.JFrame implements Observer {
         try {
             Logic.Service.getInstance().Save(p);
         } catch (Exception ex) {
-            //arreglar
+            System.out.println(ex.getCause());
         }
 
     }//GEN-LAST:event_SalirActionPerformed

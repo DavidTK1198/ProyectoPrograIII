@@ -5,8 +5,6 @@
  */
 package Presentation.Empresa;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -22,7 +20,6 @@ public class Controller {
         this.model = model;
         vista.setControl(this);
         vista.setModel(model);
-        model.setInformacion();
     }
 
     public void Mostrar() {
@@ -43,7 +40,6 @@ public class Controller {
             Logic.Empresa.getInstance().setDireccion(direc);
             Logic.Empresa.getInstance().setActividad(activ);
             Logic.Empresa.getInstance().setTelefono(tel);
-            model.setInformacion(); 
         }
     }
 }
