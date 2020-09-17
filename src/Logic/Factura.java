@@ -14,7 +14,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
 
-
 /**
  *
  * @author Daniel Madrigal
@@ -22,16 +21,15 @@ import javax.xml.bind.annotation.XmlIDREF;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Factura {
 
-    List<LineaDetalle> misLineas;
-  
+    private List<LineaDetalle> misLineas;
+
     @XmlID
     String numeroFactura;
-    
+
     @XmlIDREF
-    Cliente actual;
-    String fecha;
-    String tipoPago;
-    
+    private Cliente actual;
+    private String fecha;
+    private String tipoPago;
 
     public Factura() {
         misLineas = new ArrayList<>();
@@ -40,7 +38,7 @@ public class Factura {
     }
 
     public void addLine(LineaDetalle nueva) {
-       
+
         this.misLineas.add(nueva);
     }
 
@@ -80,46 +78,36 @@ public class Factura {
     public void setTipoPago(String tipoPago) {
         this.tipoPago = tipoPago;
     }
-    public double calcularTotal(){
+
+    public double calcularTotal() {
         double total = 0;
         Producto prod;
-        for(int i=0; i<this.misLineas.size();i++){
+        for (int i = 0; i < this.misLineas.size(); i++) {
             prod = this.misLineas.get(i).getCurret1();
-            total+= (prod.getPrecioUnitario()+prod.getImpuestoVenta())*this.misLineas.get(i).getCantidadProd();
+            total += (prod.getPrecioUnitario() + prod.getImpuestoVenta()) * this.misLineas.get(i).getCantidadProd();
         }
         return total;
     }
-    public double subTotal(){
+
+    public double subTotal() {
         double total = 0;
         Producto prod;
-        for(int i=0; i<this.misLineas.size();i++){
+        for (int i = 0; i < this.misLineas.size(); i++) {
             prod = this.misLineas.get(i).getCurret1();
-            total+= (prod.getPrecioUnitario())*this.misLineas.get(i).getCantidadProd();
+            total += (prod.getPrecioUnitario()) * this.misLineas.get(i).getCantidadProd();
         }
         return total;
     }
-    public double totalImpuesto(){
+
+    public double totalImpuesto() {
         double total = 0;
         Producto prod;
-            for(int i=0; i<this.misLineas.size();i++){
+        for (int i = 0; i < this.misLineas.size(); i++) {
             prod = this.misLineas.get(i).getCurret1();
-            total+= (prod.getImpuestoVenta()*this.misLineas.get(i).getCantidadProd());
+            total += (prod.getImpuestoVenta() * this.misLineas.get(i).getCantidadProd());
         }
         return total;
     }
     //10----> 525---> 25----> (525 + 25)* 10
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

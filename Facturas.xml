@@ -22,41 +22,12 @@
             </value>
         </entry>
     </productos>
-    <facturas/>
-    <clientes1>
+    <facturas>
         <entry>
-            <key>02</key>
             <value>
-                <cedula>02</cedula>
-                <nombre>Lucas</nombre>
-                <apellidos>sss</apellidos>
-                <CorreoE>sasas</CorreoE>
-            </value>
-        </entry>
-        <entry>
-            <key>03</key>
-            <value>
-                <cedula>03</cedula>
-                <nombre>m</nombre>
-                <apellidos>mf</apellidos>
-                <CorreoE>yttyeryr</CorreoE>
-            </value>
-        </entry>
-        <entry>
-            <key>10</key>
-            <value>
-                <cedula>10</cedula>
-                <nombre>Daniel</nombre>
-                <apellidos>LaRusso</apellidos>
-                <CorreoE>la</CorreoE>
-            </value>
-        </entry>
-    </clientes1>
-    <Emp>
-        <nombreEm></nombreEm>
-        <telefono></telefono>
-        <correo></correo>
-        <actividad></actividad>
-        <direccion></direccion>
-    </Emp>
-</data>
+                <misLineas>
+                    <produc>002</produc>
+                    <cantidadProd>43</cantidadProd>
+                    <ide>43</ide>
+                </misLineas>
+                
