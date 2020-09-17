@@ -8,8 +8,30 @@ package Presentation.Registros;
 
 /**
  * 
- * @author DavidTK1198
+ * @author boyro
+ * 
  */
-public class Controller {
 
+public class Controller {
+    
+    private Presentation.Registros.View vista;
+    private Presentation.Registros.Model model;
+
+    public Controller(Presentation.Registros.View vista, Presentation.Registros.Model model) {
+        this.vista = vista;
+        this.model = model;
+        vista.setControl(this);
+        vista.setModel(model);
+    }
+
+    public void show() {
+        vista.setVisible(true);
+    }
+
+
+    public void hide() {
+        vista.setVisible(false);
+    }
 }
+
+

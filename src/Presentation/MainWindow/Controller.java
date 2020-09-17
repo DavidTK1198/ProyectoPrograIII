@@ -50,9 +50,9 @@ public class Controller {
         model_factura=new Presentation.Facturacion.Model();
         factura_View=new Presentation.Facturacion.View(vista, true);
         factura=new Presentation.Facturacion.Controller(factura_View, model_factura); 
-        //registros_model=new Presentation.Registros.Model();
-        //registros_View=new Presentation.Registros.View(vista, true);
-       // registros=new Presentation.Registros.Controller(registros_View, registros_model);
+        registros_model=new Presentation.Registros.Model();
+        registros_View=new Presentation.Registros.View(vista, true);
+        registros=new Presentation.Registros.Controller(registros_View, registros_model);
         
     }
 
@@ -72,6 +72,6 @@ public class Controller {
     }
 
     public void registros_Show(){
-//        this.registros.show();
+        this.registros.show();
     }
 }

@@ -133,6 +133,11 @@ public class View extends javax.swing.JFrame implements Observer {
 
         Registros.setForeground(new java.awt.Color(255, 255, 255));
         Registros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/image(1).png"))); // NOI18N
+        Registros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegistrosMouseClicked(evt);
+            }
+        });
         Registros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegistrosActionPerformed(evt);
@@ -290,6 +295,10 @@ public class View extends javax.swing.JFrame implements Observer {
     private void FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturarMouseClicked
         this.control.facturacion_Show();
     }//GEN-LAST:event_FacturarMouseClicked
+
+    private void RegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistrosMouseClicked
+        this.control.registros_Show();
+    }//GEN-LAST:event_RegistrosMouseClicked
 
     /**
      * @param args the command line arguments

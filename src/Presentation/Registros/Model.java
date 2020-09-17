@@ -6,10 +6,39 @@
 
 package Presentation.Registros;
 
+import Logic.Factura;
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  * 
- * @author DavidTK1198
+ * @author boyro
+ * 
  */
-public class Model {
 
+public class Model  extends Observable {
+    private TableModel table;
+    private Factura factura;
+    public Model() {
+    
+    
+    
+    
+    
+    }
+  
+    
+    @Override
+    public void addObserver(Observer a){
+       
+        super.addObserver(a);
+        refresh();
+    }
+    private void refresh(){
+        
+        this.setChanged();
+        this.notifyObservers();
+        
+    }
 }
+
