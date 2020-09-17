@@ -392,8 +392,8 @@ public class View extends javax.swing.JDialog implements Observer {
     }//GEN-LAST:event_clientsMouseClicked
 
     private void hacerFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hacerFacturaActionPerformed
-        // TODO add your handling code here:
-//        this.control.hacerFactura();
+
+        this.control.hacerFactura();
         this.cliente.setEditable(true);
         this.clients.setEnabled(true);
     }//GEN-LAST:event_hacerFacturaActionPerformed

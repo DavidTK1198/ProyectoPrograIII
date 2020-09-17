@@ -2,25 +2,54 @@
 <data>
     <productos>
         <entry>
-            <key>2134</key>
+            <key>001</key>
             <value>
-                <codigo>2134</codigo>
-                <nombreE>PALA</nombreE>
-                <descripcion>pala de oro</descripcion>
-                <precioUnitario>2134.0</precioUnitario>
-                <impuestoVenta>277.42</impuestoVenta>
+                <codigo>001</codigo>
+                <nombreE>Pala</nombreE>
+                <descripcion>Pala de oro</descripcion>
+                <precioUnitario>1500.0</precioUnitario>
+                <impuestoVenta>195.0</impuestoVenta>
             </value>
         </entry>
     </productos>
-    <facturas/>
+    <facturas>
+        <entry>
+            <key>50617/09/2020 11:33:33-01</key>
+            <value>
+                <misLineas>
+                    <produc>001</produc>
+                    <cantidadProd>3</cantidadProd>
+                    <ide>3</ide>
+                </misLineas>
+                <numeroFactura>50617/09/2020 11:33:33-01</numeroFactura>
+                <actual>111</actual>
+                <fecha>17/09/2020 11:33:33</fecha>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 17/09/2020 11:35:49-01</key>
+            <value>
+                <misLineas>
+                    <produc>001</produc>
+                    <cantidadProd>15</cantidadProd>
+                    <ide>15</ide>
+                </misLineas>
+                <numeroFactura>506 - 17/09/2020 11:35:49-01</numeroFactura>
+                <actual>111</actual>
+                <fecha>17/09/2020 11:35:49</fecha>
+            </value>
+        </entry>
+    </facturas>
     <clientes1>
         <entry>
-            <key>123434</key>
+            <key>111</key>
             <value>
-                <cedula>123434</cedula>
-                <nombre>Daniel</nombre>
-                <apellidos>Barrientos Araya</apellidos>
-                <CorreoE>ddanielb09@gmail.com</CorreoE>
+                <cedula>111</cedula>
+                <nombre>David</nombre>
+                <apellidos>Barrientos</apellidos>
+                <CorreoE>retretrrt</CorreoE>
+                <listaFacturas>50617/09/2020 11:33:33-01</listaFacturas>
+                <listaFacturas>506 - 17/09/2020 11:35:49-01</listaFacturas>
             </value>
         </entry>
     </clientes1>

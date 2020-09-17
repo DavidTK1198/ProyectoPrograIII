@@ -64,25 +64,26 @@ private Presentation.Facturacion.View vista;
        
     }
 
-    void hacerFactura() {
+    public void hacerFactura() {
         Factura p;
         p=model.getNueva();
          p.setCurret(model.getCl());
     try {
-        Logic.Service.getInstance().makeFacturaXML(p);
+         Logic.Service.getInstance().addFactura(p);
+ 
     } catch (Exception ex) {
-        Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
+       
     }
     try {
-        Logic.Service.getInstance().addFactura(p);
+        Logic.Service.getInstance().makeFacturaXML(p);
     } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
-            
-        }
+        Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);  
+        return;
+    }
         this.model.setFlag(true);
         this.model.facturaUpdate();
         this.model.setLista(model.getNueva().getLineas()); 
-        
     }
 
     public void buscarCliente(String ced) {

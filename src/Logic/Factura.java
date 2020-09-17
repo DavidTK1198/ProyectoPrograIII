@@ -35,6 +35,8 @@ public class Factura {
         misLineas = new ArrayList<>();
         Date date = new Date();
         fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date);
+        numeroFactura = "506 - "+fecha+"-01";
+        
     }
 
     public void addLine(LineaDetalle nueva) {
@@ -108,6 +110,7 @@ public class Factura {
         }
         return total;
     }
+ 
     //10----> 525---> 25----> (525 + 25)* 10
 }
 
