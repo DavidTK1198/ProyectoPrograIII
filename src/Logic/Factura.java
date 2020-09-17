@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlIDREF;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Factura {
-  @XmlIDREF
+
     List<LineaDetalle> misLineas;
   
     @XmlID
@@ -109,6 +109,7 @@ public class Factura {
     }
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
 
 
 

@@ -72,6 +72,6 @@ public class Controller {
     }
 
     public void registros_Show(){
-        this.registros.show();
+//        this.registros.show();
     }
 }

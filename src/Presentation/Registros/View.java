@@ -140,8 +140,8 @@ public class View extends javax.swing.JDialog implements Observer {
     }
 
     public void setModel(Model model) {
-        this.model = model;
-        model.addObserver(this);
+//        this.model = model;
+//        model.addObserver(this);
     }
 }
 
