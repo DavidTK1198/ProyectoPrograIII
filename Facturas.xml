@@ -2,32 +2,33 @@
 <data>
     <productos>
         <entry>
-            <key>002</key>
+            <key>2134</key>
             <value>
-                <codigo>002</codigo>
-                <nombreE>Pala</nombreE>
-                <descripcion>Pala de diamante</descripcion>
-                <precioUnitario>500.0</precioUnitario>
-                <impuestoVenta>65.0</impuestoVenta>
-            </value>
-        </entry>
-        <entry>
-            <key>05</key>
-            <value>
-                <codigo>05</codigo>
-                <nombreE>Anillo</nombreE>
-                <descripcion>anillo de Sauron</descripcion>
-                <precioUnitario>700.0</precioUnitario>
-                <impuestoVenta>91.0</impuestoVenta>
+                <codigo>2134</codigo>
+                <nombreE>PALA</nombreE>
+                <descripcion>pala de oro</descripcion>
+                <precioUnitario>2134.0</precioUnitario>
+                <impuestoVenta>277.42</impuestoVenta>
             </value>
         </entry>
     </productos>
-    <facturas>
+    <facturas/>
+    <clientes1>
         <entry>
+            <key>123434</key>
             <value>
-                <misLineas>
-                    <produc>002</produc>
-                    <cantidadProd>43</cantidadProd>
-                    <ide>43</ide>
-                </misLineas>
-                
+                <cedula>123434</cedula>
+                <nombre>Daniel</nombre>
+                <apellidos>Barrientos Araya</apellidos>
+                <CorreoE>ddanielb09@gmail.com</CorreoE>
+            </value>
+        </entry>
+    </clientes1>
+    <Emp>
+        <nombreEm></nombreEm>
+        <telefono></telefono>
+        <correo></correo>
+        <actividad></actividad>
+        <direccion></direccion>
+    </Emp>
+</data>
