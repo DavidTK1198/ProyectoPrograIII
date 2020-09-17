@@ -5,25 +5,29 @@
  */
 package Presentation.Registros;
 
+import Logic.Factura;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author boyro
+ * 
  */
 public class View extends javax.swing.JDialog implements Observer {
 
     /**
      * Creates new form View
      */
+    
     private Controller control;
     private Model model;
-    
     public View(java.awt.Frame parent, boolean modal) {
         super(parent,modal);
         initComponents();
+      
     }
 
     /**
@@ -35,21 +39,56 @@ public class View extends javax.swing.JDialog implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        VolverBttn = new javax.swing.JButton();
+        Volver = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ListaDeFacturas = new javax.swing.JTable();
+        Cancelarr = new javax.swing.JButton();
+        nuevo = new javax.swing.JButton();
         GuardarBttn = new javax.swing.JButton();
-        CargarBttn = new javax.swing.JButton();
+        generarXMLBttn = new javax.swing.JButton();
+        generarPDFBttn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 255, 255));
+        setAlwaysOnTop(true);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-25.png"))); // NOI18N
+        Volver.setText("Volver");
+        Volver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VolverMouseClicked(evt);
+            }
+        });
 
-        VolverBttn.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        VolverBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Go-back_36760.png"))); // NOI18N
-        VolverBttn.setText("Volver");
+        ListaDeFacturas.setBackground(new java.awt.Color(255, 153, 153));
+        ListaDeFacturas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        ListaDeFacturas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        GuardarBttn.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
+            },
+            new String [] {
+                "Fecha", "# Factura", "Cliente", "SubTotal", "IVA"
+            }
+        ));
+        ListaDeFacturas.setColumnSelectionAllowed(true);
+        jScrollPane3.setViewportView(ListaDeFacturas);
+        ListaDeFacturas.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+
+        Cancelarr.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        Cancelarr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cancel.png"))); // NOI18N
+        Cancelarr.setText("Cancelar");
+        Cancelarr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarrActionPerformed(evt);
+            }
+        });
+
+        nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-new-copy-20.png"))); // NOI18N
+        nuevo.setText("Nuevo");
+        nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevoActionPerformed(evt);
+            }
+        });
+
         GuardarBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save_icon-icons.com_53618.png"))); // NOI18N
         GuardarBttn.setText("Guardar");
         GuardarBttn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -57,80 +96,132 @@ public class View extends javax.swing.JDialog implements Observer {
                 GuardarBttnMouseClicked(evt);
             }
         });
-
-        CargarBttn.setFont(new java.awt.Font("Arial Narrow", 1, 12)); // NOI18N
-        CargarBttn.setText("Cargar");
-        CargarBttn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CargarBttnMouseClicked(evt);
+        GuardarBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarBttnActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(CargarBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
-                        .addComponent(VolverBttn))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(GuardarBttn)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
-                .addComponent(GuardarBttn)
-                .addGap(143, 143, 143)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(VolverBttn)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(CargarBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20))
-        );
+        generarXMLBttn.setText("Generar XML");
+        generarXMLBttn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                generarXMLBttnMouseClicked(evt);
+            }
+        });
+
+        generarPDFBttn.setText("Generar PDF");
+        generarPDFBttn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                generarPDFBttnMouseClicked(evt);
+            }
+        });
+        generarPDFBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generarPDFBttnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 827, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(15, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(GuardarBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(generarXMLBttn)
+                        .addGap(32, 32, 32)
+                        .addComponent(generarPDFBttn)
+                        .addGap(55, 55, 55)
+                        .addComponent(Cancelarr)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(GuardarBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(generarXMLBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(generarPDFBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Cancelarr, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(42, 42, 42))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
+        control.hide();
+    }//GEN-LAST:event_VolverMouseClicked
+
     private void GuardarBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarBttnMouseClicked
-        // TODO add your handling code here:
+        try {
+           // Logic.Service.getInstance().Save("Facturas.xml");//change root name
+        } catch (Exception ex) {
+            System.out.println(ex.getCause());
+        }  
+
     }//GEN-LAST:event_GuardarBttnMouseClicked
 
-    private void CargarBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CargarBttnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CargarBttnMouseClicked
+    private void nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoActionPerformed
+       
+          JOptionPane.showMessageDialog(null, "Sin Implementar");
+        
+    }//GEN-LAST:event_nuevoActionPerformed
 
+    private void CancelarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarrActionPerformed
+      
+      limpiarTextFields();
+      
+    }//GEN-LAST:event_CancelarrActionPerformed
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CargarBttn;
-    private javax.swing.JButton GuardarBttn;
-    private javax.swing.JButton VolverBttn;
-    private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
+    private void GuardarBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBttnActionPerformed
+        JOptionPane.showMessageDialog(null, "Sin Implementar");
+    }//GEN-LAST:event_GuardarBttnActionPerformed
 
+    private void generarPDFBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarPDFBttnActionPerformed
+        JOptionPane.showMessageDialog(null, "Sin Implementar");
+    }//GEN-LAST:event_generarPDFBttnActionPerformed
+
+    private void generarXMLBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generarXMLBttnMouseClicked
+        try {
+            Factura FacturaElectronica = new Factura();//debo capmturar la factura del tablemodel para reemplazarla......
+            Logic.Service.getInstance().makeFacturaXML(FacturaElectronica);
+        } catch (Exception ex) {
+            System.out.println(ex.getCause());
+        }
+    }//GEN-LAST:event_generarXMLBttnMouseClicked
+
+    private void generarPDFBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generarPDFBttnMouseClicked
+        JOptionPane.showMessageDialog(null, "Sin Implementar");
+    }//GEN-LAST:event_generarPDFBttnMouseClicked
+
+    
     @Override
     public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       //JOptionPane.showMessageDialog(null, "Sin Implementar");
     }
-    
+
+    public Controller getControl() {
+        return control;
+    }
+
     public void setControl(Controller control) {
         this.control = control;
     }
@@ -140,8 +231,33 @@ public class View extends javax.swing.JDialog implements Observer {
     }
 
     public void setModel(Model model) {
-//        this.model = model;
-//        model.addObserver(this);
+        this.model = model;
+        model.addObserver(this);
     }
+
+    /**
+     * @param args the command line arguments
+     */
+    
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cancelarr;
+    private javax.swing.JButton GuardarBttn;
+    private javax.swing.JTable ListaDeFacturas;
+    private javax.swing.JButton Volver;
+    private javax.swing.JButton generarPDFBttn;
+    private javax.swing.JButton generarXMLBttn;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton nuevo;
+    // End of variables declaration//GEN-END:variables
+
+    private void limpiarTextFields() {
+//        this.Cod.setText(model.getProduct().getCodigo());
+//        this.detalle.setText(model.getProduct().getDescripcion());
+//        this.PrSr.setText(model.getProduct().getNombre());
+//        this.PrecioU.setText(String.valueOf(model.getProduct().getPrecioUnitario()));
+    }
+
+   
 }
 
