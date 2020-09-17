@@ -35,10 +35,14 @@ public class Factura {
         misLineas = new ArrayList<>();
         Date date = new Date();
         fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date);
-        numeroFactura = "506 - "+fecha+"-01";
+        
+        numeroFactura = "506 - "+date_Format(fecha)+"-01";
         
     }
-
+    private String date_Format(String f){
+        f = f.replace(":","");
+        return f.replace("/","");   
+    }
     public void addLine(LineaDetalle nueva) {
 
         this.misLineas.add(nueva);

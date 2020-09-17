@@ -346,6 +346,14 @@ public class View extends javax.swing.JDialog implements Observer {
         if(cedJur.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar cedula juridica");
             return false;
+        }else{
+             try{
+                int ph = Integer.parseInt(cedJur);
+            
+            }catch(Exception e){
+                 JOptionPane.showMessageDialog(null, "Digite solo numeros en el espacio para la Cédula Juridica");
+                 return false;
+            }
         }
          if(direc.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar direccion de la empresa");
@@ -355,9 +363,18 @@ public class View extends javax.swing.JDialog implements Observer {
             JOptionPane.showMessageDialog(null, "Ingresar actividad de la empresa");
             return false;
         }
+        
         if(tel.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar telefono");
             return false;
+        }else{
+             try{
+                int ph = Integer.parseInt(tel);
+            
+            }catch(Exception e){
+                 JOptionPane.showMessageDialog(null, "Digite solo numeros en el espacio para telefono");
+                 return false;
+            }
         }
          if(correoE.isEmpty()){
             JOptionPane.showMessageDialog(null, "Ingresar correo electronico");
