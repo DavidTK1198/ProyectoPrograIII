@@ -53,8 +53,7 @@ public class Model extends Observable {
         flag=false;
          nueva=new Factura();
        tableCliente = new Presentation.Cliente.TableModelClient(Logic.Service.getInstance().getClientes(), clientes);//vamos a
-       tableProducto = new Presentation.Producto.TableModel(Logic.Service.getInstance().getProductos(), productos);//mostrar todos los cientes
-                                                                                                                   // y productos
+       tableProducto = new Presentation.Producto.TableModel(Logic.Service.getInstance().getProductos(), productos);//mostrar todos los cientes                                                                                                                   // y productos
     }
 
     public Presentation.Cliente.TableModelClient getTableCliente() {
