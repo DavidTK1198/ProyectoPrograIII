@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -254,13 +255,20 @@ public class View extends javax.swing.JFrame implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        String p = "Facturas.xml";/// a ver que ponemos aquí
+       
         try {
+            
+            if(Logic.Empresa.getInstance().validateData())
+               throw new Exception("Datos de la empresa Incompletos");
+       
+            this.dispose();
+            String p = "Facturas.xml";/// a ver que ponemos aquí
             Logic.Service.getInstance().Save(p);
-        } catch (Exception ex) {
-            System.out.println(ex.getCause());
+       
+        }catch(Exception e){
+            
+         JOptionPane.showMessageDialog(null, " basura Excepcion al salir  "+e);
+       
         }
 
     }//GEN-LAST:event_SalirActionPerformed

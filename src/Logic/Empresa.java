@@ -105,7 +105,10 @@ public class Empresa {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    public boolean validateData(){
     
-   
-    
+    if(this.CedulaJuridica.isEmpty()||this.actividad.isEmpty()||this.correo.isEmpty()||this.direccion.isEmpty()||this.nombreEm.isEmpty()||this.telefono.isEmpty())
+    return false;
+    else    return true;
+    }
 }

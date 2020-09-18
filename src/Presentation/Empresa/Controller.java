@@ -42,4 +42,7 @@ public class Controller {
             Logic.Empresa.getInstance().setTelefono(tel);
         }
     }
+    public boolean empresaValidData(){
+    return Logic.Empresa.getInstance().validateData();
+    }
 }
