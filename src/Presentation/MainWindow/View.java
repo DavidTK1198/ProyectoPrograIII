@@ -5,6 +5,7 @@
  */
 package Presentation.MainWindow;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Observable;
@@ -30,6 +31,7 @@ public class View extends javax.swing.JFrame implements Observer {
         this.fecha.setText(fech);
         String p = "Facturas.xml";
         Logic.Service.getInstance().load(p);
+     
 
     }
 

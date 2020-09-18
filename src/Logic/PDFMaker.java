@@ -22,6 +22,7 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.property.TextAlignment;
+import com.itextpdf.layout.property.UnitValue;
 import java.util.List;
 //import javafx.stage.FileChooser;
 
@@ -81,6 +82,7 @@ public class PDFMaker {
         c= new Cell(1,4);  c.add(new Paragraph("SubTotal")).setBackgroundColor(bkg).setFontColor(frg).setTextAlignment(TextAlignment.RIGHT);
         table.addHeaderCell(c);                    
         c= new Cell();  c.add(new Paragraph(Double.toString(p.subTotal()))).setBackgroundColor(bkg).setFontColor(frg);
+        table.setWidth(UnitValue.createPercentValue(100));
         table.addHeaderCell(c);         
         document.add(table);
         document.close();

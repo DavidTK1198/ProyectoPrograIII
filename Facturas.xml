@@ -2,49 +2,44 @@
 <data>
     <productos>
         <entry>
-            <key>1232</key>
+            <key>3434</key>
             <value>
-                <codigo>1232</codigo>
-                <nombreE>21332</nombreE>
-                <descripcion>2132</descripcion>
-                <precioUnitario>123.0</precioUnitario>
-                <impuestoVenta>15.99</impuestoVenta>
+                <codigo>3434</codigo>
+                <nombreE>12121</nombreE>
+                <descripcion>2121</descripcion>
+                <precioUnitario>1232.0</precioUnitario>
+                <impuestoVenta>160.16</impuestoVenta>
+            </value>
+        </entry>
+        <entry>
+            <key>343434</key>
+            <value>
+                <codigo>343434</codigo>
+                <nombreE>21211</nombreE>
+                <descripcion>211221</descripcion>
+                <precioUnitario>12123.0</precioUnitario>
+                <impuestoVenta>1575.99</impuestoVenta>
             </value>
         </entry>
     </productos>
-    <facturas>
-        <entry>
-            <key>506 - 17092020 180657-01</key>
-            <value>
-                <misLineas>
-                    <produc>1232</produc>
-                    <cantidadProd>6</cantidadProd>
-                    <ide>6</ide>
-                </misLineas>
-                <numeroFactura>506 - 17092020 180657-01</numeroFactura>
-                <actual>2121</actual>
-                <fecha>17/09/2020 18:06:57</fecha>
-            </value>
-        </entry>
-    </facturas>
+    <facturas/>
     <clientes1>
         <entry>
-            <key>2121</key>
+            <key>2323</key>
             <value>
-                <cedula>2121</cedula>
+                <cedula>2323</cedula>
                 <nombre>1221</nombre>
-                <apellidos>3223</apellidos>
-                <CorreoE>3223</CorreoE>
-                <listaFacturas>506 - 17092020 180657-01</listaFacturas>
+                <apellidos>3434</apellidos>
+                <CorreoE>1221</CorreoE>
             </value>
         </entry>
     </clientes1>
     <Emp>
-        <nombreEm>ds</nombreEm>
-        <telefono>12233</telefono>
-        <correo>3223</correo>
-        <actividad>sd</actividad>
-        <CedulaJuridica>121</CedulaJuridica>
-        <direccion>1223312</direccion>
+        <nombreEm>232323545tdgvdsvdf</nombreEm>
+        <telefono>343434</telefono>
+        <correo>343434</correo>
+        <actividad>344334</actividad>
+        <CedulaJuridica>21122112</CedulaJuridica>
+        <direccion>1221211</direccion>
     </Emp>
 </data>

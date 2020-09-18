@@ -25,12 +25,13 @@ public class Data {
       private final  Map<String, Producto> productos;
       private final Map<String,Factura> facturas;
       private final Map<String, Cliente> clientes1;
-      private Empresa Emp=Logic.Empresa.getInstance();;
+      private Empresa Emp;
 
     public Data() {
         clientes1 = new HashMap<>();
         productos = new HashMap<>();
         facturas = new HashMap<>();
+        Emp=Logic.Empresa.getInstance();
         
     }
 
@@ -108,9 +109,15 @@ public class Data {
        return client;
    }
 
+    public void setEmp(Empresa Emp) {
+        this.Emp = Emp;
+    }
+
    
 
 }
+
+
 
 
 

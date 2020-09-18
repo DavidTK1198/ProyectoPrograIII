@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlID;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Empresa {
 
-    private static Empresa single_instance = null; //Singleton
+    private static Empresa single_instance; //Singleton
 
     private String nombreEm;
     private String telefono;

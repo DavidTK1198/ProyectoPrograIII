@@ -94,5 +94,9 @@ public class Service {
     public void makeFacturaXML(Factura p) throws Exception {
         this.maker.makeXml(p);
     }
+    
+    public void setEmpresa(Empresa instancia){
+        this.data.setEmp(instancia);
+    }
 
 }

@@ -33,13 +33,13 @@ public class Controller {
     public void editEmpresa(boolean editable, String nom,String cedJur,String direc,String activ, String tel,String correoE) {//a ver como manejamos la lista de telefonos
 
         if (!editable) {
-            System.out.print(Logic.Empresa.getInstance().getNombre());
             Logic.Empresa.getInstance().setNombre(nom);
             Logic.Empresa.getInstance().setCorreo(correoE);
             Logic.Empresa.getInstance().setCedulaJuridica(cedJur);
             Logic.Empresa.getInstance().setDireccion(direc);
             Logic.Empresa.getInstance().setActividad(activ);
             Logic.Empresa.getInstance().setTelefono(tel);
+            Logic.Service.getInstance().setEmpresa(Logic.Empresa.getInstance());
         }
     }
     public boolean empresaValidData(){
