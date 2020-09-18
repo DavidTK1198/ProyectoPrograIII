@@ -33,7 +33,18 @@ public class View extends javax.swing.JDialog implements Observer {
         initComponents();
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.noModificar();
-        
+        this.actualizarValoresNoMd();
+
+        try {
+            ImageIcon logo1 = new ImageIcon("image.png");
+            Image label = logo1.getImage();
+            Image nuevo = label.getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon image = new ImageIcon(nuevo);
+            logo.setIcon(image);
+        } catch (Exception e) {
+
+        }
+
     }
 
     /**
@@ -165,8 +176,8 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addComponent(logo)
-                        .addGap(128, 128, 128))
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -220,18 +231,14 @@ public class View extends javax.swing.JDialog implements Observer {
                     .addComponent(CorreoTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Direccion))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(telefonoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TelefonoTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(logo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Direccion)
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(telefonoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TelefonoTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgregarBoton)
                     .addComponent(BotonCancelar)
@@ -387,9 +394,9 @@ public class View extends javax.swing.JDialog implements Observer {
 
     private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
         // TODO add your handling code here:
-        if(!model.isBandera()){
-             JOptionPane.showMessageDialog(null, "Completar la informacion de la empresa"); 
-             
+        if (!model.isBandera()) {
+            JOptionPane.showMessageDialog(null, "Completar la informacion de la empresa");
+
             return;
         }
         control.hide();
@@ -412,9 +419,9 @@ public class View extends javax.swing.JDialog implements Observer {
             this.control.editEmpresa(model.isEditable(), nombre, cedJud, direccionn, actividad, telefono, correo);
             this.actualizarValoresNoMd();
             model.setBandera(true);
-           this.vaciarTextFields();
-           
-           JOptionPane.showMessageDialog(null, "Datos guardados con exito.");
+            this.vaciarTextFields();
+
+            JOptionPane.showMessageDialog(null, "Datos guardados con exito.");
         }
 
 
@@ -427,7 +434,7 @@ public class View extends javax.swing.JDialog implements Observer {
         this.CorreElNoMd.setEditable(false);
         this.telNoMd.setEditable(false);
     }
-    
+
     public void vaciarTextFields() {
         this.NombreTxtFld.setText("");
         this.ActividadTxtFld.setText("");
@@ -469,7 +476,7 @@ public class View extends javax.swing.JDialog implements Observer {
                 FileUtils.copyFile(source, icon);
                 ImageIcon logo1 = new ImageIcon("image.png");
                 Image label = logo1.getImage();
-                Image nuevo = label.getScaledInstance(logo1.getIconWidth(), logo1.getIconHeight(), Image.SCALE_SMOOTH);
+                Image nuevo = label.getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH);
                 ImageIcon image = new ImageIcon(nuevo);
                 logo.setIcon(image);
             } catch (Exception e) {
@@ -479,7 +486,7 @@ public class View extends javax.swing.JDialog implements Observer {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void BotonCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCancelarMouseClicked
-         this.vaciarTextFields();
+        this.vaciarTextFields();
     }//GEN-LAST:event_BotonCancelarMouseClicked
 
     @Override
