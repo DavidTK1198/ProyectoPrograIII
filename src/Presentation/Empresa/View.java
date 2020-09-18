@@ -5,9 +5,15 @@
  */
 package Presentation.Empresa;
 
+import java.awt.Image;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import org.apache.commons.io.FileUtils;
 
 /**
  *
@@ -54,6 +60,7 @@ public class View extends javax.swing.JDialog implements Observer {
         BotonCancelar = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
         Volver = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -151,6 +158,13 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -158,13 +172,6 @@ public class View extends javax.swing.JDialog implements Observer {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Direccion)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(logo)
-                        .addGap(128, 128, 128))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -199,7 +206,19 @@ public class View extends javax.swing.JDialog implements Observer {
                                         .addComponent(ActividadTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                                 .addComponent(Volver)))
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Direccion)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(logo)
+                                .addGap(128, 128, 128))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(57, 57, 57))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,6 +252,8 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addGap(24, 24, 24))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(logo)
+                        .addGap(52, 52, 52)
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgregarBoton)
@@ -399,6 +420,30 @@ public class View extends javax.swing.JDialog implements Observer {
         // TODO add your handling code here:
     }//GEN-LAST:event_NuevoBottonActionPerformed
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        
+        JFileChooser fc = new JFileChooser();
+        FileNameExtensionFilter filtro;
+        filtro = new FileNameExtensionFilter("Archivos Imagen", "jpg", "png");
+        fc.setFileFilter(filtro);
+        int seleccion = fc.showOpenDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File source = fc.getSelectedFile();
+            File icon = new File("image.png");
+            try {
+                FileUtils.copyFile(source, icon);
+                ImageIcon logo1 = new ImageIcon("image.png");
+                Image label = logo1.getImage();
+                Image nuevo = label.getScaledInstance(logo1.getIconWidth(), logo1.getIconHeight(), Image.SCALE_SMOOTH);
+                ImageIcon image = new ImageIcon(nuevo);
+                logo.setIcon(image);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al carga la imagen");
+            }
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
+
   
     @Override
     public void update(Observable o, Object arg) {
@@ -445,6 +490,7 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JTextField TelefonoTxtField;
     private javax.swing.JButton Volver;
     private javax.swing.JTextArea direccion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
