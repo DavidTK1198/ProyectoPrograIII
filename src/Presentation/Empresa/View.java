@@ -5,6 +5,7 @@
  */
 package Presentation.Empresa;
 
+import Logic.Service;
 import java.awt.Image;
 import java.io.File;
 import java.util.Observable;
@@ -30,6 +31,7 @@ public class View extends javax.swing.JDialog implements Observer {
     public View(java.awt.Frame Parent, boolean modal) {
         super(Parent, modal);
         initComponents();
+        this.noModificar();
     }
 
     /**
@@ -74,6 +76,8 @@ public class View extends javax.swing.JDialog implements Observer {
         CorreElNoMd = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         DirecciNoMd = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        telNoMd = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 153));
@@ -213,12 +217,9 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(logo)
-                                .addGap(128, 128, 128))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(57, 57, 57))))))
+                            .addComponent(logo)
+                            .addComponent(jButton1))
+                        .addGap(73, 73, 73))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,7 +246,7 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Direccion))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(telefonoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TelefonoTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -291,6 +292,9 @@ public class View extends javax.swing.JDialog implements Observer {
         DirecciNoMd.setRows(5);
         jScrollPane1.setViewportView(DirecciNoMd);
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setText("Telefono");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -317,7 +321,11 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(CorreElNoMd)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(68, 68, 68)
+                        .addComponent(telNoMd, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(104, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -343,7 +351,11 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(telNoMd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45))
         );
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -377,7 +389,7 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel1.getAccessibleContext().setAccessibleName("Empresa");
@@ -405,24 +417,56 @@ public class View extends javax.swing.JDialog implements Observer {
         String cedJud = this.CedJuridicaiTxtFld.getText();
         String telefono = this.TelefonoTxtField.getText();
         String direccionn = this.direccion.getText();
-        if (validacionTexto(nombre,cedJud,direccionn,actividad,telefono,correo)) {
-            this.control.editEmpresa(model.isEditable(), nombre, cedJud,direccionn, actividad,telefono,correo);
+        if (validacionTexto(nombre, cedJud, direccionn, actividad, telefono, correo)) {
+            this.control.editEmpresa(model.isEditable(), nombre, cedJud, direccionn, actividad, telefono, correo);
+            this.actualizarValoresNoMd();
+           this.vaciarTextFields();
         }
-        
-        
+
+
     }//GEN-LAST:event_AgregarBotonMouseClicked
-    public void actualizarValoresNoMd(){
-//        this.ActNoMd.setText(model.g); 
+    public void noModificar() {
+        this.ActNoMd.setEditable(false);
+        this.DirecciNoMd.setEditable(false);
+        this.EmpNoMd.setEditable(false);
+        this.CedJurNoMd.setEditable(false);
+        this.CorreElNoMd.setEditable(false);
+        this.telNoMd.setEditable(false);
     }
-    
-    
+
+    public void vaciarTextFields() {
+        this.NombreTxtFld.setText("");
+        this.ActividadTxtFld.setText("");
+        this.CorreoTxtFld.setText("");
+        this.CedJuridicaiTxtFld.setText("");
+        this.TelefonoTxtField.setText("");
+        this.direccion.setText("");
+    }
+
+    public void actualizarValoresNoMd() {
+
+        this.ActNoMd.setText(Service.getInstance().my_Empresa().getActividad());
+
+        this.DirecciNoMd.setText(Service.getInstance().my_Empresa().getDireccion());
+
+        this.EmpNoMd.setText(Service.getInstance().my_Empresa().getNombreEm());
+
+        this.CedJurNoMd.setText(Service.getInstance().my_Empresa().getCedulaJuridica());
+
+        this.CorreElNoMd.setText(Service.getInstance().my_Empresa().getCorreo());
+
+        this.telNoMd.setText(Service.getInstance().my_Empresa().getTelefono());
+
+    }
+
+
     private void NuevoBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoBottonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NuevoBottonActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        
+
         JFileChooser fc = new JFileChooser();
         FileNameExtensionFilter filtro;
         filtro = new FileNameExtensionFilter("Archivos Imagen", "jpg", "png");
@@ -444,7 +488,6 @@ public class View extends javax.swing.JDialog implements Observer {
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
-  
     @Override
     public void update(Observable o, Object arg) {
         //arreglar
@@ -492,6 +535,7 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JTextArea direccion;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -505,48 +549,49 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel logo;
+    private javax.swing.JTextField telNoMd;
     private javax.swing.JLabel telefonoLbl;
     // End of variables declaration//GEN-END:variables
 
-    private boolean validacionTexto(String nom,String cedJur,String direc,String activ, String tel,String correoE) {
-        if(nom.isEmpty()){
+    private boolean validacionTexto(String nom, String cedJur, String direc, String activ, String tel, String correoE) {
+        if (nom.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar nombre de la empresa");
             return false;
         }
-        if(cedJur.isEmpty()){
+        if (cedJur.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar cedula juridica");
             return false;
-        }else{
-             try{
+        } else {
+            try {
                 int ph = Integer.parseInt(cedJur);
-            
-            }catch(Exception e){
-                 JOptionPane.showMessageDialog(null, "Digite solo numeros en el espacio para la Cédula Juridica");
-                 return false;
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Digite solo numeros en el espacio para la Cédula Juridica");
+                return false;
             }
         }
-         if(direc.isEmpty()){
+        if (direc.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar direccion de la empresa");
             return false;
         }
-        if(activ.isEmpty()){
+        if (activ.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar actividad de la empresa");
             return false;
         }
-        
-        if(tel.isEmpty()){
+
+        if (tel.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar telefono");
             return false;
-        }else{
-             try{
+        } else {
+            try {
                 int ph = Integer.parseInt(tel);
-            
-            }catch(Exception e){
-                 JOptionPane.showMessageDialog(null, "Digite solo numeros en el espacio para telefono");
-                 return false;
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Digite solo numeros en el espacio para telefono");
+                return false;
             }
         }
-         if(correoE.isEmpty()){
+        if (correoE.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar correo electronico");
             return false;
         }
