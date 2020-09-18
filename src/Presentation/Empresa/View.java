@@ -31,7 +31,9 @@ public class View extends javax.swing.JDialog implements Observer {
     public View(java.awt.Frame Parent, boolean modal) {
         super(Parent, modal);
         initComponents();
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.noModificar();
+        
     }
 
     /**
@@ -58,10 +60,8 @@ public class View extends javax.swing.JDialog implements Observer {
         Direccion = new javax.swing.JLabel();
         AgregarBoton = new javax.swing.JButton();
         TelefonoTxtField = new javax.swing.JTextField();
-        NuevoBotton = new javax.swing.JButton();
         BotonCancelar = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
-        Volver = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -79,6 +79,7 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel10 = new javax.swing.JLabel();
         telNoMd = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        Volver = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 153, 153));
 
@@ -134,33 +135,16 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
-        NuevoBotton.setFont(new java.awt.Font("Arial Black", 2, 14)); // NOI18N
-        NuevoBotton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/new_25355.png"))); // NOI18N
-        NuevoBotton.setText("Nuevo");
-        NuevoBotton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NuevoBottonActionPerformed(evt);
-            }
-        });
-
         BotonCancelar.setFont(new java.awt.Font("Arial Black", 2, 14)); // NOI18N
         BotonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cancel_89309.png"))); // NOI18N
         BotonCancelar.setText("Cancelar");
-        BotonCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCancelarActionPerformed(evt);
+        BotonCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonCancelarMouseClicked(evt);
             }
         });
 
         logo.setText("logo");
-
-        Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-25.png"))); // NOI18N
-        Volver.setText("Volver");
-        Volver.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                VolverMouseClicked(evt);
-            }
-        });
 
         jButton1.setText("jButton1");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -177,49 +161,43 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Direccion)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(logo)
+                        .addGap(128, 128, 128))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(telefonoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TelefonoTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(TelefonoTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(CedJuridicaiTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(CorreoTxtFld))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(NombreLbl)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(NombreTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addComponent(ActicidaLbl)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(ActividadTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addComponent(AgregarBoton)
-                                        .addGap(27, 27, 27)
-                                        .addComponent(NuevoBotton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(BotonCancelar))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(CedJuridicaiTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(CorreoTxtFld))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(NombreLbl)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(NombreTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ActicidaLbl)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ActividadTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                                .addComponent(Volver)))
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Direccion)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(logo)
-                            .addComponent(jButton1))
-                        .addGap(73, 73, 73))))
+                                .addGap(14, 14, 14)
+                                .addComponent(AgregarBoton)
+                                .addGap(54, 54, 54)
+                                .addComponent(BotonCancelar)
+                                .addGap(62, 62, 62)
+                                .addComponent(jButton1)))
+                        .addContainerGap(117, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,21 +224,18 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Direccion))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(telefonoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TelefonoTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(24, 24, 24))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(logo)
-                        .addGap(52, 52, 52)
-                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgregarBoton)
-                    .addComponent(NuevoBotton)
                     .addComponent(BotonCancelar)
-                    .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -351,7 +326,7 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(telNoMd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -360,6 +335,14 @@ public class View extends javax.swing.JDialog implements Observer {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("VISUALIZACION DE DATOS DE LA EMPRESA");
+
+        Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-back-arrow-25.png"))); // NOI18N
+        Volver.setText("Volver");
+        Volver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VolverMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -377,6 +360,10 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(144, 144, 144))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Volver)
+                .addGap(526, 526, 526))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -389,7 +376,8 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel1.getAccessibleContext().setAccessibleName("Empresa");
@@ -399,16 +387,19 @@ public class View extends javax.swing.JDialog implements Observer {
 
     private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
         // TODO add your handling code here:
+        if(!model.isBandera()){
+             JOptionPane.showMessageDialog(null, "Completar la informacion de la empresa"); 
+             
+            return;
+        }
         control.hide();
+        model.setBandera(false);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }//GEN-LAST:event_VolverMouseClicked
 
     private void TelefonoTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelefonoTxtFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TelefonoTxtFieldActionPerformed
-
-    private void BotonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonCancelarActionPerformed
 
     private void AgregarBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarBotonMouseClicked
         String nombre = this.NombreTxtFld.getText();
@@ -420,7 +411,10 @@ public class View extends javax.swing.JDialog implements Observer {
         if (validacionTexto(nombre, cedJud, direccionn, actividad, telefono, correo)) {
             this.control.editEmpresa(model.isEditable(), nombre, cedJud, direccionn, actividad, telefono, correo);
             this.actualizarValoresNoMd();
+            model.setBandera(true);
            this.vaciarTextFields();
+           
+           JOptionPane.showMessageDialog(null, "Datos guardados con exito.");
         }
 
 
@@ -433,7 +427,7 @@ public class View extends javax.swing.JDialog implements Observer {
         this.CorreElNoMd.setEditable(false);
         this.telNoMd.setEditable(false);
     }
-
+    
     public void vaciarTextFields() {
         this.NombreTxtFld.setText("");
         this.ActividadTxtFld.setText("");
@@ -460,10 +454,6 @@ public class View extends javax.swing.JDialog implements Observer {
     }
 
 
-    private void NuevoBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoBottonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NuevoBottonActionPerformed
-
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
 
@@ -487,6 +477,10 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void BotonCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCancelarMouseClicked
+         this.vaciarTextFields();
+    }//GEN-LAST:event_BotonCancelarMouseClicked
 
     @Override
     public void update(Observable o, Object arg) {
@@ -529,7 +523,6 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JTextField EmpNoMd;
     private javax.swing.JLabel NombreLbl;
     private javax.swing.JTextField NombreTxtFld;
-    private javax.swing.JButton NuevoBotton;
     private javax.swing.JTextField TelefonoTxtField;
     private javax.swing.JButton Volver;
     private javax.swing.JTextArea direccion;
