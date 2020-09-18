@@ -41,7 +41,7 @@ public class View extends javax.swing.JDialog implements Observer {
 
         Volver = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        ListaDeFacturas = new javax.swing.JTable();
+        TableDeFacturas = new javax.swing.JTable();
         Cancelarr = new javax.swing.JButton();
         nuevo = new javax.swing.JButton();
         GuardarBttn = new javax.swing.JButton();
@@ -58,9 +58,9 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
-        ListaDeFacturas.setBackground(new java.awt.Color(255, 153, 153));
-        ListaDeFacturas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        ListaDeFacturas.setModel(new javax.swing.table.DefaultTableModel(
+        TableDeFacturas.setBackground(new java.awt.Color(255, 153, 153));
+        TableDeFacturas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        TableDeFacturas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -68,9 +68,9 @@ public class View extends javax.swing.JDialog implements Observer {
                 "Fecha", "# Factura", "Cliente", "SubTotal", "IVA"
             }
         ));
-        ListaDeFacturas.setColumnSelectionAllowed(true);
-        jScrollPane3.setViewportView(ListaDeFacturas);
-        ListaDeFacturas.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        TableDeFacturas.setColumnSelectionAllowed(true);
+        jScrollPane3.setViewportView(TableDeFacturas);
+        TableDeFacturas.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         Cancelarr.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         Cancelarr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cancel.png"))); // NOI18N
@@ -215,7 +215,7 @@ public class View extends javax.swing.JDialog implements Observer {
     
     @Override
     public void update(Observable o, Object arg) {
-       //JOptionPane.showMessageDialog(null, "Sin Implementar");
+      //  this.TableDeFacturas.setModel(model.getTableFacturas());
     }
 
     public Controller getControl() {
@@ -243,7 +243,7 @@ public class View extends javax.swing.JDialog implements Observer {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelarr;
     private javax.swing.JButton GuardarBttn;
-    private javax.swing.JTable ListaDeFacturas;
+    private javax.swing.JTable TableDeFacturas;
     private javax.swing.JButton Volver;
     private javax.swing.JButton generarPDFBttn;
     private javax.swing.JButton generarXMLBttn;
