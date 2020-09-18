@@ -18,11 +18,13 @@ public class Service {
     private Data data;
     private XmlMaker maker;
     private static Service my_instance = null; //Singleton
+    private PDFMaker my_pdf;
 
     public Service() {
 
         this.data = new Data();
         maker = new XmlMaker();
+        this.my_pdf=new PDFMaker();
     }
 
     public static Service getInstance() {
@@ -83,6 +85,10 @@ public class Service {
 
         }
 
+    }
+    
+    public void createPDF(Factura p) throws Exception{
+        my_pdf.createPDF(p);
     }
 
     public void makeFacturaXML(Factura p) throws Exception {

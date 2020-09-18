@@ -118,7 +118,7 @@ public class XmlMaker {
             Element codigo1 = documento.createElement("Codigo");
             Text  codigo= documento.createTextNode(p.getCodigo());
             codigo1.appendChild(codigo);
-            linea.appendChild(codigo1);
+            linea.appendChild(codigo);
           
             
             //nombre

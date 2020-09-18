@@ -2,62 +2,49 @@
 <data>
     <productos>
         <entry>
-            <key>001</key>
+            <key>1232</key>
             <value>
-                <codigo>001</codigo>
-                <nombreE>Pala</nombreE>
-                <descripcion>Pala de oro</descripcion>
-                <precioUnitario>1500.0</precioUnitario>
-                <impuestoVenta>195.0</impuestoVenta>
+                <codigo>1232</codigo>
+                <nombreE>21332</nombreE>
+                <descripcion>2132</descripcion>
+                <precioUnitario>123.0</precioUnitario>
+                <impuestoVenta>15.99</impuestoVenta>
             </value>
         </entry>
     </productos>
     <facturas>
         <entry>
-            <key>50617/09/2020 11:33:33-01</key>
+            <key>506 - 17092020 180657-01</key>
             <value>
                 <misLineas>
-                    <produc>001</produc>
-                    <cantidadProd>3</cantidadProd>
-                    <ide>3</ide>
+                    <produc>1232</produc>
+                    <cantidadProd>6</cantidadProd>
+                    <ide>6</ide>
                 </misLineas>
-                <numeroFactura>50617/09/2020 11:33:33-01</numeroFactura>
-                <actual>111</actual>
-                <fecha>17/09/2020 11:33:33</fecha>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 17/09/2020 11:35:49-01</key>
-            <value>
-                <misLineas>
-                    <produc>001</produc>
-                    <cantidadProd>15</cantidadProd>
-                    <ide>15</ide>
-                </misLineas>
-                <numeroFactura>506 - 17/09/2020 11:35:49-01</numeroFactura>
-                <actual>111</actual>
-                <fecha>17/09/2020 11:35:49</fecha>
+                <numeroFactura>506 - 17092020 180657-01</numeroFactura>
+                <actual>2121</actual>
+                <fecha>17/09/2020 18:06:57</fecha>
             </value>
         </entry>
     </facturas>
     <clientes1>
         <entry>
-            <key>111</key>
+            <key>2121</key>
             <value>
-                <cedula>111</cedula>
-                <nombre>David</nombre>
-                <apellidos>Barrientos</apellidos>
-                <CorreoE>retretrrt</CorreoE>
-                <listaFacturas>50617/09/2020 11:33:33-01</listaFacturas>
-                <listaFacturas>506 - 17/09/2020 11:35:49-01</listaFacturas>
+                <cedula>2121</cedula>
+                <nombre>1221</nombre>
+                <apellidos>3223</apellidos>
+                <CorreoE>3223</CorreoE>
+                <listaFacturas>506 - 17092020 180657-01</listaFacturas>
             </value>
         </entry>
     </clientes1>
     <Emp>
-        <nombreEm></nombreEm>
-        <telefono></telefono>
-        <correo></correo>
-        <actividad></actividad>
-        <direccion></direccion>
+        <nombreEm>ds</nombreEm>
+        <telefono>12233</telefono>
+        <correo>3223</correo>
+        <actividad>sd</actividad>
+        <CedulaJuridica>121</CedulaJuridica>
+        <direccion>1223312</direccion>
     </Emp>
 </data>

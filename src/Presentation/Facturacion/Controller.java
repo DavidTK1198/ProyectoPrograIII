@@ -70,15 +70,19 @@ private Presentation.Facturacion.View vista;
          p.setCurret(model.getCl());
     try {
          Logic.Service.getInstance().addFactura(p);
+       
  
     } catch (Exception ex) {
         JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
        
     }
+    
     try {
-        Logic.Service.getInstance().makeFacturaXML(p);
+          Logic.Service.getInstance().makeFacturaXML(p);
+         Logic.Service.getInstance().createPDF(p);
+       
     } catch (Exception ex) {
-        Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);  
+        System.out.println(ex.getCause());
         return;
     }
         this.model.setFlag(true);
