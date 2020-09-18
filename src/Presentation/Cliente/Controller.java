@@ -68,4 +68,19 @@ public class Controller {
         List<Cliente> lc = Service.getInstance().getClientes();
         model.setLista(lc);
     }
+
+    public void eliminar(int n) {
+        Cliente client = model.getClient();
+        Logic.Service.getInstance().deleteCliente(client);
+        model.setLista(Logic.Service.getInstance().getClientes());
+    }
+    public void modificar(Cliente nuevo){
+        Cliente c = model.getClient();
+        String cedula = c.getCedula();
+        Logic.Service.getInstance().reemplazarCliente(cedula,c,nuevo);
+        model.setLista(Logic.Service.getInstance().getClientes());
+     
+    }
+
+    
 }

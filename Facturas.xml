@@ -4,11 +4,11 @@
         <entry>
             <key>3434</key>
             <value>
-                <codigo>3434</codigo>
-                <nombreE>12121</nombreE>
-                <descripcion>2121</descripcion>
-                <precioUnitario>1232.0</precioUnitario>
-                <impuestoVenta>160.16</impuestoVenta>
+                <codigo>001</codigo>
+                <nombreE>Pala</nombreE>
+                <descripcion>Pala de carne</descripcion>
+                <precioUnitario>500.0</precioUnitario>
+                <impuestoVenta>0.0</impuestoVenta>
             </value>
         </entry>
         <entry>
@@ -32,7 +32,6 @@
                     <ide>96</ide>
                 </misLineas>
                 <numeroFactura>506 - 17092020-01</numeroFactura>
-                <actual>2323</actual>
                 <fecha>17/09/2020</fecha>
                 <fecha2>17/09/2020</fecha2>
             </value>
@@ -61,7 +60,6 @@
                     <ide>33</ide>
                 </misLineas>
                 <numeroFactura>506 - 17092020 213655-01</numeroFactura>
-                <actual>2323</actual>
                 <fecha>17/09/2020 21:36:55</fecha>
                 <fecha2>17/09/2020</fecha2>
             </value>
@@ -105,7 +103,6 @@
                     <ide>8</ide>
                 </misLineas>
                 <numeroFactura>506 - 17092020 212235-01</numeroFactura>
-                <actual>2323</actual>
                 <fecha>17/09/2020 21:22:35</fecha>
                 <fecha2>17/09/2020</fecha2>
             </value>
@@ -115,13 +112,10 @@
         <entry>
             <key>2323</key>
             <value>
-                <cedula>2323</cedula>
-                <nombre>1221</nombre>
-                <apellidos>3434</apellidos>
-                <CorreoE>1221</CorreoE>
-                <listaFacturas>506 - 17092020-01</listaFacturas>
-                <listaFacturas>506 - 17092020 212235-01</listaFacturas>
-                <listaFacturas>506 - 17092020 213655-01</listaFacturas>
+                <cedula>41</cedula>
+                <nombre>Patricio</nombre>
+                <apellidos>Estrella</apellidos>
+                <CorreoE>afaf</CorreoE>
             </value>
         </entry>
     </clientes1>

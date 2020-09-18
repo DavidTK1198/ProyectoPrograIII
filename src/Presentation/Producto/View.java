@@ -59,6 +59,7 @@ public class View extends javax.swing.JDialog implements Observer {
         BottonBuscar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         eliminar = new javax.swing.JButton();
+        modify = new javax.swing.JButton();
         Volver = new javax.swing.JButton();
 
         setAlwaysOnTop(true);
@@ -217,28 +218,37 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
+        modify.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/editnote_edi_9512.png"))); // NOI18N
+        modify.setText("Modificar");
+        modify.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modifyMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(BottonBuscar)
-                        .addGap(68, 68, 68)
-                        .addComponent(eliminar))
+                        .addGap(135, 135, 135)
+                        .addComponent(IdeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(135, 135, 135)
-                                .addComponent(IdeBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(BottonBuscar)
+                .addGap(46, 46, 46)
+                .addComponent(eliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(modify)
+                .addGap(18, 18, 18))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,7 +260,8 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BottonBuscar)
-                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modify, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -317,7 +328,12 @@ public class View extends javax.swing.JDialog implements Observer {
      
        if(ValidacionTexto(codigo,detail,precio,nombre)){
            Producto p = new Producto(codigo,detail,dinero,nombre);
-           this.control.agregar(model.isEditable(), p);
+           if(model.isFlag() == false){
+                this.control.agregar(model.isEditable(), p);
+           }else{
+               this.control.modificarProducto(p);
+               this.model.setFlag(false);
+           }
         }
         this.deshabilitarCajitas();
     }//GEN-LAST:event_agregarMouseClicked
@@ -356,6 +372,25 @@ public class View extends javax.swing.JDialog implements Observer {
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_agregarActionPerformed
+
+    private void modifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyMouseClicked
+          int n = this.ListaDeProductos.getSelectedRow();
+        
+        if(n>=-1){
+            Producto producto = model.getTable().getRowAt(n);
+            this.Cod.setText(producto.getCodigo());
+            this.detalle.setText(producto.getDescripcion());
+            this.PrecioU.setText(String.valueOf(producto.getPrecioUnitario()));
+            this.PrSr.setText(producto.getNombre());
+            model.setProduct(producto);
+            model.setFlag(true);
+          
+        }else{
+            JOptionPane.showMessageDialog(null, "Seleccione un producto de la tabla");
+            return;
+        }
+        
+    }//GEN-LAST:event_modifyMouseClicked
 
     
     private boolean ValidacionTexto(String codigo , String descripcion, String precioUnitario,String nombre){
@@ -450,6 +485,7 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton modify;
     private javax.swing.JButton nuevo;
     // End of variables declaration//GEN-END:variables
 

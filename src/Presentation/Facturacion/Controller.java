@@ -45,12 +45,12 @@ private Presentation.Facturacion.View vista;
         vista.setVisible(false);
     }
 
-    void setProducto(int n) {
+    public void setProducto(int n) {
        Producto p=model.getTableProducto().getRowAt(n);
        model.setPd(p);
     }
 
-    void setCliente(int n) {
+    public void setCliente(int n) {
        Cliente cl=model.getTableCliente().getRowAT(n);
        model.setCl(cl);
     }

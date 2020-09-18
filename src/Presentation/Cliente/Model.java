@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-import javax.swing.table.TableModel;
 
 
 
@@ -27,6 +26,7 @@ public class Model extends Observable {
     private int[] col = {0,1,2,3};
     private List<Cliente> lista;
     private boolean editable;
+    private boolean flag;
     @Override
     
     public void addObserver(Observer a){
@@ -35,11 +35,20 @@ public class Model extends Observable {
         refresh();
     }
 
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
     public Model() {
         client = new Cliente();
         lista = new ArrayList<>();
-        table = new TableModelClient(lista,col);
+        table = new TableModel(lista,col);
         editable = false;
+        flag = false;
     }
 
     public boolean isEditable() {
@@ -52,14 +61,16 @@ public class Model extends Observable {
     private void refresh(){
         this.setChanged();
         this.notifyObservers();
+        client = new Cliente();
     }
 
     public TableModel getTable() {
         return table;
     }
-
+   
+   
     public void setTable(List<Cliente> tablee) {
-        table = new TableModelClient(tablee,col);
+        table = new TableModel(tablee,col);
     }
 
     public Cliente getClient() {

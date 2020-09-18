@@ -13,13 +13,13 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author Daniel Madrigal
  */
-public class TableModelClient extends AbstractTableModel{
+public class TableModel extends AbstractTableModel{
     private List<Cliente> filas;
     private final int[] columnas;
     private final String[] nombCol = {"Cedula","Nombre","Apellidos","Correo Electronico"};
    
 
-    public TableModelClient(List<Cliente> filas, int[] columnas) {
+    public TableModel(List<Cliente> filas, int[] columnas) {
         this.filas = filas;
         this.columnas = columnas;
     }
@@ -54,7 +54,7 @@ public class TableModelClient extends AbstractTableModel{
     public Cliente getRowAT(int n){
         return filas.get(n);
     }
-    
+
 }
 
 

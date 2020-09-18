@@ -33,6 +33,7 @@ public class Data {
         facturas = new HashMap<>();
         Emp=Logic.Empresa.getInstance();
         
+        
     }
 
     public List<Cliente> getClientes() {
@@ -92,6 +93,15 @@ public class Data {
     public void removeElement(Producto p){//revisar
         
        productos.remove(p.getCodigo());
+    }
+    public void removeCliente(Cliente c){
+        this.clientes1.remove(c.getCedula());
+    }
+    public void replaceCliente(String key,Cliente viejo,Cliente nuevo){
+        this.clientes1.replace(key, viejo, nuevo);
+    }
+    public void replaceProducto(String key,Producto viejo,Producto nuevo){
+        this.productos.replace(key, viejo, nuevo);
     }
     
    public Producto getProducto(String p) throws Exception{

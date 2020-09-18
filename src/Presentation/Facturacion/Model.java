@@ -33,7 +33,7 @@ public class Model extends Observable {
     private List<LineaDetalle> lista;
     private boolean editable;
     private Factura nueva;
-    private Presentation.Cliente.TableModelClient tableCliente;
+    private Presentation.Cliente.TableModel tableCliente;
     private Presentation.Producto.TableModel tableProducto;
     private Boolean flag;
     
@@ -52,11 +52,11 @@ public class Model extends Observable {
         editable = false;
         flag=false;
          nueva=new Factura();
-       tableCliente = new Presentation.Cliente.TableModelClient(Logic.Service.getInstance().getClientes(), clientes);//vamos a
+       tableCliente = new Presentation.Cliente.TableModel(Logic.Service.getInstance().getClientes(), clientes);//vamos a
        tableProducto = new Presentation.Producto.TableModel(Logic.Service.getInstance().getProductos(), productos);//mostrar todos los cientes                                                                                                                   // y productos
     }
 
-    public Presentation.Cliente.TableModelClient getTableCliente() {
+    public Presentation.Cliente.TableModel getTableCliente() {
         return tableCliente;
     }
 
@@ -68,7 +68,7 @@ public class Model extends Observable {
         this.li = li;
     }
     public void setCliente(List<Cliente> client){
-        this.tableCliente = new Presentation.Cliente.TableModelClient(client, clientes);
+        this.tableCliente = new Presentation.Cliente.TableModel(client, clientes);
         this.setChanged();
         this.notifyObservers();    
     }
@@ -79,7 +79,7 @@ public class Model extends Observable {
     }
     
 
-    public void setTableCliente(Presentation.Cliente.TableModelClient tableCliente) {
+    public void setTableCliente(Presentation.Cliente.TableModel tableCliente) {
         this.tableCliente = tableCliente;
     }
 
@@ -97,7 +97,7 @@ public class Model extends Observable {
     }
 
     public void updateTables(){
-       tableCliente = new Presentation.Cliente.TableModelClient(Logic.Service.getInstance().getClientes(), clientes);
+       tableCliente = new Presentation.Cliente.TableModel(Logic.Service.getInstance().getClientes(), clientes);
        tableProducto = new Presentation.Producto.TableModel(Logic.Service.getInstance().getProductos(), productos);
        this.setChanged();
        this.notifyObservers();

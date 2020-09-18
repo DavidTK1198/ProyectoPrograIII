@@ -70,6 +70,15 @@ public class Service {
     public void deleteProduct(Producto p) {
         this.data.removeElement(p);
     }
+    public void deleteCliente(Cliente c){
+        this.data.removeCliente(c);
+    }
+    public void reemplazarCliente(String key,Cliente viejo,Cliente nuevo){
+        this.data.replaceCliente(key, viejo, nuevo);
+    }
+    public void reemplazarProducto(String key,Producto viejo,Producto nuevo){
+        this.data.replaceProducto(key, viejo, nuevo);
+    }
 
     public void Save(String p) throws Exception {
         XmlPersister.getInstance().setPath(p);

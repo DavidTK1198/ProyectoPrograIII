@@ -24,6 +24,7 @@ public class Model extends Observable {
     private int[] col = {0,1,2,3};
     private List<Producto> lista;
     private boolean editable;
+    private boolean flag;
     
     @Override
     
@@ -33,12 +34,20 @@ public class Model extends Observable {
         refresh();
     }
 
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
     public Model() {
         Product = new Producto();
         lista = new ArrayList<>();
         table = new TableModel(lista,col);
         editable = false;
-        
+        flag = false;
     }
 
     public boolean isEditable() {
