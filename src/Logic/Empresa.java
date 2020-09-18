@@ -43,12 +43,12 @@ public class Empresa {
  
      
     private Empresa() {
-         this.nombreEm = "Vacio";
-         this.telefono = "Vacio";
-         this.direccion = "Vacio";
-         this.correo = "Vacio";
-         this.telefono = "Vacio";
-         this.actividad = "Vacio";
+         this.nombreEm = "";
+         this.telefono = "";
+         this.direccion = "";
+         this.correo = "";
+         this.telefono = "";
+         this.actividad = "";
     }
     private Empresa(String nombre,String actividad,String telefono,String direcion,String CedJuri,String correo) {
          this.nombreEm = nombre;

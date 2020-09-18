@@ -1,125 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <data>
-    <productos>
-        <entry>
-            <key>3434</key>
-            <value>
-                <codigo>001</codigo>
-                <nombreE>Pala</nombreE>
-                <descripcion>Pala de carne</descripcion>
-                <precioUnitario>500.0</precioUnitario>
-                <impuestoVenta>0.0</impuestoVenta>
-            </value>
-        </entry>
-        <entry>
-            <key>343434</key>
-            <value>
-                <codigo>343434</codigo>
-                <nombreE>21211</nombreE>
-                <descripcion>211221</descripcion>
-                <precioUnitario>12123.0</precioUnitario>
-                <impuestoVenta>1575.99</impuestoVenta>
-            </value>
-        </entry>
-    </productos>
-    <facturas>
-        <entry>
-            <key>506 - 17092020-01</key>
-            <value>
-                <misLineas>
-                    <cantidadProd>96</cantidadProd>
-                    <ide>96</ide>
-                </misLineas>
-                <numeroFactura>506 - 17092020-01</numeroFactura>
-                <fecha>17/09/2020</fecha>
-                <fecha2>17/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 17092020 213655-01</key>
-            <value>
-                <misLineas>
-                    <cantidadProd>3443</cantidadProd>
-                    <ide>3443</ide>
-                </misLineas>
-                <misLineas>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <cantidadProd>3</cantidadProd>
-                    <ide>3</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>343434</produc>
-                    <cantidadProd>33</cantidadProd>
-                    <ide>33</ide>
-                </misLineas>
-                <numeroFactura>506 - 17092020 213655-01</numeroFactura>
-                <fecha>17/09/2020 21:36:55</fecha>
-                <fecha2>17/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 17092020 212235-01</key>
-            <value>
-                <misLineas>
-                    <produc>343434</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>343434</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>343434</produc>
-                    <cantidadProd>5</cantidadProd>
-                    <ide>5</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>343434</produc>
-                    <cantidadProd>6</cantidadProd>
-                    <ide>6</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>343434</produc>
-                    <cantidadProd>7</cantidadProd>
-                    <ide>7</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>343434</produc>
-                    <cantidadProd>7</cantidadProd>
-                    <ide>7</ide>
-                </misLineas>
-                <misLineas>
-                    <cantidadProd>8</cantidadProd>
-                    <ide>8</ide>
-                </misLineas>
-                <numeroFactura>506 - 17092020 212235-01</numeroFactura>
-                <fecha>17/09/2020 21:22:35</fecha>
-                <fecha2>17/09/2020</fecha2>
-            </value>
-        </entry>
-    </facturas>
-    <clientes1>
-        <entry>
-            <key>2323</key>
-            <value>
-                <cedula>41</cedula>
-                <nombre>Patricio</nombre>
-                <apellidos>Estrella</apellidos>
-                <CorreoE>afaf</CorreoE>
-            </value>
-        </entry>
-    </clientes1>
+    <productos/>
+    <facturas/>
+    <clientes1/>
     <Emp>
-        <nombreEm>iuk</nombreEm>
-        <telefono>211221</telefono>
-        <correo>thrthr</correo>
-        <actividad>85</actividad>
-        <CedulaJuridica>8</CedulaJuridica>
-        <direccion>785</direccion>
+        <nombreEm>78i78i8</nombreEm>
+        <telefono></telefono>
+        <correo>8o68o</correo>
+        <actividad>1</actividad>
+        <CedulaJuridica>1</CedulaJuridica>
+        <direccion>i78i87</direccion>
     </Emp>
 </data>

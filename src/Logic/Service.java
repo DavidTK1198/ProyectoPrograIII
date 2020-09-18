@@ -68,6 +68,7 @@ public class Service {
     }
 
     public void deleteProduct(Producto p) {
+        
         this.data.removeElement(p);
     }
     public void deleteCliente(Cliente c){

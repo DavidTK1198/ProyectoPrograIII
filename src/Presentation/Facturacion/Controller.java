@@ -69,9 +69,7 @@ private Presentation.Facturacion.View vista;
          p.setCurret(model.getCl());
     try {
          Logic.Service.getInstance().addFactura(p);
-       
- 
-    } catch (Exception ex) {
+     } catch (Exception ex) {
         JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
        
     }

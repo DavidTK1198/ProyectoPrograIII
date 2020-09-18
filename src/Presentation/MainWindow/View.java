@@ -26,6 +26,7 @@ public class View extends javax.swing.JFrame implements Observer {
 
     public View() {
         initComponents();
+        this.setResizable(false);
         Date date = new Date();
         String fech = new SimpleDateFormat("dd/MM/yyyy").format(date);
         this.fecha.setText(fech);
@@ -284,7 +285,7 @@ public class View extends javax.swing.JFrame implements Observer {
         // TODO add your handling code here:
         this.control.productoShow();
     }//GEN-LAST:event_productosMouseClicked
-
+   
     private void productosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_productosActionPerformed
@@ -336,6 +337,7 @@ public class View extends javax.swing.JFrame implements Observer {
     public void update(Observable o, Object arg) {
 
     }
+
 
     public Controller getControl() {
         return control;

@@ -15,7 +15,7 @@ import java.util.Observer;
 public class Model extends Observable {
 
     private boolean editable;
-
+    private boolean bandera;
     @Override
 
     public void addObserver(Observer a) {
@@ -26,6 +26,15 @@ public class Model extends Observable {
 
     public Model() {
         editable = false;
+        bandera = false;
+    }
+
+    public boolean isBandera() {
+        return bandera;
+    }
+
+    public void setBandera(boolean bandera) {
+        this.bandera = bandera;
     }
 
     public boolean isEditable() {

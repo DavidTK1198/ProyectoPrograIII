@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Data {
 
-      private final  Map<String, Producto> productos;
-      private final Map<String,Factura> facturas;
-      private final Map<String, Cliente> clientes1;
+      private Map<String, Producto> productos;
+      private Map<String,Factura> facturas;
+      private Map<String, Cliente> clientes1;
       private Empresa Emp;
 
     public Data() {
@@ -91,11 +91,20 @@ public class Data {
     }
     
     public void removeElement(Producto p){//revisar
-        
-       productos.remove(p.getCodigo());
+        if(productos.size()==1){
+             productos = new HashMap<>();
+        }else{
+            productos.remove(p.getCodigo());
+        }
+     
     }
     public void removeCliente(Cliente c){
-        this.clientes1.remove(c.getCedula());
+        if(clientes1.size() == 1){
+            clientes1 = new HashMap<>();
+        }else{
+           this.clientes1.remove(c.getCedula());
+        }
+       
     }
     public void replaceCliente(String key,Cliente viejo,Cliente nuevo){
         this.clientes1.replace(key, viejo, nuevo);

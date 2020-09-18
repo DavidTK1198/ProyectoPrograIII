@@ -5,6 +5,8 @@
  */
 package Presentation.MainWindow;
 
+import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+
 /**
  *
  * @author DavidTK1198
@@ -35,6 +37,7 @@ public class Controller {
         vista.setControl(this);
         vista.setModel(model);
         initOptions();
+       
     }
 
     public void initOptions() {
@@ -53,6 +56,10 @@ public class Controller {
         registros_model=new Presentation.Registros.Model();
         registros_View=new Presentation.Registros.View(vista, true);
         registros=new Presentation.Registros.Controller(registros_View, registros_model);
+         if(empresa_model.isBandera() == false){
+             empresa_control.Mostrar();
+        }
+
         
     }
 

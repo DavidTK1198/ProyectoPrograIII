@@ -70,7 +70,8 @@ public class Controller {
     }
 
     public void eliminar(int n) {
-        Cliente client = model.getClient();
+        
+        Cliente client = this.model.getTable().getRowAT(n);
         Logic.Service.getInstance().deleteCliente(client);
         model.setLista(Logic.Service.getInstance().getClientes());
     }
