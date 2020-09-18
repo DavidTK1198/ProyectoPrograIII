@@ -260,8 +260,8 @@ public class View extends javax.swing.JFrame implements Observer {
        
         try {
             
-            if(Logic.Empresa.getInstance().validateData())
-               throw new Exception("Datos de la empresa Incompletos");
+//            if(Logic.Empresa.getInstance().validateData())
+//               throw new Exception("Datos de la empresa Incompletos");
        
             this.dispose();
             String p = "Facturas.xml";/// a ver que ponemos aquí

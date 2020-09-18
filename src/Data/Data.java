@@ -109,13 +109,13 @@ public class Data {
        return client;
    }
 
-    public void setEmp(Empresa Emp) {
-        this.Emp = Emp;
+    public Empresa getEmp() {
+        return Emp;
     }
-
-   
+  
 
 }
+
 
 
 

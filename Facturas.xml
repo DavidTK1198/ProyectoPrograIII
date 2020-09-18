@@ -22,7 +22,95 @@
             </value>
         </entry>
     </productos>
-    <facturas/>
+    <facturas>
+        <entry>
+            <key>506 - 17092020-01</key>
+            <value>
+                <misLineas>
+                    <produc>3434</produc>
+                    <cantidadProd>96</cantidadProd>
+                    <ide>96</ide>
+                </misLineas>
+                <numeroFactura>506 - 17092020-01</numeroFactura>
+                <actual>2323</actual>
+                <fecha>17/09/2020</fecha>
+                <fecha2>17/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 17092020 213655-01</key>
+            <value>
+                <misLineas>
+                    <produc>3434</produc>
+                    <cantidadProd>3443</cantidadProd>
+                    <ide>3443</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>3434</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>3434</produc>
+                    <cantidadProd>3</cantidadProd>
+                    <ide>3</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>343434</produc>
+                    <cantidadProd>33</cantidadProd>
+                    <ide>33</ide>
+                </misLineas>
+                <numeroFactura>506 - 17092020 213655-01</numeroFactura>
+                <actual>2323</actual>
+                <fecha>17/09/2020 21:36:55</fecha>
+                <fecha2>17/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 17092020 212235-01</key>
+            <value>
+                <misLineas>
+                    <produc>343434</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>343434</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>343434</produc>
+                    <cantidadProd>5</cantidadProd>
+                    <ide>5</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>343434</produc>
+                    <cantidadProd>6</cantidadProd>
+                    <ide>6</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>343434</produc>
+                    <cantidadProd>7</cantidadProd>
+                    <ide>7</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>343434</produc>
+                    <cantidadProd>7</cantidadProd>
+                    <ide>7</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>3434</produc>
+                    <cantidadProd>8</cantidadProd>
+                    <ide>8</ide>
+                </misLineas>
+                <numeroFactura>506 - 17092020 212235-01</numeroFactura>
+                <actual>2323</actual>
+                <fecha>17/09/2020 21:22:35</fecha>
+                <fecha2>17/09/2020</fecha2>
+            </value>
+        </entry>
+    </facturas>
     <clientes1>
         <entry>
             <key>2323</key>
@@ -31,15 +119,18 @@
                 <nombre>1221</nombre>
                 <apellidos>3434</apellidos>
                 <CorreoE>1221</CorreoE>
+                <listaFacturas>506 - 17092020-01</listaFacturas>
+                <listaFacturas>506 - 17092020 212235-01</listaFacturas>
+                <listaFacturas>506 - 17092020 213655-01</listaFacturas>
             </value>
         </entry>
     </clientes1>
     <Emp>
-        <nombreEm>232323545tdgvdsvdf</nombreEm>
-        <telefono>343434</telefono>
-        <correo>343434</correo>
-        <actividad>344334</actividad>
-        <CedulaJuridica>21122112</CedulaJuridica>
-        <direccion>1221211</direccion>
+        <nombreEm>2323</nombreEm>
+        <telefono>211221</telefono>
+        <correo>34343</correo>
+        <actividad>3434</actividad>
+        <CedulaJuridica>1221</CedulaJuridica>
+        <direccion>322312</direccion>
     </Emp>
 </data>

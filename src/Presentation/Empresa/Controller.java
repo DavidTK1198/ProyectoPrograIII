@@ -5,7 +5,6 @@
  */
 package Presentation.Empresa;
 
-
 /**
  *
  * @author boyro
@@ -30,19 +29,20 @@ public class Controller {
         vista.setVisible(false);
     }
 
-    public void editEmpresa(boolean editable, String nom,String cedJur,String direc,String activ, String tel,String correoE) {//a ver como manejamos la lista de telefonos
+    public void editEmpresa(boolean editable, String nom, String cedJur, String direc, String activ, String tel, String correoE) {//a ver como manejamos la lista de telefonos
 
         if (!editable) {
-            Logic.Empresa.getInstance().setNombre(nom);
-            Logic.Empresa.getInstance().setCorreo(correoE);
-            Logic.Empresa.getInstance().setCedulaJuridica(cedJur);
-            Logic.Empresa.getInstance().setDireccion(direc);
-            Logic.Empresa.getInstance().setActividad(activ);
-            Logic.Empresa.getInstance().setTelefono(tel);
-            Logic.Service.getInstance().setEmpresa(Logic.Empresa.getInstance());
+            Logic.Service.getInstance().my_Empresa().setNombre(nom);
+            Logic.Service.getInstance().my_Empresa().setCorreo(correoE);
+            Logic.Service.getInstance().my_Empresa().setCedulaJuridica(cedJur);
+            Logic.Service.getInstance().my_Empresa().setDireccion(direc);
+            Logic.Service.getInstance().my_Empresa().setActividad(activ);
+            Logic.Service.getInstance().my_Empresa().setActividad(tel);
+
         }
     }
-    public boolean empresaValidData(){
-    return Logic.Empresa.getInstance().validateData();
+
+    public boolean empresaValidData() {
+        return Logic.Service.getInstance().my_Empresa().validateData();
     }
 }

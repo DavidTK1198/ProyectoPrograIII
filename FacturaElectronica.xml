@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<FacturaElectronica>
+<Emisor>
+<Nombre>1212</Nombre>
+<Direccion>1212</Direccion>
+<Correo>4334</Correo>
+<CedulaJuridica>121</CedulaJuridica>
+</Emisor>
+<Receptor>
+<Nombre>1221</Nombre>
+<Identificacion>2323</Identificacion>3434<CorreoElectronico>1221</CorreoElectronico>
+</Receptor>
+<DetalleDeServicio>
+<LineaDetalle>3434<Nombre>12121</Nombre>
+<Precio>1232.0</Precio>
+<descripcion>2121</descripcion>
+</LineaDetalle>
+<LineaDetalle>3434<Nombre>12121</Nombre>
+<Precio>1232.0</Precio>
+<descripcion>2121</descripcion>
+</LineaDetalle>
+<LineaDetalle>3434<Nombre>12121</Nombre>
+<Precio>1232.0</Precio>
+<descripcion>2121</descripcion>
+</LineaDetalle>
+</DetalleDeServicio>
+</FacturaElectronica>

@@ -60,7 +60,7 @@ public class XmlPersister {
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         Data result = (Data) unmarshaller.unmarshal(is);
         is.close();
-        this.read();
+//        this.read();
         return result;
     }
 

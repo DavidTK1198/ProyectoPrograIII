@@ -95,8 +95,8 @@ public class Service {
         this.maker.makeXml(p);
     }
     
-    public void setEmpresa(Empresa instancia){
-        this.data.setEmp(instancia);
-    }
+   public Empresa my_Empresa(){
+       return this.data.getEmp();
+   }
 
 }

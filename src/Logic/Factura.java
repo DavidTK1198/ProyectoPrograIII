@@ -30,12 +30,13 @@ public class Factura {
     private Cliente actual;
     private String fecha;
     private String tipoPago;
+    private String fecha2;
 
     public Factura() {
         misLineas = new ArrayList<>();
         Date date = new Date();
         fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date);
-        
+       fecha2 = new SimpleDateFormat("dd/MM/yyyy").format(date);
         numeroFactura = "506 - "+date_Format(fecha)+"-01";
         
     }
@@ -67,6 +68,10 @@ public class Factura {
     public void setCurret(Cliente curret) {
         this.actual = curret;
         this.actual.agregarFacturas(this);
+    }
+
+    public String getFecha2() {
+        return fecha2;
     }
 
     public String getFecha() {
@@ -117,4 +122,6 @@ public class Factura {
  
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
+
 
