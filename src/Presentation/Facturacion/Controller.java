@@ -70,16 +70,18 @@ private Presentation.Facturacion.View vista;
     try {
          Logic.Service.getInstance().addFactura(p);
      } catch (Exception ex) {
+       
         JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
        
     }
     
     try {
+        
           Logic.Service.getInstance().makeFacturaXML(p);
          Logic.Service.getInstance().createPDF(p);
        
     } catch (Exception ex) {
-        System.out.println(ex.getCause());
+          System.out.println(ex.getCause());
         return;
     }
         this.model.setFlag(true);

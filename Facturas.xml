@@ -1,14 +1,361 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <data>
-    <productos/>
-    <facturas/>
-    <clientes1/>
+    <productos>
+        <entry>
+            <key>1212221</key>
+            <value>
+                <codigo>1212221</codigo>
+                <nombreE>1221</nombreE>
+                <descripcion>212</descripcion>
+                <precioUnitario>1223.0</precioUnitario>
+                <impuestoVenta>158.99</impuestoVenta>
+            </value>
+        </entry>
+    </productos>
+    <facturas>
+        <entry>
+            <key>506 - 18092020 173853-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>1</cantidadProd>
+                    <ide>1</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 173853-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 17:38:53</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 191153-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>2</cantidadProd>
+                    <ide>2</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 191153-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 19:11:53</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 190752-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>5</cantidadProd>
+                    <ide>5</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 190752-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 19:07:52</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 192504-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>3</cantidadProd>
+                    <ide>3</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>23</cantidadProd>
+                    <ide>23</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 192504-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 19:25:04</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 180218-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>5</cantidadProd>
+                    <ide>5</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 180218-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 18:02:18</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 190321-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>14</cantidadProd>
+                    <ide>14</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 190321-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 19:03:21</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 195554-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>1</cantidadProd>
+                    <ide>1</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>5</cantidadProd>
+                    <ide>5</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 195554-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 19:55:54</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 175939-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>3</cantidadProd>
+                    <ide>3</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>23</cantidadProd>
+                    <ide>23</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 175939-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 17:59:39</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 173820-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>34</cantidadProd>
+                    <ide>34</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>1</cantidadProd>
+                    <ide>1</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>3</cantidadProd>
+                    <ide>3</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 173820-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 17:38:20</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 174326-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>1</cantidadProd>
+                    <ide>1</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>1</cantidadProd>
+                    <ide>1</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 174326-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 17:43:26</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 192657-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>2</cantidadProd>
+                    <ide>2</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>3</cantidadProd>
+                    <ide>3</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 192657-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 19:26:57</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 192157-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>1</cantidadProd>
+                    <ide>1</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>2</cantidadProd>
+                    <ide>2</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 192157-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 19:21:57</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 195038-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>1</cantidadProd>
+                    <ide>1</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>2</cantidadProd>
+                    <ide>2</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>4</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 195038-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 19:50:38</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 18092020 183621-01</key>
+            <value>
+                <misLineas>
+                    <produc>1212221</produc>
+                    <cantidadProd>3</cantidadProd>
+                    <ide>3</ide>
+                </misLineas>
+                <numeroFactura>506 - 18092020 183621-01</numeroFactura>
+                <actual>41243</actual>
+                <fecha>18/09/2020 18:36:21</fecha>
+                <fecha2>18/09/2020</fecha2>
+            </value>
+        </entry>
+    </facturas>
+    <clientes1>
+        <entry>
+            <key>41243</key>
+            <value>
+                <cedula>41243</cedula>
+                <nombre>2112</nombre>
+                <apellidos>3343</apellidos>
+                <CorreoE>2214334</CorreoE>
+                <listaFacturas>506 - 18092020 173820-01</listaFacturas>
+                <listaFacturas>506 - 18092020 173853-01</listaFacturas>
+                <listaFacturas>506 - 18092020 174326-01</listaFacturas>
+                <listaFacturas>506 - 18092020 175939-01</listaFacturas>
+                <listaFacturas>506 - 18092020 180218-01</listaFacturas>
+                <listaFacturas>506 - 18092020 183621-01</listaFacturas>
+                <listaFacturas>506 - 18092020 190321-01</listaFacturas>
+                <listaFacturas>506 - 18092020 190752-01</listaFacturas>
+                <listaFacturas>506 - 18092020 191153-01</listaFacturas>
+                <listaFacturas>506 - 18092020 192157-01</listaFacturas>
+                <listaFacturas>506 - 18092020 192504-01</listaFacturas>
+                <listaFacturas>506 - 18092020 192657-01</listaFacturas>
+                <listaFacturas>506 - 18092020 195038-01</listaFacturas>
+                <listaFacturas>506 - 18092020 195554-01</listaFacturas>
+            </value>
+        </entry>
+    </clientes1>
     <Emp>
-        <nombreEm>Monas Chinas</nombreEm>
-        <telefono></telefono>
-        <correo>123434</correo>
-        <actividad>213434</actividad>
-        <CedulaJuridica>2134</CedulaJuridica>
-        <direccion>1234</direccion>
+        <nombreEm>Monas Chinas SA</nombreEm>
+        <telefono>213223</telefono>
+        <correo>3434</correo>
+        <actividad>vender anime</actividad>
+        <CedulaJuridica>212</CedulaJuridica>
+        <direccion>123r4f</direccion>
     </Emp>
 </data>

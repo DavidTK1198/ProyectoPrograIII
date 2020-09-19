@@ -37,7 +37,7 @@ public class Controller {
             Logic.Service.getInstance().my_Empresa().setCedulaJuridica(cedJur);
             Logic.Service.getInstance().my_Empresa().setDireccion(direc);
             Logic.Service.getInstance().my_Empresa().setActividad(activ);
-            Logic.Service.getInstance().my_Empresa().setActividad(tel);
+            Logic.Service.getInstance().my_Empresa().setTelefono(tel);
 
         }
     }

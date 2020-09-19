@@ -28,6 +28,7 @@ import org.w3c.dom.Text;
 public class XmlMaker {
 
     public void makeXml(Factura nueva) throws Exception {
+        
 
         Cliente cl = nueva.getCurret();
         List<LineaDetalle> lineas = nueva.getLineas();
@@ -49,25 +50,25 @@ public class XmlMaker {
 
         //Nombre Empresa
         Element nombreEmpresa = documento.createElement("Nombre");
-        Text textnombreE = documento.createTextNode(Logic.Empresa.getInstance().getNombre());
+        Text textnombreE = documento.createTextNode(Logic.Service.getInstance().my_Empresa().getNombre());
         nombreEmpresa.appendChild(textnombreE);
         emisor.appendChild(nombreEmpresa);
 
         // Direccion
         Element direccion = documento.createElement("Direccion");
-        Text textdirec = documento.createTextNode(Logic.Empresa.getInstance().getDireccion());
+        Text textdirec = documento.createTextNode(Logic.Service.getInstance().my_Empresa().getDireccion());
         direccion.appendChild(textdirec);
         emisor.appendChild(direccion);
 
         // Correo
         Element correo = documento.createElement("Correo");
-        Text textcorr = documento.createTextNode(Logic.Empresa.getInstance().getCorreo());
+        Text textcorr = documento.createTextNode(Logic.Service.getInstance().my_Empresa().getCorreo());
         correo.appendChild(textcorr);
         emisor.appendChild(correo);
 
         // CedulaJuridica
         Element ced = documento.createElement("CedulaJuridica");
-        Text jur = documento.createTextNode(Logic.Empresa.getInstance().getCedulaJuridica());
+        Text jur = documento.createTextNode(Logic.Service.getInstance().my_Empresa().getCedulaJuridica());
         ced.appendChild(jur);
         emisor.appendChild(ced);
 
@@ -118,7 +119,7 @@ public class XmlMaker {
             Element codigo1 = documento.createElement("Codigo");
             Text  codigo= documento.createTextNode(p.getCodigo());
             codigo1.appendChild(codigo);
-            linea.appendChild(codigo);
+            linea.appendChild(codigo1);
           
             
             //nombre
