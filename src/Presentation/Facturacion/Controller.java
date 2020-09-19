@@ -67,22 +67,14 @@ private Presentation.Facturacion.View vista;
         Factura p;
         p=model.getNueva();
          p.setCurret(model.getCl());
+         p.setTipoPago(this.vista.getTipo());
     try {
          Logic.Service.getInstance().addFactura(p);
+         Logic.Service.getInstance().createPDF(p);
      } catch (Exception ex) {
        
         JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
        
-    }
-    
-    try {
-        
-          Logic.Service.getInstance().makeFacturaXML(p);
-         Logic.Service.getInstance().createPDF(p);
-       
-    } catch (Exception ex) {
-          System.out.println(ex.getCause());
-        return;
     }
         this.model.setFlag(true);
         this.model.facturaUpdate();

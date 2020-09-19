@@ -28,7 +28,6 @@ import org.w3c.dom.Text;
 public class XmlMaker {
 
     public void makeXml(Factura nueva) throws Exception {
-        
 
         Cliente cl = nueva.getCurret();
         List<LineaDetalle> lineas = nueva.getLineas();
@@ -74,8 +73,6 @@ public class XmlMaker {
 
         // Añado al root el elemento emisor(Cuando se termina de agregar los elementos)
         documento.getDocumentElement().appendChild(emisor);
-        
-        
 
         Element receptor = documento.createElement("Receptor");//se hace igual que emisor
         //nombre cliente
@@ -83,74 +80,73 @@ public class XmlMaker {
         Text nombreE = documento.createTextNode(cl.getNombre());
         nombreReceptor.appendChild(nombreE);
         receptor.appendChild(nombreReceptor);
-        
+
         //cedula cliente 
-          Element cedula = documento.createElement("Identificacion");
+        Element cedula = documento.createElement("Identificacion");
         Text ide = documento.createTextNode(cl.getCedula());
         cedula.appendChild(ide);
         receptor.appendChild(cedula);
         //cliente apellido 
-          Element apellido = documento.createElement("Apellidos");
+        Element apellido = documento.createElement("Apellidos");
         Text apellidos = documento.createTextNode(cl.getApellidos());
         apellido.appendChild(apellidos);
         receptor.appendChild(apellidos);
-        
+
         //cliente correo
-          Element correoCl = documento.createElement("CorreoElectronico");
+        Element correoCl = documento.createElement("CorreoElectronico");
         Text correocl = documento.createTextNode(cl.getCorreoE());
         correoCl.appendChild(correocl);
         receptor.appendChild(correoCl);
 
         // Añado al root el elemento emisor(Cuando se termina de agregar los elementos)
         documento.getDocumentElement().appendChild(receptor);
-         
-        
+
         //aquí esta la carnita
         //Linea de servicio
-        
-         Element lineaser = documento.createElement("DetalleDeServicio");
-        
+        Element lineaser = documento.createElement("DetalleDeServicio");
+
         for (int i = 0; i < lineas.size(); i++) {
             Element linea = documento.createElement("LineaDetalle");
             miLinea = lineas.get(i);
             p = miLinea.getCurret1();//este es el producto, ahora hay que sacarle los datos
-            
+
             //codigo
             Element codigo1 = documento.createElement("Codigo");
-            Text  codigo= documento.createTextNode(p.getCodigo());
+            Text codigo = documento.createTextNode(p.getCodigo());
             codigo1.appendChild(codigo);
             linea.appendChild(codigo1);
-          
-            
+
             //nombre
-             Element name = documento.createElement("Nombre");
-            Text  nam1= documento.createTextNode(p.getNombre());
+            Element name = documento.createElement("Nombre");
+            Text nam1 = documento.createTextNode(p.getNombre());
             name.appendChild(nam1);
             linea.appendChild(name);
-          
+
             ///precio
-             Element precio = documento.createElement("Precio");
-            Text  pre= documento.createTextNode(Double.toString(p.getPrecioUnitario()));
+            Element precio = documento.createElement("Precio");
+            Text pre = documento.createTextNode(Double.toString(p.getPrecioUnitario()));
             precio.appendChild(pre);
             linea.appendChild(precio);
-          
-            
+
             //descripcion
-             Element descrip = documento.createElement("descripcion");
-            Text  des= documento.createTextNode(p.getDescripcion());
+            Element descrip = documento.createElement("descripcion");
+            Text des = documento.createTextNode(p.getDescripcion());
             descrip.appendChild(des);
             linea.appendChild(descrip);
-            
+
             lineaser.appendChild(linea);
         }
-       
+
         documento.getDocumentElement().appendChild(lineaser);
+        Element tipopago = documento.createElement("TipoDePago");
+        Text pago = documento.createTextNode(nueva.getTipoPago());
+        tipopago.appendChild(pago);
+        documento.getDocumentElement().appendChild(tipopago);
 
         // Asocio el source con el Document
         Source source = new DOMSource(documento);
         // Creo el Result, indicado que fichero se va a crear
         Result result = new StreamResult(new File("FacturaElectronica.xml"));
-
 
         // Creo un transformer, se crea el fichero XML
         Transformer transformer = TransformerFactory.newInstance().newTransformer();

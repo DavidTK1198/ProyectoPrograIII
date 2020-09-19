@@ -38,6 +38,7 @@ public class Factura {
         fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date);
        fecha2 = new SimpleDateFormat("dd/MM/yyyy").format(date);
         numeroFactura = "506 - "+date_Format(fecha)+"-01";
+        tipoPago="";
         
     }
     private String date_Format(String f){
@@ -122,6 +123,7 @@ public class Factura {
  
     //10----> 525---> 25----> (525 + 25)* 10
 }
+
 
 
 

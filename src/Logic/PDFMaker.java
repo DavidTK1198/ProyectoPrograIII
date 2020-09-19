@@ -7,7 +7,6 @@ package Logic;
 
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.io.image.ImageData;
-import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFont;
@@ -70,6 +69,8 @@ public class PDFMaker {
         document.add(img);
 
         document.add(new Paragraph(""));
+      document.add(new Paragraph("Factura Electronica N°: " + p.getNumeroFactura()).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT));
+     
         document.add(new Paragraph("Nombre de la empresa:    " + Logic.Service.getInstance().my_Empresa().getNombre()).setFont(font).setBold().setFontSize(12f));
         document.add(new Paragraph("Cedula Juridica: " + Logic.Service.getInstance().my_Empresa().getCedulaJuridica()).setFont(font).setBold().setFontSize(12f));
         document.add(new Paragraph("Telefono:    " + Logic.Service.getInstance().my_Empresa().getTelefono()).setFont(font).setBold().setFontSize(12f));
@@ -78,6 +79,7 @@ public class PDFMaker {
         document.add(new Paragraph("Cliente: " + p.getCurret().getNombre() + p.getCurret().getApellidos()).setFont(font).setBold().setFontSize(12f));
         document.add(new Paragraph("Correo del Cliente: " + p.getCurret().getCorreoE()).setFont(font).setBold().setFontSize(12f));
         document.add(new Paragraph("Cedula : " + p.getCurret().getCedula()).setFont(font).setBold().setFontSize(12f));
+         document.add(new Paragraph("Tipo de pago  : " + p.getTipoPago()).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT));
 
         document.add(new Paragraph("Fecha: " + p.getFecha2()).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT));
 
@@ -112,6 +114,7 @@ public class PDFMaker {
         table.setWidth(UnitValue.createPercentValue(100));
         document.add(table);
         document.add(new Paragraph("")).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
+         document.add(new Paragraph("Tipo de Pago   "+p.getTipoPago())).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
         document.add(new Paragraph("Total de  la compra    " + Double.toString(p.calcularTotal()))).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
         document.add(new Paragraph("SubTotal   " + Double.toString(p.subTotal()))).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
         document.add(new Paragraph("IVA   " + Double.toString(p.totalImpuesto()))).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
