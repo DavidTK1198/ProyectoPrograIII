@@ -5,6 +5,8 @@
  */
 package Logic;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlID;
@@ -27,7 +29,8 @@ public class LineaDetalle {
     public LineaDetalle(Producto produc, int cantidadProd) {
         this.produc = produc;
         this.cantidadProd = cantidadProd;
-        ide=String.valueOf(cantidadProd);
+         Date date = new Date();
+        ide= new SimpleDateFormat("HH:mm:ss").format(date);
     }
 
     public LineaDetalle() {
@@ -57,6 +60,7 @@ public class LineaDetalle {
     
     
 }
+
 
 
 

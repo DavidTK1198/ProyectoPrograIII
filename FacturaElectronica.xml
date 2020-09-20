@@ -29,11 +29,6 @@
 <Precio>1223.0</Precio>
 <descripcion>212</descripcion>
 </LineaDetalle>
-<LineaDetalle>
-<Codigo>1212221</Codigo>
-<Nombre>1221</Nombre>
-<Precio>1223.0</Precio>
-<descripcion>212</descripcion>
-</LineaDetalle>
 </DetalleDeServicio>
+<TipoDePago/>
 </FacturaElectronica>

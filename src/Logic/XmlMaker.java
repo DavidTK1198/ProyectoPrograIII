@@ -146,6 +146,7 @@ public class XmlMaker {
         // Asocio el source con el Document
         Source source = new DOMSource(documento);
         // Creo el Result, indicado que fichero se va a crear
+        
         Result result = new StreamResult(new File("FacturaElectronica.xml"));
 
         // Creo un transformer, se crea el fichero XML

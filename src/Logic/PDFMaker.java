@@ -114,7 +114,6 @@ public class PDFMaker {
         table.setWidth(UnitValue.createPercentValue(100));
         document.add(table);
         document.add(new Paragraph("")).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
-         document.add(new Paragraph("Tipo de Pago   "+p.getTipoPago())).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
         document.add(new Paragraph("Total de  la compra    " + Double.toString(p.calcularTotal()))).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
         document.add(new Paragraph("SubTotal   " + Double.toString(p.subTotal()))).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);
         document.add(new Paragraph("IVA   " + Double.toString(p.totalImpuesto()))).setFont(font).setBold().setFontSize(12f).setTextAlignment(TextAlignment.RIGHT);

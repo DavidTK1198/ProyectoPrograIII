@@ -113,7 +113,9 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
-        lineaFacturaPresentadaTxtFld.setBackground(new java.awt.Color(204, 204, 255));
+        lineaFacturaPresentadaTxtFld.setBackground(new java.awt.Color(255, 255, 255));
+        lineaFacturaPresentadaTxtFld.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lineaFacturaPresentadaTxtFld.setForeground(new java.awt.Color(0, 0, 0));
 
         TableDeFacturas.setBackground(new java.awt.Color(255, 153, 153));
         TableDeFacturas.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED)));
@@ -165,7 +167,7 @@ public class View extends javax.swing.JDialog implements Observer {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(lineaFacturaPresentadaTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

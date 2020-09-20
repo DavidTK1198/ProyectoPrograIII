@@ -6,7 +6,6 @@
 package Presentation.Empresa;
 
 import Logic.Service;
-import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
 import java.util.Observable;
@@ -473,7 +472,8 @@ public class View extends javax.swing.JDialog implements Observer {
         JFileChooser fc = new JFileChooser();
         FileNameExtensionFilter filtro;
         filtro = new FileNameExtensionFilter("Archivos Imagen 150x150 .png", "png");
-        fc.setPreferredSize(new Dimension(150, 150));
+    
+//        fc.setPreferredSize(new Dimension(150, 150));
         fc.setFileFilter(filtro);
         int seleccion = fc.showOpenDialog(this);
         if (seleccion == JFileChooser.APPROVE_OPTION) {
