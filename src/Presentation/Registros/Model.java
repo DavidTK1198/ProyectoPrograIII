@@ -20,11 +20,12 @@ import java.util.Observer;
 public class Model  extends Observable {
     private TableModel table;
     private Factura factura;
-     private final int[] col = {0,1,2,4,5};
+     private final int[] col = {0,1,2,3,4};
     private Presentation.Registros.TableModel tableFacturas;
     private List<Factura> lista;
     public Model() {
-    
+    factura = new Factura();
+    lista = Logic.Service.getInstance().misFacturas();
     table = new TableModel(lista,col);
      
     
@@ -34,7 +35,7 @@ public class Model  extends Observable {
         return tableFacturas;
     }
 
-    public void setTableProducto(Presentation.Registros.TableModel tableFacturas) {
+    public void setTableFacturas(Presentation.Registros.TableModel tableFacturas) {
         this.tableFacturas = tableFacturas;
     }
     
@@ -48,6 +49,32 @@ public class Model  extends Observable {
         this.setChanged();
         this.notifyObservers();
         
+    }
+    
+    
+    public Factura getFactura() {
+        return  factura;
+    }
+
+    public void setFactura(Factura  factura) {
+        this. factura =  factura;
+    }
+
+    public List<Factura> getLista() {
+        return lista;
+    }
+
+    public void setLista(List<Factura> a) {
+        this.lista = a;
+        setTable(a);
+        refresh();
+    }
+    
+      public TableModel getTable() {
+        return table;
+    }
+    public void setTable(List<Factura> tablee) {
+        table = new TableModel(tablee,col);
     }
 }
 

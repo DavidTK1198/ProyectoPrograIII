@@ -17,7 +17,7 @@ import javax.swing.table.AbstractTableModel;
 public class TableModel extends AbstractTableModel{
     private List<Factura> filas;
     private int[] columnas;
-    private String[] nombCol={"Fecha","# Factura","Cliente","SubTotal","IVA"};
+    private String[] nombCol={"Fecha","# Factura","Cliente","SubTotal","+IVA"};
    
 
     public TableModel(List<Factura> filas, int[] columnas) {

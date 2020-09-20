@@ -261,18 +261,20 @@ public class View extends javax.swing.JFrame implements Observer {
        
         try {
             
-//            if(Logic.Empresa.getInstance().validateData())
-//               throw new Exception("Datos de la empresa Incompletos");
-       
-            this.dispose();
-            String p = "Facturas.xml";/// a ver que ponemos aquí
-            Logic.Service.getInstance().Save(p);
-       
+//            if(Logic.Service.getInstance().my_Empresa() .validateData())
+//              throw new Exception("Datos de la empresa Incompletos");
+           this.dispose();
+           String p = "Facturas.xml";/// a ver que ponemos aquí
+           Logic.Service.getInstance().Save(p);
+
+            
+ 
         }catch(Exception e){
             
-         JOptionPane.showMessageDialog(null, " basura Excepcion al salir  "+e);
+         //JOptionPane.showMessageDialog(null, " basura Excepcion al salir  "+e);
        
         }
+  
 
     }//GEN-LAST:event_SalirActionPerformed
 

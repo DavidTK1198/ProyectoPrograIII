@@ -6,6 +6,8 @@
 
 package Presentation.Registros;
 
+import Logic.Factura;
+
 /**
  * 
  * @author boyro
@@ -22,8 +24,12 @@ public class Controller {
         this.model = model;
         vista.setControl(this);
         vista.setModel(model);
+        model.setLista(Logic.Service.getInstance().misFacturas());
     }
-
+    public void setFactura(int n) {
+       Factura fac=model.getTable().getRowAt(n);
+       model.setFactura(fac);
+    }
     public void show() {
         vista.setVisible(true);
     }
