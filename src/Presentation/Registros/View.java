@@ -6,8 +6,10 @@
 package Presentation.Registros;
 
 import Logic.Factura;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 
@@ -24,6 +26,7 @@ public class View extends javax.swing.JDialog implements Observer {
     
     private Controller control;
     private Model model;
+   String path;
     public View(java.awt.Frame parent, boolean modal) {
         super(parent,modal);
         initComponents();
@@ -41,7 +44,7 @@ public class View extends javax.swing.JDialog implements Observer {
 
         jPanel1 = new javax.swing.JPanel();
         Volver = new javax.swing.JButton();
-        Cancelarr = new javax.swing.JButton();
+        SetPathbttn = new javax.swing.JButton();
         generarPDFBttn = new javax.swing.JButton();
         generarXMLBttn = new javax.swing.JButton();
         nuevo = new javax.swing.JButton();
@@ -63,16 +66,16 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
-        Cancelarr.setBackground(new java.awt.Color(0, 153, 153));
-        Cancelarr.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        Cancelarr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cancel.png"))); // NOI18N
-        Cancelarr.setText("Cancelar");
-        Cancelarr.addActionListener(new java.awt.event.ActionListener() {
+        SetPathbttn.setBackground(new java.awt.Color(0, 153, 153));
+        SetPathbttn.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        SetPathbttn.setText("Set Path");
+        SetPathbttn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarrActionPerformed(evt);
+                SetPathbttnActionPerformed(evt);
             }
         });
 
+        generarPDFBttn.setBackground(new java.awt.Color(0, 153, 153));
         generarPDFBttn.setText("Generar PDF");
         generarPDFBttn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -85,13 +88,20 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
+        generarXMLBttn.setBackground(new java.awt.Color(0, 153, 153));
         generarXMLBttn.setText("Generar XML");
         generarXMLBttn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 generarXMLBttnMouseClicked(evt);
             }
         });
+        generarXMLBttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generarXMLBttnActionPerformed(evt);
+            }
+        });
 
+        nuevo.setBackground(new java.awt.Color(0, 153, 153));
         nuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-new-copy-20.png"))); // NOI18N
         nuevo.setText("Nuevo");
         nuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +110,7 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
+        GuardarBttn.setBackground(new java.awt.Color(0, 153, 153));
         GuardarBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/save_icon-icons.com_53618.png"))); // NOI18N
         GuardarBttn.setText("Guardar");
         GuardarBttn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -113,9 +124,7 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         });
 
-        lineaFacturaPresentadaTxtFld.setBackground(new java.awt.Color(255, 255, 255));
         lineaFacturaPresentadaTxtFld.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lineaFacturaPresentadaTxtFld.setForeground(new java.awt.Color(0, 0, 0));
 
         TableDeFacturas.setBackground(new java.awt.Color(255, 153, 153));
         TableDeFacturas.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED)));
@@ -141,23 +150,21 @@ public class View extends javax.swing.JDialog implements Observer {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(GuardarBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(generarXMLBttn)
-                .addGap(26, 26, 26)
-                .addComponent(generarPDFBttn)
-                .addGap(28, 28, 28)
-                .addComponent(Cancelarr)
-                .addGap(18, 18, 18)
-                .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(GuardarBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addComponent(nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(generarXMLBttn)
+                        .addGap(53, 53, 53)
+                        .addComponent(generarPDFBttn)
+                        .addGap(58, 58, 58)
+                        .addComponent(SetPathbttn)
+                        .addGap(52, 52, 52)
+                        .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lineaFacturaPresentadaTxtFld))
                 .addContainerGap())
@@ -172,7 +179,7 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cancelarr, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SetPathbttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(generarPDFBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(generarXMLBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -214,10 +221,19 @@ public class View extends javax.swing.JDialog implements Observer {
         
     }//GEN-LAST:event_nuevoActionPerformed
 
-    private void CancelarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarrActionPerformed
-      
-      limpiarTextField();
-    }//GEN-LAST:event_CancelarrActionPerformed
+    private void SetPathbttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetPathbttnActionPerformed
+         try {     
+        JFileChooser fc = new JFileChooser();
+             int seleccion = fc.showSaveDialog(this);
+                if (seleccion == JFileChooser.APPROVE_OPTION) {
+                      File source = fc.getCurrentDirectory();
+                         path = fc.getSelectedFile().getAbsolutePath();
+            
+                 }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al elegir la directorio para el achivo");
+            }
+    }//GEN-LAST:event_SetPathbttnActionPerformed
 
     private void GuardarBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBttnActionPerformed
        // JOptionPane.showMessageDialog(null, "Sin Implementar");
@@ -236,7 +252,7 @@ public class View extends javax.swing.JDialog implements Observer {
     private void generarXMLBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generarXMLBttnMouseClicked
         try {
             Factura FacturaElectronica = model.getFactura();
-            Logic.Service.getInstance().makeFacturaXML(FacturaElectronica);
+            Logic.Service.getInstance().makeFacturaXML(FacturaElectronica,path);
         } catch (Exception ex) {
             System.out.println(ex.getCause());
             JOptionPane.showMessageDialog(null, "No fue posible crear el XML");
@@ -247,7 +263,7 @@ public class View extends javax.swing.JDialog implements Observer {
         //JOptionPane.showMessageDialog(null, "Sin Implementar");
          try {
             Factura FacturaElectronica = model.getFactura();
-            Logic.Service.getInstance().createPDF(FacturaElectronica);
+            Logic.Service.getInstance().createPDF(FacturaElectronica,path);
         } catch (Exception ex) {
             System.out.println(ex.getCause());
             JOptionPane.showMessageDialog(null, "No fue posible crear el PDF");
@@ -264,6 +280,10 @@ public class View extends javax.swing.JDialog implements Observer {
             }
         
     }//GEN-LAST:event_TableDeFacturasMouseClicked
+
+    private void generarXMLBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarXMLBttnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generarXMLBttnActionPerformed
 
     
     @Override
@@ -294,8 +314,8 @@ public class View extends javax.swing.JDialog implements Observer {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cancelarr;
     private javax.swing.JButton GuardarBttn;
+    private javax.swing.JButton SetPathbttn;
     private javax.swing.JTable TableDeFacturas;
     private javax.swing.JButton Volver;
     private javax.swing.JButton generarPDFBttn;

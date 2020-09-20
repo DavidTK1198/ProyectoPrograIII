@@ -47,10 +47,11 @@ public class PDFMaker {
         ImageIO.write(nueva1, "png", nueva);
     }
 
-    public void createPDF(Factura p) throws Exception {
-        String path = "prueba.pdf";
+    public void createPDF(Factura p,String path) throws Exception {
+        //String path = "prueba.pdf";
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
-        PdfWriter writer = new PdfWriter(path);
+        //PdfWriter writer = new PdfWriter(path);
+        PdfWriter writer = new PdfWriter(path+p.numeroFactura);//no se si sirva este seteo
         PdfDocument pdf = new PdfDocument(writer);
         Document document = new Document(pdf, PageSize.A4);
         document.setMargins(20, 20, 20, 20);

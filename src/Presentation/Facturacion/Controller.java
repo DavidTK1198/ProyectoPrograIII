@@ -70,7 +70,7 @@ private Presentation.Facturacion.View vista;
          p.setTipoPago(this.vista.getTipo());
     try {
          Logic.Service.getInstance().addFactura(p);
-         Logic.Service.getInstance().createPDF(p);
+         //Logic.Service.getInstance().createPDF(p);********************************************************************
      } catch (Exception ex) {
        
         JOptionPane.showMessageDialog(null, "Ingresar solo numeros");

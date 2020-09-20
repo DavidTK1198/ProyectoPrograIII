@@ -97,12 +97,12 @@ public class Service {
 
     }
     
-    public void createPDF(Factura p) throws Exception{
-        my_pdf.createPDF(p);
+    public void createPDF(Factura p,String path) throws Exception{
+        my_pdf.createPDF(p,path);
     }
 
-    public void makeFacturaXML(Factura p) throws Exception {
-        this.maker.makeXml(p);
+    public void makeFacturaXML(Factura p,String path) throws Exception {
+        this.maker.makeXml(p,path);
     }
     
    public Empresa my_Empresa(){

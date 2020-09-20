@@ -27,7 +27,7 @@ import org.w3c.dom.Text;
  */
 public class XmlMaker {
 
-    public void makeXml(Factura nueva) throws Exception {
+    public void makeXml(Factura nueva,String path) throws Exception {
 
         Cliente cl = nueva.getCurret();
         List<LineaDetalle> lineas = nueva.getLineas();
@@ -147,8 +147,8 @@ public class XmlMaker {
         Source source = new DOMSource(documento);
         // Creo el Result, indicado que fichero se va a crear
         
-        Result result = new StreamResult(new File("FacturaElectronica.xml"));
-
+        //Result result = new StreamResult(new File("FacturaElectronica.xml"));
+        Result result = new StreamResult(new File(path+nueva.numeroFactura+".xml"));// no se si esto sirve  
         // Creo un transformer, se crea el fichero XML
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
