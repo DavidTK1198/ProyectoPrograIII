@@ -398,11 +398,13 @@ public class View extends javax.swing.JDialog implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
-        // TODO add your handling code here:
-        if (!model.isBandera()) {
-            JOptionPane.showMessageDialog(null, "Completar la informacion de la empresa");
+    
+        if (!Logic.Service.getInstance().my_Empresa().validateData()) {
+        //if (!model.isBandera()) {
 
+            JOptionPane.showMessageDialog(null, "Completar la informacion de la empresa");
             return;
+            
         }
         control.hide();
         model.setBandera(false);

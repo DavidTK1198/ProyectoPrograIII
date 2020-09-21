@@ -30,6 +30,7 @@ public class View extends javax.swing.JDialog implements Observer {
     public View(java.awt.Frame parent, boolean modal) {
         super(parent,modal);
         initComponents();
+        path = "";
       
     }
 
@@ -222,8 +223,8 @@ public class View extends javax.swing.JDialog implements Observer {
     }//GEN-LAST:event_nuevoActionPerformed
 
     private void SetPathbttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetPathbttnActionPerformed
-         try {     
-        JFileChooser fc = new JFileChooser();
+        try {     
+            JFileChooser fc = new JFileChooser();
     
              int seleccion = fc.showSaveDialog(this);
                 if (seleccion == JFileChooser.APPROVE_OPTION) {
@@ -252,22 +253,37 @@ public class View extends javax.swing.JDialog implements Observer {
 
     private void generarXMLBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generarXMLBttnMouseClicked
         try {
+            if(path.isEmpty())
+                throw new Exception("NO se ha elegido un directorio donde guardar el archivo vaya al botón Set Path");
             Factura FacturaElectronica = model.getFactura();
+            if(FacturaElectronica==null)
+                throw new Exception("NO se ha elegido una  factura a guardar en formato XML");
             Logic.Service.getInstance().makeFacturaXML(FacturaElectronica,path);
+        } catch (java.lang.NullPointerException ex){
+            // Catch NullPointerExceptions.
+            JOptionPane.showMessageDialog(null, "No fue posible crear el XML: NO se ha elegido una  factura a guardar en formato XML");
         } catch (Exception ex) {
             System.out.println(ex.getCause());
-            JOptionPane.showMessageDialog(null, "No fue posible crear el XML");
+            JOptionPane.showMessageDialog(null, "No fue posible crear el XML "+ex);
         }
     }//GEN-LAST:event_generarXMLBttnMouseClicked
 
     private void generarPDFBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generarPDFBttnMouseClicked
         //JOptionPane.showMessageDialog(null, "Sin Implementar");
          try {
+            if(path.isEmpty())
+                throw new Exception("NO se ha elegido un directorio donde guardar el archivo vaya al botón Set Path");
             Factura FacturaElectronica = model.getFactura();
+            if(FacturaElectronica==null)
+                throw new Exception("NO se ha elegido una  factura a guardar en formato PDF ");
             Logic.Service.getInstance().createPDF(FacturaElectronica,path);
-        } catch (Exception ex) {
+        }catch (java.lang.NullPointerException ex){
+            // Catch NullPointerExceptions.
+            JOptionPane.showMessageDialog(null, "No fue posible crear el PDF: NO se ha elegido una  factura a guardar en formato PDF ");
+        } 
+         catch (Exception ex) {
             System.out.println(ex.getCause());
-            JOptionPane.showMessageDialog(null, "No fue posible crear el PDF");
+            JOptionPane.showMessageDialog(null, "No fue posible crear el PDF " + ex);
         }
     }//GEN-LAST:event_generarPDFBttnMouseClicked
 
