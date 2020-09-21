@@ -49,6 +49,7 @@ public class Empresa {
          this.correo = "";
          this.telefono = "";
          this.actividad = "";
+         this.CedulaJuridica="";
     }
     private Empresa(String nombre,String actividad,String telefono,String direcion,String CedJuri,String correo) {
          this.nombreEm = nombre;
@@ -107,8 +108,6 @@ public class Empresa {
     }
     public boolean validateData(){
     
-    if(this.CedulaJuridica.isEmpty()||this.actividad.isEmpty()||this.correo.isEmpty()||this.direccion.isEmpty()||this.nombreEm.isEmpty()||this.telefono.isEmpty())
-    return false;
-    else    return true;
+        return !(this.CedulaJuridica.isEmpty()||this.actividad.isEmpty()||this.correo.isEmpty()||this.direccion.isEmpty()||this.nombreEm.isEmpty()||this.telefono.isEmpty());
     }
 }

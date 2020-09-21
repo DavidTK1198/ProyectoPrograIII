@@ -40,6 +40,7 @@ public class Cliente {//Persona
     public List<Factura> getListaFacturas() {
         return listaFacturas;
     }
+ 
 
     public void setListaFacturas(List<Factura> listaFacturas) {
         this.listaFacturas = listaFacturas;
@@ -56,6 +57,7 @@ public class Cliente {//Persona
         this.apellidos = apellidos;
         this.cedula = cedula;
         this.CorreoE = CorreoE;
+         this.listaFacturas = new ArrayList<>();
     }
 
     public String getApellidos() {

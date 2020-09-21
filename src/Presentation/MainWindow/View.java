@@ -272,7 +272,7 @@ public class View extends javax.swing.JFrame implements Observer {
  
         }catch(Exception e){
             
-         JOptionPane.showMessageDialog(null, " basura Excepcion al salir  "+e);
+         JOptionPane.showMessageDialog(null, e.getMessage());
        
         }
   

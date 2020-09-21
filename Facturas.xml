@@ -2,416 +2,99 @@
 <data>
     <productos>
         <entry>
-            <key>1212221</key>
+            <key>2334</key>
             <value>
-                <codigo>1212221</codigo>
-                <nombreE>1221</nombreE>
-                <descripcion>212</descripcion>
-                <precioUnitario>1223.0</precioUnitario>
-                <impuestoVenta>158.99</impuestoVenta>
+                <codigo>2334</codigo>
+                <nombreE>|23</nombreE>
+                <descripcion>3434</descripcion>
+                <precioUnitario>123.0</precioUnitario>
+                <impuestoVenta>15.99</impuestoVenta>
             </value>
         </entry>
     </productos>
     <facturas>
         <entry>
-            <key>506 - 18092020 173853-01</key>
+            <key>506 - 21092020 113919-01</key>
             <value>
                 <misLineas>
-                    <produc>1212221</produc>
+                    <produc>2334</produc>
                     <cantidadProd>1</cantidadProd>
-                    <ide>1</ide>
+                    <ide>11:39:27</ide>
                 </misLineas>
-                <numeroFactura>506 - 18092020 173853-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 17:38:53</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 191153-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>2</cantidadProd>
-                    <ide>2</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 191153-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 19:11:53</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 190752-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>5</cantidadProd>
-                    <ide>5</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 190752-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 19:07:52</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 192504-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>3</cantidadProd>
-                    <ide>3</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>23</cantidadProd>
-                    <ide>23</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 192504-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 19:25:04</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 180218-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>5</cantidadProd>
-                    <ide>5</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 180218-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 18:02:18</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 19092020 193417-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>44</cantidadProd>
-                    <ide>44</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>55</cantidadProd>
-                    <ide>55</ide>
-                </misLineas>
-                <numeroFactura>506 - 19092020 193417-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>19/09/2020 19:34:17</fecha>
+                <numeroFactura>506 - 21092020 113919-01</numeroFactura>
+                <actual>3434</actual>
+                <fecha>21/09/2020 11:39:19</fecha>
                 <tipoPago>Efectivo</tipoPago>
-                <fecha2>19/09/2020</fecha2>
+                <fecha2>21/09/2020</fecha2>
             </value>
         </entry>
         <entry>
-            <key>506 - 19092020 195705-01</key>
+            <key>506 - 21092020 113928-01</key>
             <value>
                 <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>3</cantidadProd>
-                    <ide>3</ide>
+                    <produc>2334</produc>
+                    <cantidadProd>4</cantidadProd>
+                    <ide>11:39:56</ide>
                 </misLineas>
-                <numeroFactura>506 - 19092020 195705-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>19/09/2020 19:57:05</fecha>
+                <numeroFactura>506 - 21092020 113928-01</numeroFactura>
+                <actual>3434</actual>
+                <fecha>21/09/2020 11:39:28</fecha>
                 <tipoPago>Efectivo</tipoPago>
-                <fecha2>19/09/2020</fecha2>
+                <fecha2>21/09/2020</fecha2>
             </value>
         </entry>
         <entry>
-            <key>506 - 18092020 190321-01</key>
+            <key>506 - 21092020 113727-01</key>
             <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>14</cantidadProd>
-                    <ide>14</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 190321-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 19:03:21</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
+                <numeroFactura>506 - 21092020 113727-01</numeroFactura>
+                <actual>3434</actual>
+                <fecha>21/09/2020 11:37:27</fecha>
+                <tipoPago>Efectivo</tipoPago>
+                <fecha2>21/09/2020</fecha2>
             </value>
         </entry>
         <entry>
-            <key>506 - 18092020 195554-01</key>
+            <key>506 - 21092020 113627-01</key>
             <value>
                 <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>1</cantidadProd>
-                    <ide>1</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>5</cantidadProd>
-                    <ide>5</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 195554-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 19:55:54</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 175939-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>3</cantidadProd>
-                    <ide>3</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>23</cantidadProd>
-                    <ide>23</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 175939-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 17:59:39</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 173820-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>34</cantidadProd>
-                    <ide>34</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>1</cantidadProd>
-                    <ide>1</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>3</cantidadProd>
-                    <ide>3</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 173820-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 17:38:20</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 174326-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>1</cantidadProd>
-                    <ide>1</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>1</cantidadProd>
-                    <ide>1</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 174326-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 17:43:26</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 192657-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
+                    <produc>2334</produc>
                     <cantidadProd>2</cantidadProd>
-                    <ide>2</ide>
+                    <ide>11:37:12</ide>
                 </misLineas>
                 <misLineas>
-                    <produc>1212221</produc>
+                    <produc>2334</produc>
                     <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
+                    <ide>11:37:13</ide>
                 </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>3</cantidadProd>
-                    <ide>3</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 192657-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 19:26:57</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 192157-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>1</cantidadProd>
-                    <ide>1</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>2</cantidadProd>
-                    <ide>2</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 192157-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 19:21:57</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 195038-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>1</cantidadProd>
-                    <ide>1</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>2</cantidadProd>
-                    <ide>2</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>4</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 195038-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 19:50:38</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 18092020 183621-01</key>
-            <value>
-                <misLineas>
-                    <produc>1212221</produc>
-                    <cantidadProd>3</cantidadProd>
-                    <ide>3</ide>
-                </misLineas>
-                <numeroFactura>506 - 18092020 183621-01</numeroFactura>
-                <actual>41243</actual>
-                <fecha>18/09/2020 18:36:21</fecha>
-                <tipoPago></tipoPago>
-                <fecha2>18/09/2020</fecha2>
+                <numeroFactura>506 - 21092020 113627-01</numeroFactura>
+                <actual>3434</actual>
+                <fecha>21/09/2020 11:36:27</fecha>
+                <tipoPago>Efectivo</tipoPago>
+                <fecha2>21/09/2020</fecha2>
             </value>
         </entry>
     </facturas>
     <clientes1>
         <entry>
-            <key>41243</key>
+            <key>3434</key>
             <value>
-                <cedula>41243</cedula>
-                <nombre>2112</nombre>
-                <apellidos>3343</apellidos>
-                <CorreoE>2214334</CorreoE>
-                <listaFacturas>506 - 18092020 173820-01</listaFacturas>
-                <listaFacturas>506 - 18092020 173853-01</listaFacturas>
-                <listaFacturas>506 - 18092020 174326-01</listaFacturas>
-                <listaFacturas>506 - 18092020 175939-01</listaFacturas>
-                <listaFacturas>506 - 18092020 180218-01</listaFacturas>
-                <listaFacturas>506 - 18092020 183621-01</listaFacturas>
-                <listaFacturas>506 - 18092020 190321-01</listaFacturas>
-                <listaFacturas>506 - 18092020 190752-01</listaFacturas>
-                <listaFacturas>506 - 18092020 191153-01</listaFacturas>
-                <listaFacturas>506 - 18092020 192157-01</listaFacturas>
-                <listaFacturas>506 - 18092020 192504-01</listaFacturas>
-                <listaFacturas>506 - 18092020 192657-01</listaFacturas>
-                <listaFacturas>506 - 18092020 195038-01</listaFacturas>
-                <listaFacturas>506 - 18092020 195554-01</listaFacturas>
-                <listaFacturas>506 - 19092020 193417-01</listaFacturas>
-                <listaFacturas>506 - 19092020 195705-01</listaFacturas>
+                <cedula>3434</cedula>
+                <nombre>34</nombre>
+                <apellidos>32121</apellidos>
+                <CorreoE>211221</CorreoE>
+                <listaFacturas>506 - 21092020 113627-01</listaFacturas>
+                <listaFacturas>506 - 21092020 113727-01</listaFacturas>
+                <listaFacturas>506 - 21092020 113919-01</listaFacturas>
+                <listaFacturas>506 - 21092020 113928-01</listaFacturas>
             </value>
         </entry>
     </clientes1>
     <Emp>
-        <nombreEm>Monas Chinas SA</nombreEm>
-        <telefono>213223</telefono>
+        <nombreEm>232</nombreEm>
+        <telefono>2321</telefono>
         <correo>3434</correo>
-        <actividad>vender anime</actividad>
-        <CedulaJuridica>212</CedulaJuridica>
-        <direccion>123r4f</direccion>
+        <actividad>3434</actividad>
+        <CedulaJuridica>2121</CedulaJuridica>
+        <direccion>2112</direccion>
     </Emp>
 </data>

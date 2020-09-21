@@ -56,7 +56,7 @@ public class Controller {
         registros_model=new Presentation.Registros.Model();
         registros_View=new Presentation.Registros.View(vista, true);
         registros=new Presentation.Registros.Controller(registros_View, registros_model);
-         if("".equals(Logic.Service.getInstance().my_Empresa().getCedulaJuridica())){
+         if(Logic.Service.getInstance().my_Empresa().validateData()==false ){
              empresa_control.Mostrar();
         }
 

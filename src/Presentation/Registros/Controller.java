@@ -31,7 +31,10 @@ public class Controller {
        model.setFactura(fac);
     }
     public void show() {
+       model.setLista(Logic.Service.getInstance().misFacturas());
         vista.setVisible(true);
+         
+        
     }
 
 
