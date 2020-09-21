@@ -224,6 +224,7 @@ public class View extends javax.swing.JDialog implements Observer {
     private void SetPathbttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetPathbttnActionPerformed
          try {     
         JFileChooser fc = new JFileChooser();
+    
              int seleccion = fc.showSaveDialog(this);
                 if (seleccion == JFileChooser.APPROVE_OPTION) {
                       File source = fc.getCurrentDirectory();

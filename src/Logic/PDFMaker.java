@@ -51,7 +51,7 @@ public class PDFMaker {
         //String path = "prueba.pdf";
         PdfFont font = PdfFontFactory.createFont(StandardFonts.TIMES_ROMAN);
         //PdfWriter writer = new PdfWriter(path);
-        PdfWriter writer = new PdfWriter(path+p.numeroFactura);//no se si sirva este seteo
+        PdfWriter writer = new PdfWriter(path+p.getNumeroFactura()+".pdf");//no se si sirva este seteo
         PdfDocument pdf = new PdfDocument(writer);
         Document document = new Document(pdf, PageSize.A4);
         document.setMargins(20, 20, 20, 20);
