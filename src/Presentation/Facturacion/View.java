@@ -6,6 +6,7 @@
 package Presentation.Facturacion;
 
 import Logic.LineaDetalle;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JOptionPane;
@@ -201,6 +202,11 @@ public class View extends javax.swing.JDialog implements Observer {
         sub.setBackground(new java.awt.Color(255, 204, 255));
         sub.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         sub.setEnabled(false);
+        sub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Total(+IVA)");
@@ -247,17 +253,23 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(80, 80, 80)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(hacerFactura))
+                                .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(hacerFactura))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(26, 26, 26)
@@ -310,7 +322,7 @@ public class View extends javax.swing.JDialog implements Observer {
                             .addComponent(producto)
                             .addComponent(prdo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(CantidadBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -325,8 +337,10 @@ public class View extends javax.swing.JDialog implements Observer {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(sub)
+                                .addGap(2, 2, 2)))
+                        .addGap(24, 24, 24))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -371,13 +385,14 @@ public class View extends javax.swing.JDialog implements Observer {
         // TODO add your handling code here:
         int n = 0;
         try {
+
+            try {
+                n = Integer.parseInt(this.CantidadBusqueda.getText());
+            } catch (Exception r) {
+                JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
+                return;
+            }
             if (this.validacionDatosFactura() == true) {
-                try {
-                    n = Integer.parseInt(this.CantidadBusqueda.getText());
-                } catch (Exception r) {
-                    JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
-                    return;
-                }
                 LineaDetalle nueva;
                 nueva = new LineaDetalle(model.getPd(), n);
                 control.agregar(nueva);
@@ -391,6 +406,14 @@ public class View extends javax.swing.JDialog implements Observer {
         }
     }//GEN-LAST:event_AgregarMouseClicked
 
+    public boolean validarCantLineaDetalle()throws Exception{
+        List<LineaDetalle> ld = model.getLista();
+        if(ld.isEmpty()){
+            throw new Exception();
+        }else{
+            return true;
+        }
+    }
     private void clientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientsMouseClicked
         // TODO add your handling code here:
         int n = this.clients.getSelectedRow();
@@ -407,14 +430,16 @@ public class View extends javax.swing.JDialog implements Observer {
 
         try {
 
-            if (this.validacionDatosFactura() == true) {
+            if (this.validarCantLineaDetalle()) {
                 this.control.hacerFactura();
                 this.cliente.setEditable(true);
                 this.clients.setEnabled(true);
-                
+                this.sub.setText("0.00");
+                this.total.setText("0.00");
+                JOptionPane.showMessageDialog(null, "Factura creada satisfactoriamente");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se ha seleccionado un producto o un cliente o ambas");
+            JOptionPane.showMessageDialog(null, "Debe de existir al menos una linea de detalle para poder facturar");
         }
 
 
@@ -457,12 +482,12 @@ public class View extends javax.swing.JDialog implements Observer {
             control.eliminarLineaDetalle(n);
             this.total.setText(Double.toString(model.getNueva().calcularTotal()));
             this.sub.setText(Double.toString(model.getNueva().subTotal()));
-            if(n == 0){
+            if (n == 0) {
                 this.cliente.setEditable(true);
             }
 
         } else {
-            JOptionPane.showMessageDialog(null, "No ha seleccionado ningun elemento");
+            JOptionPane.showMessageDialog(null, "No ha seleccionado ninguna linea de detalle a eliminar");
             return;
         }
     }//GEN-LAST:event_eliminarMouseClicked
@@ -482,6 +507,10 @@ public class View extends javax.swing.JDialog implements Observer {
     private void clienteTextbusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteTextbusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_clienteTextbusActionPerformed
+
+    private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subActionPerformed
 
     /**
      * @param args the command line arguments
