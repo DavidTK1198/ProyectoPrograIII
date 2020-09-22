@@ -12,7 +12,53 @@
             </value>
         </entry>
     </productos>
-    <facturas/>
+    <facturas>
+        <entry>
+            <key>506 - 22092020 140618-01</key>
+            <value>
+                <numeroFactura>506 - 22092020 140618-01</numeroFactura>
+                <fecha>22/09/2020 14:06:18</fecha>
+                <tipoPago>Efectivo</tipoPago>
+                <fecha2>22/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 22092020 140221-01</key>
+            <value>
+                <numeroFactura>506 - 22092020 140221-01</numeroFactura>
+                <fecha>22/09/2020 14:02:21</fecha>
+                <tipoPago>Efectivo</tipoPago>
+                <fecha2>22/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 22092020 142203-01</key>
+            <value>
+                <numeroFactura>506 - 22092020 142203-01</numeroFactura>
+                <fecha>22/09/2020 14:22:03</fecha>
+                <tipoPago>Efectivo</tipoPago>
+                <fecha2>22/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 22092020 140614-01</key>
+            <value>
+                <numeroFactura>506 - 22092020 140614-01</numeroFactura>
+                <fecha>22/09/2020 14:06:14</fecha>
+                <tipoPago>Efectivo</tipoPago>
+                <fecha2>22/09/2020</fecha2>
+            </value>
+        </entry>
+        <entry>
+            <key>506 - 22092020 140622-01</key>
+            <value>
+                <numeroFactura>506 - 22092020 140622-01</numeroFactura>
+                <fecha>22/09/2020 14:06:22</fecha>
+                <tipoPago>Efectivo</tipoPago>
+                <fecha2>22/09/2020</fecha2>
+            </value>
+        </entry>
+    </facturas>
     <clientes1>
         <entry>
             <key>424</key>

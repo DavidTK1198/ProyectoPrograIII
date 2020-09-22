@@ -371,45 +371,70 @@ public class View extends javax.swing.JDialog implements Observer {
         // TODO add your handling code here:
         int n = 0;
         try {
-            n = Integer.parseInt(this.CantidadBusqueda.getText());
-        } catch (Exception r) {
-            JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
-            return;
+            if (this.validacionDatosFactura() == true) {
+                try {
+                    n = Integer.parseInt(this.CantidadBusqueda.getText());
+                } catch (Exception r) {
+                    JOptionPane.showMessageDialog(null, "Ingresar solo numeros");
+                    return;
+                }
+                LineaDetalle nueva;
+                nueva = new LineaDetalle(model.getPd(), n);
+                control.agregar(nueva);
+                double total = model.getNueva().calcularTotal();
+                this.total.setText(Double.toString(total));
+                double subtotal = model.getNueva().subTotal();
+                this.sub.setText(Double.toString(subtotal));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se ha seleccionado un producto o un cliente o ambas");
         }
-        LineaDetalle nueva;
-        nueva = new LineaDetalle(model.getPd(), n);
-        control.agregar(nueva);
-        double total = model.getNueva().calcularTotal();
-        this.total.setText(Double.toString(total));
-        double subtotal = model.getNueva().subTotal();
-        this.sub.setText(Double.toString(subtotal));
     }//GEN-LAST:event_AgregarMouseClicked
 
     private void clientsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clientsMouseClicked
         // TODO add your handling code here:
-        int n=this.clients.getSelectedRow();
-         if (n > -1) {
+        int n = this.clients.getSelectedRow();
+        if (n > -1) {
             this.control.setCliente(n);
             this.cliente.setText(model.getCl().getCedula());
             this.cliente.setEditable(false);
             this.clients.setEnabled(false);
         }
-        
+
     }//GEN-LAST:event_clientsMouseClicked
 
     private void hacerFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hacerFacturaActionPerformed
 
-        this.control.hacerFactura();
-        this.cliente.setEditable(true);
-        this.clients.setEnabled(true);
+        try {
+
+            if (this.validacionDatosFactura() == true) {
+                this.control.hacerFactura();
+                this.cliente.setEditable(true);
+                this.clients.setEnabled(true);
+                
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se ha seleccionado un producto o un cliente o ambas");
+        }
+
+
     }//GEN-LAST:event_hacerFacturaActionPerformed
 
+    public boolean validacionDatosFactura() throws Exception {
+
+        if (cliente.getText().equals("") || this.prdo.getText().equals("")) {
+            throw new Exception();
+        } else {
+            return true;
+        }
+
+    }
     private void buscar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar1MouseClicked
         String busqueda = this.clienteTextbus.getText();
-        if(!busqueda.isEmpty()){
+        if (!busqueda.isEmpty()) {
             control.buscarCliente(busqueda);
             clienteTextbus.setText("");
-        }else{
+        } else {
             control.cargarTodosLosClientes();
             this.clienteTextbus.setText("");
         }
@@ -417,26 +442,29 @@ public class View extends javax.swing.JDialog implements Observer {
 
     private void buscar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar2MouseClicked
         String busqueda = this.productoText.getText();
-        if(!busqueda.isEmpty()){
+        if (!busqueda.isEmpty()) {
             control.busquedaProducto(busqueda);
             productoText.setText("");
-        }else{
+        } else {
             control.cargarTodosLosProductos();
             this.productoText.setText("");
         }
     }//GEN-LAST:event_buscar2MouseClicked
 
     private void eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseClicked
-         int n = this.facturar.getSelectedRow();
-         if(n>=0){
-             control.eliminarLineaDetalle(n);
-             this.total.setText(Double.toString(model.getNueva().calcularTotal()));
-             this.sub.setText(Double.toString(model.getNueva().subTotal()));
-             
-         }else{
-             JOptionPane.showMessageDialog(null, "No ha seleccionado ningun elemento");
-             return;
-         }
+        int n = this.facturar.getSelectedRow();
+        if (n >= 0) {
+            control.eliminarLineaDetalle(n);
+            this.total.setText(Double.toString(model.getNueva().calcularTotal()));
+            this.sub.setText(Double.toString(model.getNueva().subTotal()));
+            if(n == 0){
+                this.cliente.setEditable(true);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "No ha seleccionado ningun elemento");
+            return;
+        }
     }//GEN-LAST:event_eliminarMouseClicked
 
     private void CantidadBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantidadBusquedaActionPerformed
@@ -494,14 +522,13 @@ public class View extends javax.swing.JDialog implements Observer {
     @Override
     public void update(Observable o, Object arg) {
 
-        boolean ayuda = model.isEditable();
         this.facturar.setModel(model.getTable());
         this.clients.setModel(model.getTableCliente());
         this.productos.setModel(model.getTableProducto());
         this.prdo.setText(model.getPd().getCodigo());
         this.cliente.setText(model.getCl().getCedula());
         this.CantidadBusqueda.setText("");
-        
+
     }
 
     public void setControl(Controller control) {
@@ -516,8 +543,8 @@ public class View extends javax.swing.JDialog implements Observer {
         this.model = model;
         model.addObserver(this);
     }
-    
-    String getTipo(){
+
+    String getTipo() {
         return this.tipo.getSelectedItem().toString();
     }
 
