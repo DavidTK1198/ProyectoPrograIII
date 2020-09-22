@@ -78,7 +78,7 @@ public class Controller {
     public void modificar(Cliente nuevo){
         Cliente c = model.getClient();
         String cedula = c.getCedula();
-        Logic.Service.getInstance().reemplazarCliente(cedula,c,nuevo);
+        Logic.Service.getInstance().reemplazarCliente(cedula,nuevo);
         model.setLista(Logic.Service.getInstance().getClientes());
      
     }

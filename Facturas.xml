@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data>
+    <productos>
+        <entry>
+            <key>001</key>
+            <value>
+                <codigo>001</codigo>
+                <nombreE>Pala</nombreE>
+                <descripcion>hmh</descripcion>
+                <precioUnitario>4500.0</precioUnitario>
+                <impuestoVenta>585.0</impuestoVenta>
+            </value>
+        </entry>
+    </productos>
+    <facturas/>
+    <clientes1>
+        <entry>
+            <key>424</key>
+            <value>
+                <cedula>424</cedula>
+                <nombre>dawd</nombre>
+                <apellidos>wadwd</apellidos>
+                <CorreoE>grfrg</CorreoE>
+            </value>
+        </entry>
+    </clientes1>
+    <Emp>
+        <nombreEm>El One Piece</nombreEm>
+        <telefono>755</telefono>
+        <correo>dawdwad</correo>
+        <actividad>Buscar el one piece</actividad>
+        <CedulaJuridica>1124</CedulaJuridica>
+        <direccion>dwadwawd</direccion>
+    </Emp>
+</data>

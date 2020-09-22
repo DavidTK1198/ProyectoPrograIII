@@ -108,11 +108,19 @@ public class Data {
         }
        
     }
-    public void replaceCliente(String key,Cliente viejo,Cliente nuevo){
-        this.clientes1.replace(key, viejo, nuevo);
+    public void replaceCliente(String ced,Cliente nuevo){
+        Cliente c = this.clientes1.get(ced);
+        c.setApellidos(nuevo.getApellidos());
+        c.setCorreoE(nuevo.getCorreoE());
+        c.setNombre(nuevo.getNombre());
     }
-    public void replaceProducto(String key,Producto viejo,Producto nuevo){
-        this.productos.replace(key, viejo, nuevo);
+    public void replaceProducto(String key,Producto nuevo){
+        Producto p = this.productos.get(key);
+        p.setDescripcion(nuevo.getDescripcion());
+        p.setNombre(nuevo.getNombreE());
+        p.setPrecioUnitario(nuevo.getPrecioUnitario());
+        p.calculoIV();
+        
     }
     
    public Producto getProducto(String p) throws Exception{

@@ -88,7 +88,7 @@ public class Controller {
     public void modificarProducto(Producto nuevo){
         Producto c = model.getProduct();
         String codigo = c.getCodigo();
-        Logic.Service.getInstance().reemplazarProducto(codigo,c, nuevo);
+        Logic.Service.getInstance().reemplazarProducto(codigo, nuevo);
         model.setLista(Logic.Service.getInstance().getProductos());
     }
 

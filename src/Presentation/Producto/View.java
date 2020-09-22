@@ -332,6 +332,8 @@ public class View extends javax.swing.JDialog implements Observer {
                 this.control.agregar(model.isEditable(), p);
            }else{
                this.control.modificarProducto(p);
+               this.Cod.setEditable(true);
+               this.limpiarTextFields();
                this.model.setFlag(false);
            }
         }
@@ -376,12 +378,14 @@ public class View extends javax.swing.JDialog implements Observer {
     private void modifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyMouseClicked
           int n = this.ListaDeProductos.getSelectedRow();
         
-        if(n>=-1){
+        if(n>-1){
             Producto producto = model.getTable().getRowAt(n);
             this.Cod.setText(producto.getCodigo());
             this.detalle.setText(producto.getDescripcion());
             this.PrecioU.setText(String.valueOf(producto.getPrecioUnitario()));
             this.PrSr.setText(producto.getNombre());
+            this.Cod.setEditable(false);
+            JOptionPane.showMessageDialog(null, "No se permite modificar el codigo del producto. Si desea hacerlo, debera eliminarlo y crear un producto nuevo");
             model.setProduct(producto);
             model.setFlag(true);
           

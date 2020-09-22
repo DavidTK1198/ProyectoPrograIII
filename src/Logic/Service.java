@@ -74,11 +74,11 @@ public class Service {
     public void deleteCliente(Cliente c){
         this.data.removeCliente(c);
     }
-    public void reemplazarCliente(String key,Cliente viejo,Cliente nuevo){
-        this.data.replaceCliente(key, viejo, nuevo);
+    public void reemplazarCliente(String ced, Cliente nuevo){
+        this.data.replaceCliente(ced,nuevo);
     }
-    public void reemplazarProducto(String key,Producto viejo,Producto nuevo){
-        this.data.replaceProducto(key, viejo, nuevo);
+    public void reemplazarProducto(String key,Producto nuevo){
+        this.data.replaceProducto(key, nuevo);
 //        this.data.productos.replace(key, nuevo);
     }
 

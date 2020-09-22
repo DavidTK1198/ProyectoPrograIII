@@ -90,7 +90,7 @@ public class XmlMaker {
         Element apellido = documento.createElement("Apellidos");
         Text apellidos = documento.createTextNode(cl.getApellidos());
         apellido.appendChild(apellidos);
-        receptor.appendChild(apellidos);
+        receptor.appendChild(apellido);
 
         //cliente correo
         Element correoCl = documento.createElement("CorreoElectronico");

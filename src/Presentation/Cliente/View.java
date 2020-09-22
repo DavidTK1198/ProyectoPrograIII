@@ -326,8 +326,10 @@ public class View extends javax.swing.JDialog implements Observer {
             Cliente client = new Cliente(nombre, apelli, iden, correo);
             if (model.isFlag() == false) {
                 this.control.agregar(model.isEditable(), client);
+                this.limpiarTexto();
             } else {
                 control.modificar(client);
+                this.limpiarTexto();
                 model.setFlag(false);
             }
 
@@ -376,13 +378,14 @@ public class View extends javax.swing.JDialog implements Observer {
 
     private void modifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyMouseClicked
         int n = this.ListaClientes.getSelectedRow();
-
         if (n > -1) {
             Cliente nuevo = model.getTable().getRowAT(n);
             this.Identfi.setText(nuevo.getCedula());
             this.CorreoEle.setText(nuevo.getCorreoE());
             this.Apelli.setText(nuevo.getApellidos());
             this.Nom.setText(nuevo.getNombre());
+            JOptionPane.showMessageDialog(null, "No es posible modificar la cedula del cliente,si la quisiera modificar, debera eliminar el cliente y crear uno nuevo");
+            this.Identfi.setEditable(false);
             model.setClient(nuevo);
             model.setFlag(true);
 
@@ -393,10 +396,10 @@ public class View extends javax.swing.JDialog implements Observer {
 
     }//GEN-LAST:event_modifyMouseClicked
     public void limpiarTexto() {
-        this.Apelli.setText(model.getClient().getApellidos());
-        this.CorreoEle.setText(model.getClient().getCorreoE());
-        this.Identfi.setText(model.getClient().getCedula());
-        this.Nom.setText(model.getClient().getNombre());
+        this.Apelli.setText("");
+        this.CorreoEle.setText("");
+        this.Identfi.setText("");
+        this.Nom.setText("");
     }
 
     public void deshabilitarCajasTexto() {
