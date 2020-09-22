@@ -51,7 +51,7 @@ public class Controller {
             JOptionPane.showMessageDialog(null, exc.getMessage());
         }
         model.setProduct(new Producto());
-        model.setEditable(false);
+//        model.setEditable(false);
     }
 
     public void hide() {

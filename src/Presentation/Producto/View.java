@@ -335,7 +335,7 @@ public class View extends javax.swing.JDialog implements Observer {
                this.model.setFlag(false);
            }
         }
-        this.deshabilitarCajitas();
+//        this.deshabilitarCajitas();
     }//GEN-LAST:event_agregarMouseClicked
 
     private void eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseClicked
@@ -350,14 +350,14 @@ public class View extends javax.swing.JDialog implements Observer {
     }//GEN-LAST:event_eliminarMouseClicked
 
     private void nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoActionPerformed
-         control.cancelar();
+//         control.cancelar();
          habilitarCajitas();
     }//GEN-LAST:event_nuevoActionPerformed
 
     private void CancelarrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarrActionPerformed
       
       limpiarTextFields();
-      deshabilitarCajitas();
+//      deshabilitarCajitas();
     }//GEN-LAST:event_CancelarrActionPerformed
 
     private void BottonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BottonBuscarActionPerformed
@@ -490,10 +490,10 @@ public class View extends javax.swing.JDialog implements Observer {
     // End of variables declaration//GEN-END:variables
 
     private void limpiarTextFields() {
-        this.Cod.setText(model.getProduct().getCodigo());
-        this.detalle.setText(model.getProduct().getDescripcion());
-        this.PrSr.setText(model.getProduct().getNombre());
-        this.PrecioU.setText(String.valueOf(model.getProduct().getPrecioUnitario()));
+        this.Cod.setText("");
+        this.detalle.setText("");
+        this.PrSr.setText("");
+        this.PrecioU.setText("");
     }
 
    

@@ -79,6 +79,7 @@ public class Service {
     }
     public void reemplazarProducto(String key,Producto viejo,Producto nuevo){
         this.data.replaceProducto(key, viejo, nuevo);
+//        this.data.productos.replace(key, nuevo);
     }
 
     public void Save(String p) throws Exception {

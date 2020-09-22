@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Data {
 
-      private Map<String, Producto> productos;
+      public Map<String, Producto> productos;
       private Map<String,Factura> facturas;
       private Map<String, Cliente> clientes1;
       private Empresa Emp;
@@ -49,10 +49,12 @@ public class Data {
         Producto Product = productos.get(p.getCodigo());
         if (Product == null) {
             productos.put(p.getCodigo(), p);
+            
         } else {
             throw new Exception("El producto ya existe");
         }
     }
+    
     
     public void addClient(Cliente p) throws Exception {
         Cliente cl = clientes1.get(p.getCedula());

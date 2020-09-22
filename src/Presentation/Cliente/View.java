@@ -19,11 +19,11 @@ public class View extends javax.swing.JDialog implements Observer {
     /**
      * Creates new form View
      */
-    
     private Controller control;
     private Model model;
-    public View(java.awt.Frame Parent,boolean modal ) {
-        super(Parent,modal);
+
+    public View(java.awt.Frame Parent, boolean modal) {
+        super(Parent, modal);
         initComponents();
     }
 
@@ -318,22 +318,22 @@ public class View extends javax.swing.JDialog implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String nombre = this.Nom.getText();
-       String apelli = this.Apelli.getText();
-       String correo = this.CorreoEle.getText();
-       String iden = this.Identfi.getText();
-       if(ValidacionTexto(nombre,apelli,correo,iden)){
-           Cliente client = new Cliente(nombre,apelli,iden,correo);
-           if(model.isFlag()== false){
-                this.control.agregar(model.isEditable(), client); 
-           }else{
-              control.modificar(client);
-              model.setFlag(false);
-           }
-         
-       }
-       this.deshabilitarCajasTexto();
-        
+        String nombre = this.Nom.getText();
+        String apelli = this.Apelli.getText();
+        String correo = this.CorreoEle.getText();
+        String iden = this.Identfi.getText();
+        if (ValidacionTexto(nombre, apelli, correo, iden)) {
+            Cliente client = new Cliente(nombre, apelli, iden, correo);
+            if (model.isFlag() == false) {
+                this.control.agregar(model.isEditable(), client);
+            } else {
+                control.modificar(client);
+                model.setFlag(false);
+            }
+
+        }
+//        this.deshabilitarCajasTexto();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void VolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VolverMouseClicked
@@ -342,39 +342,42 @@ public class View extends javax.swing.JDialog implements Observer {
     }//GEN-LAST:event_VolverMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.limpiarTexto();
+//        this.limpiarTexto();
         this.habilitarCajitasTexto();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-          this.limpiarTexto();
-          this.deshabilitarCajasTexto();
-          
+        this.limpiarTexto();
+        this.deshabilitarCajasTexto();
+
     }//GEN-LAST:event_CancelarActionPerformed
 
     private void BusquedaBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaBottonActionPerformed
-       String texto = this.IdeBusquedaClien.getText();
-       if(!texto.isEmpty()){
-           control.buscarCliente(texto);
-       }else{
-           control.mostrarTodosLosClientes();
-       }
+        String texto = this.IdeBusquedaClien.getText();
+
+        if (!texto.isEmpty()) {
+            control.buscarCliente(texto);
+        } else {
+            control.mostrarTodosLosClientes();
+        }
+
+
     }//GEN-LAST:event_BusquedaBottonActionPerformed
 
     private void eliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarMouseClicked
-         int n = this.ListaClientes.getSelectedRow();
-          if(n>-1){
+        int n = this.ListaClientes.getSelectedRow();
+        if (n > -1) {
             control.eliminar(n);
-            
-        }else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Debes seleccionar el cliente a eliminar");
         }
     }//GEN-LAST:event_eliminarMouseClicked
 
     private void modifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyMouseClicked
         int n = this.ListaClientes.getSelectedRow();
-        
-        if(n>=-1){
+
+        if (n > -1) {
             Cliente nuevo = model.getTable().getRowAT(n);
             this.Identfi.setText(nuevo.getCedula());
             this.CorreoEle.setText(nuevo.getCorreoE());
@@ -382,65 +385,69 @@ public class View extends javax.swing.JDialog implements Observer {
             this.Nom.setText(nuevo.getNombre());
             model.setClient(nuevo);
             model.setFlag(true);
-          
-        }else{
+
+        } else {
             JOptionPane.showMessageDialog(null, "Seleccione un cliente de la tabla");
             return;
         }
-        
+
     }//GEN-LAST:event_modifyMouseClicked
-    public void limpiarTexto(){
+    public void limpiarTexto() {
         this.Apelli.setText(model.getClient().getApellidos());
         this.CorreoEle.setText(model.getClient().getCorreoE());
         this.Identfi.setText(model.getClient().getCedula());
         this.Nom.setText(model.getClient().getNombre());
     }
-    public void deshabilitarCajasTexto(){
+
+    public void deshabilitarCajasTexto() {
         this.Apelli.setEnabled(false);
         this.CorreoEle.setEnabled(false);
         this.Identfi.setEnabled(false);
         this.Nom.setEnabled(false);
     }
-    public void habilitarCajitasTexto(){
-         this.Apelli.setEnabled(true);
+
+    public void habilitarCajitasTexto() {
+        this.Apelli.setEnabled(true);
         this.CorreoEle.setEnabled(true);
         this.Identfi.setEnabled(true);
         this.Nom.setEnabled(true);
-        
+
     }
-    private boolean ValidacionTexto(String nom,String ape, String corr, String iden){
-        if(nom.isEmpty()){
+
+    private boolean ValidacionTexto(String nom, String ape, String corr, String iden) {
+        if (nom.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar Nombre");
             return false;
         }
-        if(ape.isEmpty()){
+        if (ape.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar Apellidos");
             return false;
         }
-        if(corr.isEmpty()){
+        if (corr.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar Correo electronico");
             return false;
         }
-        if(iden.isEmpty()){
+        if (iden.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingresar Identificacion");
             return false;
         }
         return true;
     }
+
     @Override
     public void update(Observable o, Object arg) {
-       Cliente client = model.getClient();
-       boolean ayudante = model.isEditable();
-       if(ayudante){
-           this.habilitarCajitasTexto();
-           this.Identfi.setEnabled(true);
-       }
-       this.Apelli.setText(client.getApellidos());
-       this.Nom.setText(client.getNombre());
-       this.CorreoEle.setText(client.getCorreoE());
-       this.Identfi.setText(client.getCedula());
-       this.IdeBusquedaClien.setText("");
-       this.ListaClientes.setModel(model.getTable());
+        Cliente client = model.getClient();
+        boolean ayudante = model.isEditable();
+        if (ayudante) {
+            this.habilitarCajitasTexto();
+            this.Identfi.setEnabled(true);
+        }
+        this.Apelli.setText(client.getApellidos());
+        this.Nom.setText(client.getNombre());
+        this.CorreoEle.setText(client.getCorreoE());
+        this.Identfi.setText(client.getCedula());
+        this.IdeBusquedaClien.setText("");
+        this.ListaClientes.setModel(model.getTable());
     }
 
     public Controller getControl() {
@@ -462,7 +469,7 @@ public class View extends javax.swing.JDialog implements Observer {
     /**
      * @param args the command line arguments
      */
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Ape;
@@ -490,4 +497,3 @@ public class View extends javax.swing.JDialog implements Observer {
     private javax.swing.JButton modify;
     // End of variables declaration//GEN-END:variables
 }
-
