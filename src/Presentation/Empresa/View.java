@@ -31,7 +31,7 @@ public class View extends javax.swing.JDialog implements Observer {
     public View(java.awt.Frame Parent, boolean modal) {
         super(Parent, modal);
         initComponents();
-        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.noModificar();
         this.actualizarValoresNoMd();
         limpiarImagenEmpresa();
@@ -83,8 +83,15 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel2 = new javax.swing.JLabel();
         Volver = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 153, 153));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setForeground(new java.awt.Color(255, 204, 0));
@@ -506,9 +513,23 @@ public class View extends javax.swing.JDialog implements Observer {
         this.vaciarTextFields();
     }//GEN-LAST:event_BotonCancelarMouseClicked
 
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+      if(Logic.Service.getInstance().my_Empresa().validateData()==false)  
+        JOptionPane.showMessageDialog(null, "Se salio de la ventana de datos de la Empresa sin comletar o guardar la informacion: "
+                + "Para el uso del las funciones del sistemas dichos datos son requeridos, vaya a la ventana 'Configurar Empresa' para completar la informacion.");
+      
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        if(Logic.Service.getInstance().my_Empresa().validateData()==false)  
+        JOptionPane.showMessageDialog(null, "Se salio de la ventana de datos de la Empresa sin completar o guardar la informacion: "
+                + "Para el uso del las funciones del sistemas dichos datos son requeridos, vaya a la ventana 'Configurar Empresa' para completar la informacion.");
+      
+    }//GEN-LAST:event_formWindowClosing
+
     @Override
     public void update(Observable o, Object arg) {
-        //arreglar
+  
     }
 
     public Controller getControl() {

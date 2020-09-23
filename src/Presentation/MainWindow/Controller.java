@@ -5,6 +5,7 @@
  */
 package Presentation.MainWindow;
 
+import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
 
 /**
@@ -37,6 +38,7 @@ public class Controller {
         vista.setControl(this);
         vista.setModel(model);
         initOptions();
+        
        
     }
 
@@ -64,21 +66,36 @@ public class Controller {
     }
 
     public void productoShow() {
+    if(validateUse())
         this.producto_Controller.show();
+    else
+        JOptionPane.showMessageDialog(null, "Los datos de la Empresa son necesarios para usar esta funcion del Sistema");
     }
 
     public void clienteShow() {
+    if(validateUse())
         this.cliente_control.Mostrar();
+        else
+        JOptionPane.showMessageDialog(null, "Los datos de la Empresa son necesarios para usar esta funcion del Sistema");
     }
     public void empresaShow(){
         this.empresa_control.Mostrar();
     }
     
     public void facturacion_Show(){
+    if(validateUse())
         this.factura.show();
+        else
+        JOptionPane.showMessageDialog(null, "Los datos de la Empresa son necesarios para usar esta funcion del Sistema");
     }
 
     public void registros_Show(){
+    if(validateUse())
         this.registros.show();
+        else
+        JOptionPane.showMessageDialog(null, "Los datos de la Empresa son necesarios para usar esta funcion del Sistema");
+    }
+    public boolean validateUse(){
+    return (Logic.Service.getInstance().my_Empresa().validateData());
     }
 }

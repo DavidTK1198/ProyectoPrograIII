@@ -32,7 +32,6 @@ public class View extends javax.swing.JFrame implements Observer {
         this.fecha.setText(fech);
         String p = "Facturas.xml";
         Logic.Service.getInstance().load(p);
-     
 
     }
 
@@ -338,7 +337,7 @@ public class View extends javax.swing.JFrame implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-
+    
     }
 
 
@@ -356,7 +355,7 @@ public class View extends javax.swing.JFrame implements Observer {
 
     public void setModel(Model model) {
         this.model = model;
-        model.addObserver(this);
+        this.model.addObserver(this);
     }
 
 }
