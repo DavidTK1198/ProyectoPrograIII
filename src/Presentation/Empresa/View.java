@@ -34,16 +34,7 @@ public class View extends javax.swing.JDialog implements Observer {
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.noModificar();
         this.actualizarValoresNoMd();
-
-        try {
-            ImageIcon logo1 = new ImageIcon("image.png");
-            Image label = logo1.getImage();
-            Image nuevo = label.getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH);
-            ImageIcon image = new ImageIcon(nuevo);
-            logo.setIcon(image);
-        } catch (Exception e) {
-
-        }
+        limpiarImagenEmpresa();
 
     }
 
@@ -92,6 +83,7 @@ public class View extends javax.swing.JDialog implements Observer {
         jLabel2 = new javax.swing.JLabel();
         Volver = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 153, 153));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
@@ -408,7 +400,7 @@ public class View extends javax.swing.JDialog implements Observer {
         }
         control.hide();
         model.setBandera(false);
-        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        //this.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }//GEN-LAST:event_VolverMouseClicked
 
     private void TelefonoTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TelefonoTxtFieldActionPerformed
@@ -465,6 +457,22 @@ public class View extends javax.swing.JDialog implements Observer {
 
         this.telNoMd.setText(Service.getInstance().my_Empresa().getTelefono());
 
+    }
+    private void limpiarImagenEmpresa(){
+            try {
+                if(Logic.Service.getInstance().my_Empresa().validateData()){
+            ImageIcon logo1 = new ImageIcon("image.png");
+            Image label = logo1.getImage();
+            Image nuevo = label.getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon image = new ImageIcon(nuevo);
+            logo.setIcon(image);
+            }else
+                    logo.remove(logo);
+        } catch (Exception e) {
+
+        }
+
+    
     }
 
 

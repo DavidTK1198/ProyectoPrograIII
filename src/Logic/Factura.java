@@ -37,12 +37,13 @@ public class Factura {
         Date date = new Date();
         fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(date);
        fecha2 = new SimpleDateFormat("dd/MM/yyyy").format(date);
-        numeroFactura = "506 - "+date_Format(fecha)+"-01";
+        numeroFactura = "506-"+date_Format(fecha)+"-01";
         tipoPago="";
         
     }
     private String date_Format(String f){
         f = f.replace(":","");
+        f = f.replace(" ","");
         return f.replace("/","");   
     }
     public void addLine(LineaDetalle nueva) {

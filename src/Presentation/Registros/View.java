@@ -163,12 +163,13 @@ public class View extends javax.swing.JDialog implements Observer {
                 .addGap(38, 38, 38)
                 .addComponent(lineaFacturaPresentadaTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SetPathbttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(generarPDFBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(generarXMLBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(SetPathbttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(generarPDFBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(generarXMLBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -206,20 +207,15 @@ public class View extends javax.swing.JDialog implements Observer {
                          path = fc.getSelectedFile().getAbsolutePath();
             
                  }
+              JOptionPane.showMessageDialog(null, "El directorio para el achivo se guardo correctamente.");  
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error al elegir la directorio para el achivo");
-                return;
+                JOptionPane.showMessageDialog(null, "Error al elegir el directorio para el achivo. Intente de nuevo por favor");
+                //return;
             }
     }//GEN-LAST:event_SetPathbttnActionPerformed
 
     private void generarPDFBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarPDFBttnActionPerformed
-      //  JOptionPane.showMessageDialog(null, "Sin Implementar");
-//         try {
-//            Factura FacturaElectronica = model.getFactura();
-//            Logic.Service.getInstance().makeFacturaXML(FacturaElectronica);
-//        } catch (Exception ex) {
-//            System.out.println(ex.getCause());
-//        }
+
     }//GEN-LAST:event_generarPDFBttnActionPerformed
 
     private void generarXMLBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generarXMLBttnMouseClicked
@@ -231,7 +227,7 @@ public class View extends javax.swing.JDialog implements Observer {
                 throw new Exception("NO se ha elegido una  factura a guardar en formato XML");
             Logic.Service.getInstance().makeFacturaXML(FacturaElectronica,path);
         } catch (java.lang.NullPointerException ex){
-            // Catch NullPointerExceptions.
+            // Catch NullPointerException
             JOptionPane.showMessageDialog(null, "No fue posible crear el XML: NO se ha elegido una  factura a guardar en formato XML");
             return;
         } catch (Exception ex) {
@@ -239,11 +235,11 @@ public class View extends javax.swing.JDialog implements Observer {
             JOptionPane.showMessageDialog(null, "No fue posible crear el XML ");
             return;
         }
-          JOptionPane.showMessageDialog(null, "XML creado correctamente");
+        JOptionPane.showMessageDialog(null, "XML creado correctamente");
     }//GEN-LAST:event_generarXMLBttnMouseClicked
 
     private void generarPDFBttnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_generarPDFBttnMouseClicked
-        //JOptionPane.showMessageDialog(null, "Sin Implementar");
+        
          try {
             if(path.isEmpty())
                 throw new Exception("NO se ha elegido un directorio donde guardar el archivo vaya al botón Set Path");
@@ -261,7 +257,7 @@ public class View extends javax.swing.JDialog implements Observer {
             JOptionPane.showMessageDialog(null, "No fue posible crear el PDF ");
             return;
         }
-         JOptionPane.showMessageDialog(null, "PDF creado correctamente");
+        JOptionPane.showMessageDialog(null, "PDF creado correctamente");
     }//GEN-LAST:event_generarPDFBttnMouseClicked
 
     private void TableDeFacturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableDeFacturasMouseClicked
