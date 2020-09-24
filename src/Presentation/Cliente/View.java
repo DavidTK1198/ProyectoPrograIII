@@ -350,7 +350,7 @@ public class View extends javax.swing.JDialog implements Observer {
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         this.limpiarTexto();
-        this.deshabilitarCajasTexto();
+//        this.deshabilitarCajasTexto();
 
     }//GEN-LAST:event_CancelarActionPerformed
 
@@ -410,10 +410,10 @@ public class View extends javax.swing.JDialog implements Observer {
     }
 
     public void habilitarCajitasTexto() {
-        this.Apelli.setEnabled(true);
-        this.CorreoEle.setEnabled(true);
-        this.Identfi.setEnabled(true);
-        this.Nom.setEnabled(true);
+        this.Apelli.setEditable(true);
+        this.CorreoEle.setEditable(true);
+        this.Identfi.setEditable(true);
+        this.Nom.setEditable(true);
 
     }
 

@@ -61,6 +61,11 @@ public class View extends javax.swing.JFrame implements Observer {
         fecha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         Principal.setBackground(new java.awt.Color(0, 204, 255));
 
@@ -312,6 +317,25 @@ public class View extends javax.swing.JFrame implements Observer {
     private void RegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistrosMouseClicked
         this.control.registros_Show();
     }//GEN-LAST:event_RegistrosMouseClicked
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+          try {
+            
+            if(!Logic.Service.getInstance().my_Empresa() .validateData())
+              throw new Exception("Datos de la empresa Incompletos");
+            else{
+           this.dispose();
+           String p = "Facturas.xml";/// a ver que ponemos aquí
+           Logic.Service.getInstance().Save(p);
+            }
+            
+ 
+        }catch(Exception e){
+            
+         JOptionPane.showMessageDialog(null, e.getMessage());
+          return;
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

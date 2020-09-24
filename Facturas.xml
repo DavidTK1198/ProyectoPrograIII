@@ -5,104 +5,72 @@
             <key>001</key>
             <value>
                 <codigo>001</codigo>
-                <nombreE>Pala</nombreE>
-                <descripcion>hmh</descripcion>
-                <precioUnitario>4500.0</precioUnitario>
-                <impuestoVenta>585.0</impuestoVenta>
+                <nombreE>Vidrio azul</nombreE>
+                <descripcion>es un vidrio fino</descripcion>
+                <precioUnitario>2000.0</precioUnitario>
+                <impuestoVenta>260.0</impuestoVenta>
+            </value>
+        </entry>
+        <entry>
+            <key>002</key>
+            <value>
+                <codigo>002</codigo>
+                <nombreE>vidrio verde</nombreE>
+                <descripcion>rreerr</descripcion>
+                <precioUnitario>3000.0</precioUnitario>
+                <impuestoVenta>390.0</impuestoVenta>
             </value>
         </entry>
     </productos>
     <facturas>
         <entry>
-            <key>506 - 22092020 140618-01</key>
-            <value>
-                <numeroFactura>506 - 22092020 140618-01</numeroFactura>
-                <fecha>22/09/2020 14:06:18</fecha>
-                <tipoPago>Efectivo</tipoPago>
-                <fecha2>22/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 22092020 144701-01</key>
-            <value>
-                <numeroFactura>506 - 22092020 144701-01</numeroFactura>
-                <actual>424</actual>
-                <fecha>22/09/2020 14:47:01</fecha>
-                <tipoPago>Efectivo</tipoPago>
-                <fecha2>22/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 22092020 140221-01</key>
-            <value>
-                <numeroFactura>506 - 22092020 140221-01</numeroFactura>
-                <fecha>22/09/2020 14:02:21</fecha>
-                <tipoPago>Efectivo</tipoPago>
-                <fecha2>22/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 22092020 142203-01</key>
-            <value>
-                <numeroFactura>506 - 22092020 142203-01</numeroFactura>
-                <fecha>22/09/2020 14:22:03</fecha>
-                <tipoPago>Efectivo</tipoPago>
-                <fecha2>22/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 22092020 140614-01</key>
-            <value>
-                <numeroFactura>506 - 22092020 140614-01</numeroFactura>
-                <fecha>22/09/2020 14:06:14</fecha>
-                <tipoPago>Efectivo</tipoPago>
-                <fecha2>22/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 22092020 140622-01</key>
-            <value>
-                <numeroFactura>506 - 22092020 140622-01</numeroFactura>
-                <fecha>22/09/2020 14:06:22</fecha>
-                <tipoPago>Efectivo</tipoPago>
-                <fecha2>22/09/2020</fecha2>
-            </value>
-        </entry>
-        <entry>
-            <key>506 - 22092020 150347-01</key>
+            <key>506-24092020103333-01</key>
             <value>
                 <misLineas>
                     <produc>001</produc>
-                    <cantidadProd>4</cantidadProd>
-                    <ide>15:03:58</ide>
+                    <cantidadProd>3</cantidadProd>
+                    <ide>10:35:58</ide>
                 </misLineas>
-                <numeroFactura>506 - 22092020 150347-01</numeroFactura>
-                <actual>424</actual>
-                <fecha>22/09/2020 15:03:47</fecha>
+                <misLineas>
+                    <produc>002</produc>
+                    <cantidadProd>5</cantidadProd>
+                    <ide>10:36:27</ide>
+                </misLineas>
+                <numeroFactura>506-24092020103333-01</numeroFactura>
+                <actual>755</actual>
+                <fecha>24/09/2020 10:33:33</fecha>
                 <tipoPago>Efectivo</tipoPago>
-                <fecha2>22/09/2020</fecha2>
+                <fecha2>24/09/2020</fecha2>
             </value>
         </entry>
     </facturas>
     <clientes1>
         <entry>
-            <key>424</key>
+            <key>dsadas</key>
             <value>
-                <cedula>424</cedula>
-                <nombre>dawd</nombre>
-                <apellidos>wadwd</apellidos>
-                <CorreoE>grfrg</CorreoE>
-                <listaFacturas>506 - 22092020 144701-01</listaFacturas>
-                <listaFacturas>506 - 22092020 150347-01</listaFacturas>
+                <cedula>dsadas</cedula>
+                <nombre>Daniel</nombre>
+                <apellidos>Madrigal</apellidos>
+                <CorreoE>dasdasa</CorreoE>
+            </value>
+        </entry>
+        <entry>
+            <key>755</key>
+            <value>
+                <cedula>755</cedula>
+                <nombre>Patricio </nombre>
+                <apellidos>Estrella</apellidos>
+                <CorreoE>ghfh</CorreoE>
+                <listaFacturas>506-24092020103333-01</listaFacturas>
             </value>
         </entry>
     </clientes1>
     <Emp>
-        <nombreEm>El One Piece</nombreEm>
-        <telefono>755</telefono>
-        <correo>dawdwad</correo>
-        <actividad>Buscar el one piece</actividad>
-        <CedulaJuridica>1124</CedulaJuridica>
-        <direccion>dwadwawd</direccion>
+        <nombreEm>La vidriera S.A</nombreEm>
+        <telefono>57885788</telefono>
+        <correo>LosVidrios@gmail.com</correo>
+        <actividad>Vender vidrios</actividad>
+        <CedulaJuridica>145575</CedulaJuridica>
+        <direccion>dfefefwrw</direccion>
     </Emp>
 </data>

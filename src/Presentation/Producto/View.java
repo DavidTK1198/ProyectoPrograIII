@@ -434,17 +434,17 @@ public class View extends javax.swing.JDialog implements Observer {
        
     }
      private void habilitarCajitas() {
-       this.Cod.setEnabled(true);
-       this.PrSr.setEnabled(true);
-       this.PrecioU.setEnabled(true);
-       this.detalle.setEnabled(true);
+       this.Cod.setEditable(true);
+       this.PrSr.setEditable(true);
+       this.PrecioU.setEditable(true);
+       this.detalle.setEditable(true);
     }
-    private void deshabilitarCajitas() {
-       this.Cod.setEnabled(false);
-       this.PrSr.setEnabled(false);
-       this.PrecioU.setEnabled(false);
-       this.detalle.setEnabled(false);
-    }
+//    private void deshabilitarCajitas() {
+//       this.Cod.setEnabled(false);
+//       this.PrSr.setEnabled(false);
+//       this.PrecioU.setEnabled(false);
+//       this.detalle.setEnabled(false);
+//    }
     public Controller getControl() {
         return control;
     }
